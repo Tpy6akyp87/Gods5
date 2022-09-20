@@ -6,7 +6,7 @@ using System.IO;
 
 public class Field : MonoBehaviour
 {
-
+    public StartEnemyTeam enemyTeam;
     [SerializeField]
     private string nextscene = null;
     
@@ -14,6 +14,7 @@ public class Field : MonoBehaviour
     public int[,] damage = new int[8, 6];
     public bool[,] isHealed = new bool[8, 6];
     public int[,] heal = new int[8, 6];
+    public EnemyHealer eHeal;
     public EnemyDamager eDam;
     public EnemyDefender eDef;
     public Defender defender;
@@ -26,13 +27,28 @@ public class Field : MonoBehaviour
     int countOf2 = 0;
     int countOf3 = 0;
     int countOf4 = 0;
+    int countOf5 = 0;
 
     void Start()
     {
-        
+        LoadField();
+        for (int i = 0; i < enemyTeam.healers; i++)
+        {
+            AddUnit(5);
+        }
+        for (int i = 0; i < enemyTeam.damagers; i++)
+        {
+            AddUnit(0);
+        }
+        for (int i = 0; i < enemyTeam.defenders; i++)
+        {
+            AddUnit(1);
+        }
+
     }
     private void Awake()
     {
+        eHeal = Resources.Load<EnemyHealer>("EnemyHealer"); //5
         eDam = Resources.Load<EnemyDamager>("EnemyDamager"); //0
         eDef = Resources.Load<EnemyDefender>("EnemyDefender"); //1
         defender = Resources.Load<Defender>("Defender"); //2
@@ -114,6 +130,7 @@ public class Field : MonoBehaviour
                 countOf2 = 0;
                 countOf3 = 0;
                 countOf4 = 0;
+                countOf5 = 0;
             }
         }
         
@@ -203,11 +220,37 @@ public class Field : MonoBehaviour
             Healer neweDam = Instantiate(healer, new Vector3(x, 0, 0), eDam.transform.rotation) as Healer;
             countOf4++;
         }
+        if (numberOFUnit == 5 && countOf5 < 8)
+        {
+            switch (countOf5)
+            {
+                case 0: x = 3; break;
+                case 1: x = 4; break;
+                case 2: x = 2; break;
+                case 3: x = 5; break;
+                case 4: x = 1; break;
+                case 5: x = 6; break;
+                case 6: x = 0; break;
+                case 7: x = 7; break;
+            }
+            EnemyHealer neweDam = Instantiate(eHeal, new Vector3(x, 5, 0), eDam.transform.rotation) as EnemyHealer;
+            countOf5++;
+        }
     }
 
     public void EndBattle()
     {
         SceneManager.LoadScene(nextscene);
     }
-
+    [System.Serializable]
+    public class StartEnemyTeam
+    {
+        public int healers;
+        public int damagers;
+        public int defenders;
+    }
+    public void LoadField()
+    {
+        enemyTeam = JsonUtility.FromJson<StartEnemyTeam>(File.ReadAllText(Application.dataPath + "/Battle/enemyTeam.json"));
+    }
 }

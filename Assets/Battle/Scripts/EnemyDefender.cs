@@ -30,6 +30,18 @@ public class EnemyDefender : EnemyBattle
             field.damage[(int)Xpos, (int)Ypos] = 0;
             hpBar.fillAmount = hp / maxHP;
         }
+        if (field.isHealed[(int)Xpos, (int)Ypos])
+        {
+            Debug.Log(gameObject.name + "   получил   " + field.heal[(int)Xpos, (int)Ypos] + "  исцеления"); //не забыть завернуть в метод
+            field.isHealed[(int)Xpos, (int)Ypos] = false;
+            hp += field.heal[(int)Xpos, (int)Ypos];
+            if (hp > maxHP)
+            {
+                hp = maxHP;
+            }
+            field.heal[(int)Xpos, (int)Ypos] = 0;
+            hpBar.fillAmount = hp / maxHP;
+        }
         if (timeToStepForward)
         {
             StepForward(-1);

@@ -7,6 +7,8 @@ using System.IO;
 
 public class Point : MonoBehaviour
 {
+    public StartEnemyTeam enemyTeam;
+
     public Text text;
     public GameObject toBattle;
 
@@ -16,6 +18,10 @@ public class Point : MonoBehaviour
     [SerializeField]
     private string nextscene = null;
     public Explorer explorer;
+
+    public int healCount;
+    public int damagerCount;
+    public int defenderCount;
 
     void OnMouseDown()
     {
@@ -34,25 +40,20 @@ public class Point : MonoBehaviour
             Debug.Log("battle loading");
             explorer.SaveField();
             toBattle.SetActive(true);
+            SaveField();
             SceneManager.LoadScene(nextscene);
         }
     }
-    // Start is called before the first frame update
     void Start()
     {
         toBattle.SetActive(false);
         explorer = FindObjectOfType<Explorer>();
+
+        healCount = (int)Random.Range(2, 5);
+        damagerCount = (int)Random.Range(2, 5);
+        defenderCount = (int)Random.Range(2, 5);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    void Awake()
-    {
-        //explorer = FindObjectOfType<Explorer>();
-    }
     public void LoadPoint()
     {
         Debug.Log("Стартуем");
@@ -71,5 +72,19 @@ public class Point : MonoBehaviour
     public void SwitchScene(string nextscene)
     {
         SceneManager.LoadScene(nextscene);
+    }
+    [System.Serializable]
+    public class StartEnemyTeam
+    {
+        public int healers;
+        public int damagers;
+        public int defenders;
+    }
+    public void SaveField()
+    {
+        enemyTeam.healers = healCount;
+        enemyTeam.damagers = damagerCount;
+        enemyTeam.defenders = defenderCount;
+        File.WriteAllText(Application.dataPath + "/Battle/enemyTeam.json", JsonUtility.ToJson(enemyTeam));
     }
 }
