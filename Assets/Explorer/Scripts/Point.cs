@@ -55,9 +55,8 @@ public class Point : MonoBehaviour
     }
     public void LoadPoint()
     {
-        //text.text += "@";
         Debug.Log("Стартуем");
-        //explorer = FindObjectOfType<Explorer>();
+        explorer = FindObjectOfType<Explorer>();
         for (int i = 0; i < explorer.pointToSave.points.Count; i++)
         {
             //text.text += "*";
