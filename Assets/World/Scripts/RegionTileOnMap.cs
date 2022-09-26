@@ -13,38 +13,24 @@ public class RegionTileOnMap : MonoBehaviour
     public int levelOfRegion = 3;
     public string typeOfRegion = "Wild";
 
-    public Region region;
     public RegionList regionList;
     void Start()
     {
-        PutRegionStats();
         SaveField();
     }
-
-    public void PutRegionStats()
-    {
-        region.regidRegion = idRegion;
-        region.regIsvisitedRegion = visitedRegion;
-        region.regvisitedPoints = visitedPoints;
-        region.regnumberOfPoints = numberOfPoints;
-        region.reglevelOfRegion = levelOfRegion;
-        region.regtypeOfRegion = typeOfRegion;
-    }
-    
     void Update()
     {
         
     }
-
     [System.Serializable]
     public class Region
     {
-        public int regidRegion;
-        public bool regIsvisitedRegion;
-        public int regvisitedPoints;
-        public int regnumberOfPoints;
-        public int reglevelOfRegion;
-        public string regtypeOfRegion;
+        public int idRegion;
+        public bool isvisitedRegion;
+        public int visitedPoints;
+        public int numberOfPoints;
+        public int levelOfRegion;
+        public string typeOfRegion;
     }
     [System.Serializable]
     public class RegionList
@@ -59,7 +45,14 @@ public class RegionTileOnMap : MonoBehaviour
     }
     public void SaveField()
     {
-        Debug.Log(region.regidRegion);
+        Region region = new Region();
+        region.idRegion = idRegion;
+        region.isvisitedRegion = visitedRegion;
+        region.visitedPoints = visitedPoints;
+        region.numberOfPoints = numberOfPoints;
+        region.levelOfRegion = levelOfRegion;
+        region.typeOfRegion = typeOfRegion;
+        Debug.Log(region.idRegion);
         regionList.regionS.Add(region);
         File.WriteAllText(Application.dataPath + "/World/regionsData.json", JsonUtility.ToJson(regionList));
     }
