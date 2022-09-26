@@ -13,47 +13,20 @@ public class RegionTileOnMap : MonoBehaviour
     public int levelOfRegion = 3;
     public string typeOfRegion = "Wild";
 
-    public RegionList regionList;
+    public WorldDataHolder dataHolder;
+    //public RegionList regionList;
     void Start()
     {
+        dataHolder = FindObjectOfType<WorldDataHolder>();
         SaveField();
     }
     void Update()
     {
         
     }
-    [System.Serializable]
-    public class Region
-    {
-        public int idRegion;
-        public bool isvisitedRegion;
-        public int visitedPoints;
-        public int numberOfPoints;
-        public int levelOfRegion;
-        public string typeOfRegion;
-    }
-    [System.Serializable]
-    public class RegionList
-    {
-        public List<Region> regionS;
-    }
     
-    [ContextMenu("Load")]
-    public void LoadField()
-    {
-        regionList = JsonUtility.FromJson<RegionList>(File.ReadAllText(Application.dataPath + "/World/regionsData.json"));
-    }
     public void SaveField()
     {
-        Region region = new Region();
-        region.idRegion = idRegion;
-        region.isvisitedRegion = visitedRegion;
-        region.visitedPoints = visitedPoints;
-        region.numberOfPoints = numberOfPoints;
-        region.levelOfRegion = levelOfRegion;
-        region.typeOfRegion = typeOfRegion;
-        Debug.Log(region.idRegion);
-        regionList.regionS.Add(region);
-        File.WriteAllText(Application.dataPath + "/World/regionsData.json", JsonUtility.ToJson(regionList));
+        dataHolder.SaveField(idRegion, visitedRegion = false, visitedPoints = 5, numberOfPoints = 10, levelOfRegion = 3, typeOfRegion = "Wild");
     }
 }
