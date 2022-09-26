@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1065337979883887909, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1065337979883887909, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -537,7 +537,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1065337979883887909, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1065337979883887909, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -703,6 +703,7 @@ GameObject:
   - component: {fileID: 849151938}
   - component: {fileID: 849151937}
   - component: {fileID: 849151939}
+  - component: {fileID: 849151940}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -776,6 +777,94 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &849151940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849151936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d90dc9a25d4834c99a22f0200c15d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regionEs:
+  - regidRegion: 0
+    regIsvisitedRegion: 0
+    regvisitedPoints: 0
+    regnumberOfPoints: 0
+    reglevelOfRegion: 0
+    regtypeOfRegion: 
+  - regidRegion: 0
+    regIsvisitedRegion: 0
+    regvisitedPoints: 0
+    regnumberOfPoints: 0
+    reglevelOfRegion: 0
+    regtypeOfRegion: 
+  - regidRegion: 0
+    regIsvisitedRegion: 0
+    regvisitedPoints: 0
+    regnumberOfPoints: 0
+    reglevelOfRegion: 0
+    regtypeOfRegion: 
+  - regidRegion: 0
+    regIsvisitedRegion: 0
+    regvisitedPoints: 0
+    regnumberOfPoints: 0
+    reglevelOfRegion: 0
+    regtypeOfRegion: 
+  - regidRegion: 0
+    regIsvisitedRegion: 0
+    regvisitedPoints: 0
+    regnumberOfPoints: 0
+    reglevelOfRegion: 0
+    regtypeOfRegion: 
+  - regidRegion: 0
+    regIsvisitedRegion: 0
+    regvisitedPoints: 0
+    regnumberOfPoints: 0
+    reglevelOfRegion: 0
+    regtypeOfRegion: 
+  - regidRegion: 0
+    regIsvisitedRegion: 0
+    regvisitedPoints: 0
+    regnumberOfPoints: 0
+    reglevelOfRegion: 0
+    regtypeOfRegion: 
+  - regidRegion: 0
+    regIsvisitedRegion: 0
+    regvisitedPoints: 0
+    regnumberOfPoints: 0
+    reglevelOfRegion: 0
+    regtypeOfRegion: 
+  - regidRegion: 0
+    regIsvisitedRegion: 0
+    regvisitedPoints: 0
+    regnumberOfPoints: 0
+    reglevelOfRegion: 0
+    regtypeOfRegion: 
+  - regidRegion: 0
+    regIsvisitedRegion: 0
+    regvisitedPoints: 0
+    regnumberOfPoints: 0
+    reglevelOfRegion: 0
+    regtypeOfRegion: 
+  - regidRegion: 0
+    regIsvisitedRegion: 0
+    regvisitedPoints: 0
+    regnumberOfPoints: 0
+    reglevelOfRegion: 0
+    regtypeOfRegion: 
+  - regidRegion: 0
+    regIsvisitedRegion: 0
+    regvisitedPoints: 0
+    regnumberOfPoints: 0
+    reglevelOfRegion: 0
+    regtypeOfRegion: 
+  regionList:
+    regionS: []
+  regionTiles: []
 --- !u!1001 &1029589249
 PrefabInstance:
   m_ObjectHideFlags: 0
