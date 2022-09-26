@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RegionTileOnMap : MonoBehaviour
 {
@@ -13,51 +15,46 @@ public class RegionTileOnMap : MonoBehaviour
     public int levelOfRegion = 3;
     public string typeOfRegion = "Wild";
 
-    //public DataHolder dataHolder;
-    //public Region region;
-    //public RegionList regionList;
+    public bool mouseOnTile;
+
+    public WorldDataHolder dataHolder;
+    public RegionTileInfo tileInfo;
     void Start()
     {
-        //dataHolder = FindObjectOfType<DataHolder>();
-        
-        //SaveField();
+        dataHolder = FindObjectOfType<WorldDataHolder>();
+        tileInfo = FindObjectOfType<RegionTileInfo>();
+        SaveField();
     }
-
-    //public void PutRegionStats()
-    //{
-    //    region.regidRegion = idRegion;
-    //    region.regIsvisitedRegion = visitedRegion;
-    //    region.regvisitedPoints = visitedPoints;
-    //    region.regnumberOfPoints = numberOfPoints;
-    //    region.reglevelOfRegion = levelOfRegion;
-    //    region.regtypeOfRegion = typeOfRegion;
-    //}
-    
     void Update()
     {
-        
+        if (mouseOnTile)
+        {
+            tileInfo.GetRegionData(idRegion, visitedRegion = false, visitedPoints = 5, numberOfPoints = 10, levelOfRegion = 3, typeOfRegion = "Wild");
+        }
     }
-    //[System.Serializable]
-    //public class Region
-    //{
-    //    public int regidRegion;
-    //    public bool regIsvisitedRegion;
-    //    public int regvisitedPoints;
-    //    public int regnumberOfPoints;
-    //    public int reglevelOfRegion;
-    //    public string regtypeOfRegion;
-    //}
+    
+    public void SaveField()
+    {
+        dataHolder.SaveField(idRegion, visitedRegion = false, visitedPoints = 5, numberOfPoints = 10, levelOfRegion = 3, typeOfRegion = "Wild");
+    }
 
-    //[ContextMenu("Load")]
-    ////public void LoadField()
-    ////{
-    ////    dataHolder.regionList = JsonUtility.FromJson<RegionList>(File.ReadAllText(Application.dataPath + "/World/regionsData.json"));
-    ////}
-    //public void SaveField()
-    //{
-    //    //PutRegionStats();
-    //    dataHolder.regionList.regionS.Add(region); //при каждом добавлении в лист, я меняю только переменную регион в датахолдере, лист - это набор ссылок, поэтому надо сделать массив регионов?
-    //    Debug.Log(dataHolder.region.regidRegion);
-    //    //File.WriteAllText(Application.dataPath + "/World/regionsData.json", JsonUtility.ToJson(dataHolder.regionList));
-    //}
+    void OnMouseOver()
+    {
+        mouseOnTile = true;
+    }
+
+    void OnMouseExit()
+    {
+        mouseOnTile = false;
+    }
+
+    void OnMouseDown()
+    {
+        SwitchScene("ExploreScene");
+    }
+    public void SwitchScene(string nextscene)
+    {
+        SceneManager.LoadScene(nextscene);
+    }
+
 }

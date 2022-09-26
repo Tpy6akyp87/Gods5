@@ -19,19 +19,9 @@ public class Explorer : MonoBehaviour
 
     void Start()
     {
-        //LoadField();
-        //points = FindObjectsOfType<Point>();
-        
-        ////text.text += points.Length.ToString();
-        //for (int i = 0; i < points.Length; i++)
-        //{
-        //    points[i].LoadPoint();
-        //}
 
-        //transform.position = pos.PosX;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (needToMove)
