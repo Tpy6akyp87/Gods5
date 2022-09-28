@@ -39,14 +39,14 @@ public class Point : MonoBehaviour
             Debug.Log(transform.position + "  вот тут был  " + isVisited);
             Debug.Log("battle loading");
             explorer.SaveField();
-            toBattle.SetActive(true);
+            //toBattle.SetActive(true);
             SaveField();
             SceneManager.LoadScene(nextscene);
         }
     }
     void Start()
     {
-        toBattle.SetActive(false);
+        //toBattle.SetActive(false);
         explorer = FindObjectOfType<Explorer>();
 
         healCount = (int)Random.Range(2, 5);
