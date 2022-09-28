@@ -9,11 +9,13 @@ using UnityEngine.SceneManagement;
 public class RegionTileOnMap : MonoBehaviour
 {
     public int idRegion;
-    public bool visitedRegion = false;
-    public int visitedPoints = 5;
-    public int numberOfPoints = 10;
-    public int levelOfRegion = 3;
-    public string typeOfRegion = "Wild";
+    public bool visitedRegion;
+    public int visitedPoints;
+    public int numberOfPoints;
+    public int levelOfRegion;
+    public string typeOfRegion;
+    public int structType = 1;
+    public int[] structVariant = {0,0,0,0,0,0};
 
     public bool mouseOnTile;
 
@@ -35,7 +37,7 @@ public class RegionTileOnMap : MonoBehaviour
     
     public void SaveField()
     {
-        dataHolder.SaveField(idRegion, visitedRegion = false, visitedPoints = 5, numberOfPoints = 10, levelOfRegion = 3, typeOfRegion = "Wild");
+        dataHolder.SaveField(idRegion, visitedRegion = false, visitedPoints = 5, numberOfPoints = 10, levelOfRegion = 3, typeOfRegion = "Wild", structType, structVariant);
     }
 
     void OnMouseOver()

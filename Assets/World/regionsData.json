@@ -6,7 +6,9 @@
             "visitedPoints": 5,
             "numberOfPoints": 10,
             "levelOfRegion": 3,
-            "typeOfRegion": "Wild"
+            "typeOfRegion": "Wild",
+            "structType": 1,
+            "structVariant": [ 0, 0, 0, 0, 0, 0 ]
         },
         {
             "idRegion": 7,
@@ -14,7 +16,9 @@
             "visitedPoints": 5,
             "numberOfPoints": 10,
             "levelOfRegion": 3,
-            "typeOfRegion": "Wild"
+            "typeOfRegion": "Wild",
+            "structType": 1,
+            "structVariant": [ 0, 0, 0, 0, 0, 0 ]
         },
         {
             "idRegion": 4,
@@ -22,7 +26,9 @@
             "visitedPoints": 5,
             "numberOfPoints": 10,
             "levelOfRegion": 3,
-            "typeOfRegion": "Wild"
+            "typeOfRegion": "Wild",
+            "structType": 1,
+            "structVariant": [ 0, 0, 0, 0, 0, 0 ]
         },
         {
             "idRegion": 5,
@@ -30,7 +36,9 @@
             "visitedPoints": 5,
             "numberOfPoints": 10,
             "levelOfRegion": 3,
-            "typeOfRegion": "Wild"
+            "typeOfRegion": "Wild",
+            "structType": 1,
+            "structVariant": [ 0, 0, 0, 0, 0, 0 ]
         },
         {
             "idRegion": 10,
@@ -38,7 +46,9 @@
             "visitedPoints": 5,
             "numberOfPoints": 10,
             "levelOfRegion": 3,
-            "typeOfRegion": "Wild"
+            "typeOfRegion": "Wild",
+            "structType": 1,
+            "structVariant": [ 0, 0, 0, 0, 0, 0 ]
         },
         {
             "idRegion": 9,
@@ -46,7 +56,9 @@
             "visitedPoints": 5,
             "numberOfPoints": 10,
             "levelOfRegion": 3,
-            "typeOfRegion": "Wild"
+            "typeOfRegion": "Wild",
+            "structType": 1,
+            "structVariant": [ 0, 0, 0, 0, 0, 0 ]
         },
         {
             "idRegion": 8,
@@ -54,7 +66,9 @@
             "visitedPoints": 5,
             "numberOfPoints": 10,
             "levelOfRegion": 3,
-            "typeOfRegion": "Wild"
+            "typeOfRegion": "Wild",
+            "structType": 1,
+            "structVariant": [ 0, 0, 0, 0, 0, 0 ]
         },
         {
             "idRegion": 11,
@@ -62,7 +76,9 @@
             "visitedPoints": 5,
             "numberOfPoints": 10,
             "levelOfRegion": 3,
-            "typeOfRegion": "Wild"
+            "typeOfRegion": "Wild",
+            "structType": 1,
+            "structVariant": [ 0, 0, 0, 0, 0, 0 ]
         },
         {
             "idRegion": 3,
@@ -70,7 +86,9 @@
             "visitedPoints": 5,
             "numberOfPoints": 10,
             "levelOfRegion": 3,
-            "typeOfRegion": "Wild"
+            "typeOfRegion": "Wild",
+            "structType": 1,
+            "structVariant": [ 0, 0, 0, 0, 0, 0 ]
         },
         {
             "idRegion": 6,
@@ -78,23 +96,29 @@
             "visitedPoints": 5,
             "numberOfPoints": 10,
             "levelOfRegion": 3,
-            "typeOfRegion": "Wild"
+            "typeOfRegion": "Wild",
+            "structType": 1,
+            "structVariant": [ 0, 0, 0, 0, 0, 0 ]
         },
         {
             "idRegion": 1,
             "isVisitedRegion": false,
-            "levelOfRegion": 3,
+            "visitedPoints": 5,
             "numberOfPoints": 10,
+            "levelOfRegion": 3,
             "typeOfRegion": "Wild",
-            "visitedPoints": 5
+            "structType": 1,
+            "structVariant": [ 0, 0, 0, 0, 0, 0 ]
         },
         {
             "idRegion": 2,
             "isVisitedRegion": false,
-            "visitedPoints": 5,
-            "numberOfPoints": 10,
             "levelOfRegion": 3,
-            "typeOfRegion": "Wild"
+            "numberOfPoints": 10,
+            "structType": 1,
+            "structVariant": [ 0, 0, 0, 0, 0, 0 ],
+            "typeOfRegion": "Wild",
+            "visitedPoints": 5
         }
     ]
 }
