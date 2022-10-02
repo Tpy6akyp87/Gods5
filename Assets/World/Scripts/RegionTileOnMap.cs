@@ -52,6 +52,7 @@ public class RegionTileOnMap : MonoBehaviour
 
     void OnMouseDown()
     {
+        //сделать сортировку и переместить кликнутый тайл на 1 место в листе.или дать ему уник. флаг, который заберется после загрузки сцены
         SwitchScene("ExploreScene");
     }
     public void SwitchScene(string nextscene)
