@@ -264,6 +264,10 @@ PrefabInstance:
       propertyPath: idRegion
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -588,6 +592,10 @@ PrefabInstance:
       propertyPath: idRegion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -911,6 +919,10 @@ PrefabInstance:
       propertyPath: idRegion
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -996,6 +1008,10 @@ PrefabInstance:
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: idRegion
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
@@ -1183,6 +1199,10 @@ PrefabInstance:
       propertyPath: idRegion
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1291,6 +1311,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b47ffd3aa68fecf4f9022173cac03933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loaded: 0
+  idRegion: 0
+  visitedRegion: 0
+  visitedPoints: 0
+  numberOfPoints: 0
+  levelOfRegion: 0
+  typeOfRegion: 
+  structType: 0
+  structVariant: 000000000000000000000000000000000000000000000000
+  mouseOnTile: 0
+  dataHolder: {fileID: 0}
+  tileInfo: {fileID: 0}
   regionList:
     regionS: []
 --- !u!1001 &1029589249
@@ -1367,6 +1399,10 @@ PrefabInstance:
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: idRegion
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
@@ -1453,6 +1489,10 @@ PrefabInstance:
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: idRegion
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
@@ -1619,6 +1659,10 @@ PrefabInstance:
       propertyPath: idRegion
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1784,6 +1828,10 @@ PrefabInstance:
       propertyPath: idRegion
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1870,6 +1918,10 @@ PrefabInstance:
       propertyPath: idRegion
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1955,6 +2007,10 @@ PrefabInstance:
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: idRegion
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
@@ -2414,6 +2470,10 @@ PrefabInstance:
       objectReference: {fileID: 794539498}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: idRegion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}

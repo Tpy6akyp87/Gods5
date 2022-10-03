@@ -8,13 +8,14 @@ using UnityEngine.SceneManagement;
 
 public class RegionTileOnMap : MonoBehaviour
 {
+    public bool loaded;
     public int idRegion;
     public bool visitedRegion;
     public int visitedPoints;
     public int numberOfPoints;
     public int levelOfRegion;
     public string typeOfRegion;
-    public int structType = 1;
+    public int structType = 0;
     public int[] structVariant = {0,0,0,0,0,0};
 
     public bool mouseOnTile;
@@ -37,8 +38,17 @@ public class RegionTileOnMap : MonoBehaviour
     
     public void SaveField()
     {
-        dataHolder.SaveField(idRegion, visitedRegion = false, visitedPoints = 5, numberOfPoints = 10, levelOfRegion = 3, typeOfRegion = "Wild", structType, structVariant);
+        Debug.Log(structType);
+        dataHolder.SaveField(loaded, idRegion, visitedRegion = false, visitedPoints = 5, numberOfPoints = 10, levelOfRegion = 3, typeOfRegion = "Wild", structType, structVariant);
     }
+
+
+
+    public void AddPoint(int Xpos, int Ypos)
+    {
+
+    }
+  
 
     void OnMouseOver()
     {
@@ -53,6 +63,8 @@ public class RegionTileOnMap : MonoBehaviour
     void OnMouseDown()
     {
         //сделать сортировку и переместить кликнутый тайл на 1 место в листе.или дать ему уник. флаг, который заберется после загрузки сцены
+        loaded = true;
+        SaveField();
         SwitchScene("ExploreScene");
     }
     public void SwitchScene(string nextscene)
