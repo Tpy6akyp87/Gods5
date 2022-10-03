@@ -38,7 +38,6 @@ public class RegionTileOnMap : MonoBehaviour
     
     public void SaveField()
     {
-        Debug.Log(structType);
         dataHolder.SaveField(loaded, idRegion, visitedRegion = false, visitedPoints = 5, numberOfPoints = 10, levelOfRegion = 3, typeOfRegion = "Wild", structType, structVariant);
     }
 
