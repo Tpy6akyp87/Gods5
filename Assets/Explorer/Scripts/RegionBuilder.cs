@@ -31,12 +31,13 @@ public class RegionBuilder : MonoBehaviour
         {
             if (regionList.regionS[i].loaded)
             {
-                regionList.regionS[i].isVisitedRegion = true;
+                //regionList.regionS[i].isVisitedRegion = true;
                 currentId = i; break;
             }
         }
         if (regionList.regionS[currentId].isVisitedRegion)
         {
+            Debug.Log(currentId);
             structType = regionList.regionS[currentId].structType;
             structVariant = regionList.regionS[currentId].structVariant;
         }
@@ -46,6 +47,7 @@ public class RegionBuilder : MonoBehaviour
             {
                 structVariant[i] = Random.Range(0, 3);
             }
+            regionList.regionS[currentId].isVisitedRegion = true;
         }
         
         tile00 = Resources.Load<GameObject>(structType.ToString() + structVariant[0].ToString() + ".0-0");
@@ -76,7 +78,7 @@ public class RegionBuilder : MonoBehaviour
         numberOfPoints = pointArray.Length;
         for (int i = 0; i < pointArray.Length; i++)
         {
-            Paint point = new Paint();
+            PointBuilder point = new PointBuilder();
             point.isVisitedPoint = pointArray[i].isVisitedPoint;
             point.isPossibleToMove = pointArray[i].isPossibleToMove;
             point.isExplorerOnMe = pointArray[i].isExplorerOnMe;
@@ -118,7 +120,7 @@ public class RegionBuilder : MonoBehaviour
         public string typeOfRegion;
         public int structType;
         public int[] structVariant = new int[6];
-        public List<Paint> points;
+        public List<PointBuilder> points;
         
     }
     [System.Serializable]
@@ -127,7 +129,7 @@ public class RegionBuilder : MonoBehaviour
         public List<Region> regionS;
     }
     [System.Serializable]
-    public class Paint
+    public class PointBuilder
     {
         public bool isVisitedPoint;
         public bool isPossibleToMove;

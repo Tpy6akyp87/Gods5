@@ -18,6 +18,8 @@ public class RegionTileOnMap : MonoBehaviour
     public int structType = 0;
     public int[] structVariant = {0,0,0,0,0,0};
 
+    public RegionList regionList;
+
     public bool mouseOnTile;
 
     public WorldDataHolder dataHolder;
@@ -26,7 +28,7 @@ public class RegionTileOnMap : MonoBehaviour
     {
         dataHolder = FindObjectOfType<WorldDataHolder>();
         tileInfo = FindObjectOfType<RegionTileInfo>();
-        SaveField();
+        AddSaveField();
     }
     void Update()
     {
@@ -36,9 +38,10 @@ public class RegionTileOnMap : MonoBehaviour
         }
     }
     
-    public void SaveField()
+    public void AddSaveField()
     {
-        dataHolder.SaveField(loaded, idRegion, visitedRegion = false, visitedPoints = 5, numberOfPoints = 10, levelOfRegion = 3, typeOfRegion = "Wild", structType, structVariant);
+        dataHolder.AddField(loaded, idRegion, visitedRegion = false, visitedPoints = 5, numberOfPoints = 10, levelOfRegion = 3, typeOfRegion = "Wild", structType, structVariant);
+        dataHolder.SaveField();
     }
 
 
@@ -61,8 +64,16 @@ public class RegionTileOnMap : MonoBehaviour
 
     void OnMouseDown()
     {
-        //сделать сортировку и переместить кликнутый тайл на 1 место в листе.или дать ему уник. флаг, который заберется после загрузки сцены
-        loaded = true;
+        LoadField();
+        for (int i = 0; i < regionList.regionS.Count; i++)
+        {
+            if (regionList.regionS[i].idRegion == idRegion)
+            {
+                Debug.Log(idRegion);
+                Debug.Log(regionList.regionS[i].idRegion);
+                regionList.regionS[i].loaded = true;
+            }
+        }
         SaveField();
         SwitchScene("ExploreScene");
     }
@@ -70,5 +81,46 @@ public class RegionTileOnMap : MonoBehaviour
     {
         SceneManager.LoadScene(nextscene);
     }
+    public void LoadField()
+    {
+        regionList = JsonUtility.FromJson<RegionList>(File.ReadAllText(Application.dataPath + "/World/regionsData.json"));
+    }
+    public void SaveField()
+    {
+        File.WriteAllText(Application.dataPath + "/World/regionsData.json", JsonUtility.ToJson(regionList));
+    }
 
+
+    [System.Serializable]
+    public class Region
+    {
+        public bool loaded;
+        public int idRegion;
+        public bool isVisitedRegion;
+        public int visitedPoints;
+        public int numberOfPoints;
+        public int levelOfRegion;
+        public string typeOfRegion;
+        public int structType;
+        public int[] structVariant = new int[6];
+        public List<Point> points;
+
+    }
+    [System.Serializable]
+    public class RegionList
+    {
+        public List<Region> regionS;
+    }
+    [System.Serializable]
+    public class Point
+    {
+        public bool isVisitedPoint;
+        public bool isPossibleToMove;
+        public bool isExplorerOnMe;
+        public bool canGoUp;
+        public bool canGoDown;
+        public bool canGoRight;
+        public bool canGoLeft;
+        public int levelOfPoint;
+    }
 }

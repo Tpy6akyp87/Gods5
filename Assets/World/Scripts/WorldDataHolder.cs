@@ -4,7 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WorldDataHolder : RegionTileOnMap
+public class WorldDataHolder : MonoBehaviour
 {
     public RegionList regionList;
     // Start is called before the first frame update
@@ -50,8 +50,7 @@ public class WorldDataHolder : RegionTileOnMap
         public bool canGoLeft;
         public int levelOfPoint;
     }
-
-    public void SaveField(bool loaded, int idRegion, bool isVisitedRegion, int visitedPoints, int numberOfPoints, int levelOfRegion, string typeOfRegion, int structType, int[] structVariant)
+    public void AddField(bool loaded, int idRegion, bool isVisitedRegion, int visitedPoints, int numberOfPoints, int levelOfRegion, string typeOfRegion, int structType, int[] structVariant)
     {
         Region region = new Region();
         region.loaded = loaded;
@@ -64,6 +63,10 @@ public class WorldDataHolder : RegionTileOnMap
         region.structType = structType;
         region.structVariant = structVariant;
         regionList.regionS.Add(region);
+    }
+
+    public void SaveField()
+    {
         File.WriteAllText(Application.dataPath + "/World/regionsData.json", JsonUtility.ToJson(regionList));
     }
 }
