@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class RegionTileOnMap : MonoBehaviour
 {
-    public bool loaded;
+    public bool loaded = false;
     public int idRegion;
     public bool visitedRegion;
     public int visitedPoints;
@@ -28,26 +28,59 @@ public class RegionTileOnMap : MonoBehaviour
     {
         dataHolder = FindObjectOfType<WorldDataHolder>();
         tileInfo = FindObjectOfType<RegionTileInfo>();
-        AddSaveField();
+
+
+        bool regionSaved = false;
+        LoadField();
+
+        if (regionList != null)
+        {
+            for (int i = 0; i < regionList.regionS.Count; i++)
+            {
+                if (regionList.regionS[i].idRegion == idRegion)
+                {
+                    regionSaved = true;
+                }
+            }
+            
+        }
+        
+        if (!regionSaved)
+        {
+            AddSaveField();
+        }
+        else LoadRegionData();
+
     }
     void Update()
     {
         if (mouseOnTile)
         {
-            tileInfo.GetRegionData(idRegion, visitedRegion = false, visitedPoints = 5, numberOfPoints = 10, levelOfRegion = 3, typeOfRegion = "Wild");
+            tileInfo.GetRegionData(idRegion, visitedRegion, visitedPoints, numberOfPoints, levelOfRegion, typeOfRegion);
         }
     }
     
     public void AddSaveField()
     {
-        dataHolder.AddField(loaded, idRegion, visitedRegion = false, visitedPoints = 5, numberOfPoints = 10, levelOfRegion = 3, typeOfRegion = "Wild", structType, structVariant);
+        dataHolder.AddField(loaded, idRegion, visitedRegion = false, visitedPoints = 99, numberOfPoints = 99, levelOfRegion = 99, typeOfRegion = "Wild", structType, structVariant);
         dataHolder.SaveField();
     }
 
 
 
-    public void AddPoint(int Xpos, int Ypos)
+    public void LoadRegionData()
     {
+        for (int i = 0; i < regionList.regionS.Count; i++)
+        {
+            if (regionList.regionS[i].idRegion == idRegion)
+            {
+                visitedRegion = regionList.regionS[i].isVisitedRegion;
+                visitedPoints = regionList.regionS[i].visitedPoints;
+                numberOfPoints = regionList.regionS[i].numberOfPoints;
+                levelOfRegion = regionList.regionS[i].levelOfRegion;
+                typeOfRegion = regionList.regionS[i].typeOfRegion;
+            }
+        }
 
     }
   

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RegionBuilder : MonoBehaviour
 {
@@ -16,30 +17,30 @@ public class RegionBuilder : MonoBehaviour
     public GameObject tile21;
     public int numberOfPoints;
 
-    public int currentId;
+    public int currentNum;
 
     public RegionList regionList;
     public Point[] pointArray;
 
 
-    // сюда приходит idReg/lvlReg/typeReg
     void Start()
     {
         LoadField();
 
-        for (int i = 0; i < regionList.regionS.Count; i++)
+        for (int i = 0; i < regionList.regionS.Count; i++) //поиск региона по флагу loaded
         {
             if (regionList.regionS[i].loaded)
             {
-                //regionList.regionS[i].isVisitedRegion = true;
-                currentId = i; break;
+                currentNum = i; break;
             }
         }
-        if (regionList.regionS[currentId].isVisitedRegion)
+        regionList.regionS[currentNum].loaded = false;
+
+        if (regionList.regionS[currentNum].isVisitedRegion)
         {
-            Debug.Log(currentId);
-            structType = regionList.regionS[currentId].structType;
-            structVariant = regionList.regionS[currentId].structVariant;
+            Debug.Log(regionList.regionS[currentNum].idRegion + "  Visited");
+            structType = regionList.regionS[currentNum].structType;
+            structVariant = regionList.regionS[currentNum].structVariant;
         }
         else 
         {
@@ -47,7 +48,8 @@ public class RegionBuilder : MonoBehaviour
             {
                 structVariant[i] = Random.Range(0, 3);
             }
-            regionList.regionS[currentId].isVisitedRegion = true;
+            regionList.regionS[currentNum].isVisitedRegion = true;
+            
         }
         
         tile00 = Resources.Load<GameObject>(structType.ToString() + structVariant[0].ToString() + ".0-0");
@@ -87,7 +89,7 @@ public class RegionBuilder : MonoBehaviour
             point.canGoRight = pointArray[i].canGoRight;
             point.canGoLeft = pointArray[i].canGoLeft;
             point.levelOfPoint = pointArray[i].levelOfPoint;
-            regionList.regionS[currentId].points.Add(point);
+            regionList.regionS[currentNum].points.Add(point);
         }
     }
     public void LoadField()
@@ -96,12 +98,16 @@ public class RegionBuilder : MonoBehaviour
     }
     public void SaveField()
     {
-        regionList.regionS[currentId].isVisitedRegion = true;
-        regionList.regionS[currentId].structType = structType;
-        regionList.regionS[currentId].structVariant = structVariant;
+        regionList.regionS[currentNum].isVisitedRegion = true;
+        regionList.regionS[currentNum].structType = structType;
+        regionList.regionS[currentNum].structVariant = structVariant;
+        regionList.regionS[currentNum].numberOfPoints = numberOfPoints;
         File.WriteAllText(Application.dataPath + "/World/regionsData.json", JsonUtility.ToJson(regionList));
     }
-
+    public void SwitchScene(string nextscene)
+    {
+        SceneManager.LoadScene(nextscene);
+    }
 
 
 
