@@ -264,6 +264,34 @@ PrefabInstance:
       propertyPath: idRegion
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[0]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[1]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[2]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[3]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[4]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[5]
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -309,8 +337,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -54.4, y: -0.000011444092}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -5.9999633, y: -20.000034}
+  m_SizeDelta: {x: 309.8, y: 39.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &159388403
 MonoBehaviour:
@@ -325,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -334,7 +362,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -588,6 +616,34 @@ PrefabInstance:
       propertyPath: idRegion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[0]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[1]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[2]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[3]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[4]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[5]
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -633,8 +689,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -54.4, y: 29.199987}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -5.9999633, y: 21.999966}
+  m_SizeDelta: {x: 309.8, y: 39.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &193493247
 MonoBehaviour:
@@ -649,7 +705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -658,7 +714,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -712,8 +768,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -54.4, y: -27.2}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -5.9999633, y: -62.000034}
+  m_SizeDelta: {x: 309.8, y: 39.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &223904787
 MonoBehaviour:
@@ -728,7 +784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -737,7 +793,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -791,8 +847,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -54.4, y: 59.300003}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -5.9999633, y: 63.999966}
+  m_SizeDelta: {x: 309.8, y: 39.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &274409230
 MonoBehaviour:
@@ -807,7 +863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -816,7 +872,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -911,6 +967,34 @@ PrefabInstance:
       propertyPath: idRegion
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[0]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[1]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[2]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[3]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[4]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[5]
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -997,6 +1081,34 @@ PrefabInstance:
       propertyPath: idRegion
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[0]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[1]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[2]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[3]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[4]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[5]
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1049,7 +1161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -175.63, y: -135.19}
+  m_AnchoredPosition: {x: -251, y: -218}
   m_SizeDelta: {x: 351.25, y: 270.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &794539500
@@ -1182,6 +1294,34 @@ PrefabInstance:
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: idRegion
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[0]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[1]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[2]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[3]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[4]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[5]
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
@@ -1368,6 +1508,34 @@ PrefabInstance:
       propertyPath: idRegion
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[0]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[1]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[2]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[3]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[4]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[5]
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1454,6 +1622,34 @@ PrefabInstance:
       propertyPath: idRegion
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[0]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[1]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[2]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[3]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[4]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[5]
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1499,8 +1695,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -54.4, y: -60.2}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -5.9999633, y: -104.00003}
+  m_SizeDelta: {x: 309.8, y: 39.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271627592
 MonoBehaviour:
@@ -1515,7 +1711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1524,7 +1720,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1619,6 +1815,34 @@ PrefabInstance:
       propertyPath: idRegion
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[0]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[1]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[2]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[3]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[4]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[5]
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1664,8 +1888,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -54.4, y: 89.4}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -6, y: 106}
+  m_SizeDelta: {x: 309.8, y: 39.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1388988858
 MonoBehaviour:
@@ -1680,7 +1904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1689,7 +1913,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1784,6 +2008,34 @@ PrefabInstance:
       propertyPath: idRegion
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[0]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[1]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[2]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[3]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[4]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[5]
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1870,6 +2122,34 @@ PrefabInstance:
       propertyPath: idRegion
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[0]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[1]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[2]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[3]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[4]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[5]
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1955,6 +2235,34 @@ PrefabInstance:
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: idRegion
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[0]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[1]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[2]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[3]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[4]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[5]
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
@@ -2415,6 +2723,34 @@ PrefabInstance:
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: idRegion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[0]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[1]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[2]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[3]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[4]
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: structVariant.Array.data[5]
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a

@@ -21,6 +21,7 @@ public class WorldDataHolder : MonoBehaviour
     [System.Serializable]
     public class Region
     {
+        public bool loaded;
         public int idRegion;
         public bool isVisitedRegion;
         public int visitedPoints;
@@ -30,32 +31,29 @@ public class WorldDataHolder : MonoBehaviour
         public int structType;
         public int[] structVariant = new int[6];
         public List<Point> points;
-
-        public void AddPoint(int Xpos, int Ypos)
-        {
-            
-        }
-        public class Point
-        {
-            public bool isVisitedPoint;
-            public bool isPossibleToMove;
-            public bool isExplorerOnMe;
-            public bool canGoUp;
-            public bool canGoDown;
-            public bool canGoRight;
-            public bool canGoLeft;
-            public int levelOfPoint;
-        }
+        
     }
     [System.Serializable]
     public class RegionList
     {
         public List<Region> regionS;
     }
-
-    public void SaveField(int idRegion, bool isVisitedRegion, int visitedPoints, int numberOfPoints, int levelOfRegion, string typeOfRegion, int structType, int[] structVariant)
+    [System.Serializable]
+    public class Point
+    {
+        public bool isVisitedPoint;
+        public bool isPossibleToMove;
+        public bool isExplorerOnMe;
+        public bool canGoUp;
+        public bool canGoDown;
+        public bool canGoRight;
+        public bool canGoLeft;
+        public int levelOfPoint;
+    }
+    public void AddField(bool loaded, int idRegion, bool isVisitedRegion, int visitedPoints, int numberOfPoints, int levelOfRegion, string typeOfRegion, int structType, int[] structVariant)
     {
         Region region = new Region();
+        region.loaded = loaded;
         region.idRegion = idRegion;
         region.isVisitedRegion = isVisitedRegion;
         region.visitedPoints = visitedPoints;
@@ -65,6 +63,10 @@ public class WorldDataHolder : MonoBehaviour
         region.structType = structType;
         region.structVariant = structVariant;
         regionList.regionS.Add(region);
+    }
+
+    public void SaveField()
+    {
         File.WriteAllText(Application.dataPath + "/World/regionsData.json", JsonUtility.ToJson(regionList));
     }
 }
