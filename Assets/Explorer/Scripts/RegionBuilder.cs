@@ -81,6 +81,8 @@ public class RegionBuilder : MonoBehaviour
         for (int i = 0; i < pointArray.Length; i++)
         {
             PointBuilder point = new PointBuilder();
+            point.Xpos = pointArray[i].transform.position.x;
+            point.Ypos = pointArray[i].transform.position.y;
             point.isVisitedPoint = pointArray[i].isVisitedPoint;
             point.isPossibleToMove = pointArray[i].isPossibleToMove;
             point.isExplorerOnMe = pointArray[i].isExplorerOnMe;
@@ -137,6 +139,8 @@ public class RegionBuilder : MonoBehaviour
     [System.Serializable]
     public class PointBuilder
     {
+        public float Xpos;
+        public float Ypos;
         public bool isVisitedPoint;
         public bool isPossibleToMove;
         public bool isExplorerOnMe;

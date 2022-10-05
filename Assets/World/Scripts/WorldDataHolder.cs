@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class WorldDataHolder : MonoBehaviour
-{
+{    
     public RegionList regionList;
     // Start is called before the first frame update
     void Start()
