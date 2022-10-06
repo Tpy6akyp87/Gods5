@@ -32,35 +32,6 @@ public class Point : MonoBehaviour
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //public StartEnemyTeam enemyTeam;
 
     //public Text text;
