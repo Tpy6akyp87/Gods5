@@ -30,6 +30,8 @@ public class WorldDataHolder : MonoBehaviour
     [System.Serializable]
     public class Point
     {
+        public float Xpos;
+        public float Ypos;
         public bool isVisitedPoint;
         public bool isPossibleToMove;
         public bool isExplorerOnMe;
@@ -61,5 +63,11 @@ public class WorldDataHolder : MonoBehaviour
     public void Load_RegionList()
     {
         regionList = JsonUtility.FromJson<RegionList>(File.ReadAllText(Application.dataPath + "/World/regionsData.json"));
+    }
+    [ContextMenu("Clear")]
+    public void Reset_RegionList()
+    {
+        regionList.regionS.Clear();
+        Save_RegionList();
     }
 }

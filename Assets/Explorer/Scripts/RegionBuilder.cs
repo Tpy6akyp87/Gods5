@@ -16,20 +16,14 @@ public class RegionBuilder : MonoBehaviour
     public GameObject tile11;
     public GameObject tile21;
     public int numberOfPoints;
-
     public int currentNum;
     public WorldDataHolder dataHolder;
-
-    //public RegionList regionList;
-    public WorldDataHolder.Point [] pointArray;
-
-
+    public Point [] pointArray;
     void Start()
     {
         dataHolder = FindObjectOfType<WorldDataHolder>();
         dataHolder.Load_RegionList();
-
-        for (int i = 0; i < dataHolder.regionList.regionS.Count; i++) //поиск региона по флагу loaded
+        for (int i = 0; i < dataHolder.regionList.regionS.Count; i++)
         {
             if (dataHolder.regionList.regionS[i].loaded)
             {
@@ -37,10 +31,8 @@ public class RegionBuilder : MonoBehaviour
             }
         }
         dataHolder.regionList.regionS[currentNum].loaded = false;
-
         if (dataHolder.regionList.regionS[currentNum].isVisitedRegion)
         {
-            Debug.Log(dataHolder.regionList.regionS[currentNum].idRegion + "  Visited");
             structType = dataHolder.regionList.regionS[currentNum].structType;
             structVariant = dataHolder.regionList.regionS[currentNum].structVariant;
         }
@@ -68,17 +60,11 @@ public class RegionBuilder : MonoBehaviour
         GameObject neweTile11 = Instantiate(tile11, new Vector3(2f, 2f, 0), tile11.transform.rotation) as GameObject;
         GameObject neweTile21 = Instantiate(tile21, new Vector3(4f, 2f, 0), tile21.transform.rotation) as GameObject;
         CountPoints();
-        SaveField();
-    }
-
-    // выходит в json по idReg - stuctType/structVariant/numberOfPoints
-    void Update()
-    {
-        
+        Save_RegionStruct();
     }
     public void CountPoints()
     {
-        pointArray = FindObjectsOfType<WorldDataHolder.Point>();
+        pointArray = FindObjectsOfType<Point>();
         numberOfPoints = pointArray.Length;
         for (int i = 0; i < pointArray.Length; i++)
         {
@@ -96,11 +82,7 @@ public class RegionBuilder : MonoBehaviour
             dataHolder.regionList.regionS[currentNum].points.Add(point);
         }
     }
-    //public void LoadField()
-    //{
-    //    dataHolder.regionList = JsonUtility.FromJson<RegionList>(File.ReadAllText(Application.dataPath + "/World/regionsData.json"));
-    //}
-    public void SaveField()
+    public void Save_RegionStruct()
     {
         dataHolder.regionList.regionS[currentNum].isVisitedRegion = true;
         dataHolder.regionList.regionS[currentNum].structType = structType;
@@ -111,45 +93,5 @@ public class RegionBuilder : MonoBehaviour
     public void SwitchScene(string nextscene)
     {
         SceneManager.LoadScene(nextscene);
-    }
-
-
-
-
-
-
-    [System.Serializable]
-    public class Region
-    {
-        public bool loaded;
-        public int idRegion;
-        public bool isVisitedRegion;
-        public int visitedPoints;
-        public int numberOfPoints;
-        public int levelOfRegion;
-        public string typeOfRegion;
-        public int structType;
-        public int[] structVariant = new int[6];
-        public List<PointBuilder> points;
-        
-    }
-    [System.Serializable]
-    public class RegionList
-    {
-        public List<Region> regionS;
-    }
-    [System.Serializable]
-    public class PointBuilder
-    {
-        public float Xpos;
-        public float Ypos;
-        public bool isVisitedPoint;
-        public bool isPossibleToMove;
-        public bool isExplorerOnMe;
-        public bool canGoUp;
-        public bool canGoDown;
-        public bool canGoRight;
-        public bool canGoLeft;
-        public int levelOfPoint;
     }
 }
