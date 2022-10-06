@@ -18,7 +18,7 @@ public class RegionTileOnMap : MonoBehaviour
     public int structType = 0;
     public int[] structVariant = {0,0,0,0,0,0};
 
-    public RegionList regionList;
+    //public RegionList regionList;
 
     public bool mouseOnTile;
 
@@ -31,13 +31,13 @@ public class RegionTileOnMap : MonoBehaviour
 
 
         bool regionSaved = false;
-        LoadField();
+        dataHolder.Load_RegionList();
 
-        if (regionList != null)
+        if (dataHolder.regionList != null)
         {
-            for (int i = 0; i < regionList.regionS.Count; i++)
+            for (int i = 0; i < dataHolder.regionList.regionS.Count; i++)
             {
-                if (regionList.regionS[i].idRegion == idRegion)
+                if (dataHolder.regionList.regionS[i].idRegion == idRegion)
                 {
                     regionSaved = true;
                 }
@@ -62,23 +62,23 @@ public class RegionTileOnMap : MonoBehaviour
     
     public void AddSaveField()
     {
-        dataHolder.AddField(loaded, idRegion, visitedRegion = false, visitedPoints = 99, numberOfPoints = 99, levelOfRegion = 99, typeOfRegion = "Wild", structType, structVariant);
-        dataHolder.SaveField();
+        dataHolder.Add_NewRegionToList(loaded, idRegion, visitedRegion = false, visitedPoints = 99, numberOfPoints = 99, levelOfRegion = 99, typeOfRegion = "Wild", structType, structVariant);
+        dataHolder.Save_RegionList();
     }
 
 
 
     public void LoadRegionData()
     {
-        for (int i = 0; i < regionList.regionS.Count; i++)
+        for (int i = 0; i < dataHolder.regionList.regionS.Count; i++)
         {
-            if (regionList.regionS[i].idRegion == idRegion)
+            if (dataHolder.regionList.regionS[i].idRegion == idRegion)
             {
-                visitedRegion = regionList.regionS[i].isVisitedRegion;
-                visitedPoints = regionList.regionS[i].visitedPoints;
-                numberOfPoints = regionList.regionS[i].numberOfPoints;
-                levelOfRegion = regionList.regionS[i].levelOfRegion;
-                typeOfRegion = regionList.regionS[i].typeOfRegion;
+                visitedRegion = dataHolder.regionList.regionS[i].isVisitedRegion;
+                visitedPoints = dataHolder.regionList.regionS[i].visitedPoints;
+                numberOfPoints = dataHolder.regionList.regionS[i].numberOfPoints;
+                levelOfRegion = dataHolder.regionList.regionS[i].levelOfRegion;
+                typeOfRegion = dataHolder.regionList.regionS[i].typeOfRegion;
             }
         }
 
@@ -97,63 +97,21 @@ public class RegionTileOnMap : MonoBehaviour
 
     void OnMouseDown()
     {
-        LoadField();
-        for (int i = 0; i < regionList.regionS.Count; i++)
+        dataHolder.Load_RegionList();
+        for (int i = 0; i < dataHolder.regionList.regionS.Count; i++)
         {
-            if (regionList.regionS[i].idRegion == idRegion)
+            if (dataHolder.regionList.regionS[i].idRegion == idRegion)
             {
                 Debug.Log(idRegion);
-                Debug.Log(regionList.regionS[i].idRegion);
-                regionList.regionS[i].loaded = true;
+                Debug.Log(dataHolder.regionList.regionS[i].idRegion);
+                dataHolder.regionList.regionS[i].loaded = true;
             }
         }
-        SaveField();
+        dataHolder.Save_RegionList();
         SwitchScene("ExploreScene");
     }
     public void SwitchScene(string nextscene)
     {
         SceneManager.LoadScene(nextscene);
-    }
-    public void LoadField()
-    {
-        regionList = JsonUtility.FromJson<RegionList>(File.ReadAllText(Application.dataPath + "/World/regionsData.json"));
-    }
-    public void SaveField()
-    {
-        File.WriteAllText(Application.dataPath + "/World/regionsData.json", JsonUtility.ToJson(regionList));
-    }
-
-
-    [System.Serializable]
-    public class Region
-    {
-        public bool loaded;
-        public int idRegion;
-        public bool isVisitedRegion;
-        public int visitedPoints;
-        public int numberOfPoints;
-        public int levelOfRegion;
-        public string typeOfRegion;
-        public int structType;
-        public int[] structVariant = new int[6];
-        public List<Point> points;
-
-    }
-    [System.Serializable]
-    public class RegionList
-    {
-        public List<Region> regionS;
-    }
-    [System.Serializable]
-    public class Point
-    {
-        public bool isVisitedPoint;
-        public bool isPossibleToMove;
-        public bool isExplorerOnMe;
-        public bool canGoUp;
-        public bool canGoDown;
-        public bool canGoRight;
-        public bool canGoLeft;
-        public int levelOfPoint;
     }
 }

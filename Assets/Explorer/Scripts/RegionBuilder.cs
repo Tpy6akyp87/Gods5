@@ -18,29 +18,31 @@ public class RegionBuilder : MonoBehaviour
     public int numberOfPoints;
 
     public int currentNum;
+    public WorldDataHolder dataHolder;
 
-    public RegionList regionList;
-    public Point[] pointArray;
+    //public RegionList regionList;
+    public WorldDataHolder.Point [] pointArray;
 
 
     void Start()
     {
-        LoadField();
+        dataHolder = FindObjectOfType<WorldDataHolder>();
+        dataHolder.Load_RegionList();
 
-        for (int i = 0; i < regionList.regionS.Count; i++) //поиск региона по флагу loaded
+        for (int i = 0; i < dataHolder.regionList.regionS.Count; i++) //поиск региона по флагу loaded
         {
-            if (regionList.regionS[i].loaded)
+            if (dataHolder.regionList.regionS[i].loaded)
             {
                 currentNum = i; break;
             }
         }
-        regionList.regionS[currentNum].loaded = false;
+        dataHolder.regionList.regionS[currentNum].loaded = false;
 
-        if (regionList.regionS[currentNum].isVisitedRegion)
+        if (dataHolder.regionList.regionS[currentNum].isVisitedRegion)
         {
-            Debug.Log(regionList.regionS[currentNum].idRegion + "  Visited");
-            structType = regionList.regionS[currentNum].structType;
-            structVariant = regionList.regionS[currentNum].structVariant;
+            Debug.Log(dataHolder.regionList.regionS[currentNum].idRegion + "  Visited");
+            structType = dataHolder.regionList.regionS[currentNum].structType;
+            structVariant = dataHolder.regionList.regionS[currentNum].structVariant;
         }
         else 
         {
@@ -48,7 +50,7 @@ public class RegionBuilder : MonoBehaviour
             {
                 structVariant[i] = Random.Range(0, 3);
             }
-            regionList.regionS[currentNum].isVisitedRegion = true;
+            dataHolder.regionList.regionS[currentNum].isVisitedRegion = true;
             
         }
         
@@ -76,11 +78,11 @@ public class RegionBuilder : MonoBehaviour
     }
     public void CountPoints()
     {
-        pointArray = FindObjectsOfType<Point>();
+        pointArray = FindObjectsOfType<WorldDataHolder.Point>();
         numberOfPoints = pointArray.Length;
         for (int i = 0; i < pointArray.Length; i++)
         {
-            PointBuilder point = new PointBuilder();
+            WorldDataHolder.Point point = new WorldDataHolder.Point();
             point.Xpos = pointArray[i].transform.position.x;
             point.Ypos = pointArray[i].transform.position.y;
             point.isVisitedPoint = pointArray[i].isVisitedPoint;
@@ -91,20 +93,20 @@ public class RegionBuilder : MonoBehaviour
             point.canGoRight = pointArray[i].canGoRight;
             point.canGoLeft = pointArray[i].canGoLeft;
             point.levelOfPoint = pointArray[i].levelOfPoint;
-            regionList.regionS[currentNum].points.Add(point);
+            dataHolder.regionList.regionS[currentNum].points.Add(point);
         }
     }
-    public void LoadField()
-    {
-        regionList = JsonUtility.FromJson<RegionList>(File.ReadAllText(Application.dataPath + "/World/regionsData.json"));
-    }
+    //public void LoadField()
+    //{
+    //    dataHolder.regionList = JsonUtility.FromJson<RegionList>(File.ReadAllText(Application.dataPath + "/World/regionsData.json"));
+    //}
     public void SaveField()
     {
-        regionList.regionS[currentNum].isVisitedRegion = true;
-        regionList.regionS[currentNum].structType = structType;
-        regionList.regionS[currentNum].structVariant = structVariant;
-        regionList.regionS[currentNum].numberOfPoints = numberOfPoints;
-        File.WriteAllText(Application.dataPath + "/World/regionsData.json", JsonUtility.ToJson(regionList));
+        dataHolder.regionList.regionS[currentNum].isVisitedRegion = true;
+        dataHolder.regionList.regionS[currentNum].structType = structType;
+        dataHolder.regionList.regionS[currentNum].structVariant = structVariant;
+        dataHolder.regionList.regionS[currentNum].numberOfPoints = numberOfPoints;
+        dataHolder.Save_RegionList();
     }
     public void SwitchScene(string nextscene)
     {
