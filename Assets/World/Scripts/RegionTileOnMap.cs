@@ -40,7 +40,7 @@ public class RegionTileOnMap : MonoBehaviour
         }
         if (!regionSaved)
         {
-            dataHolder.Add_NewRegionToList(loaded, idRegion, visitedRegion = false, visitedPoints = 99, numberOfPoints = 99, levelOfRegion = 99, typeOfRegion = "Wild", structType, structVariant);
+            dataHolder.Add_NewRegionToList(loaded, visitedRegion = false, visitedPoints = 99, numberOfPoints = 99, levelOfRegion = 99, typeOfRegion = "Wild", structType, structVariant);
             dataHolder.Save_RegionList();
         }
         else LoadRegionData();

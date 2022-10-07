@@ -41,11 +41,11 @@ public class WorldDataHolder : MonoBehaviour
         public bool canGoLeft;
         public int levelOfPoint;
     }
-    public void Add_NewRegionToList(bool loaded, int idRegion, bool isVisitedRegion, int visitedPoints, int numberOfPoints, int levelOfRegion, string typeOfRegion, int structType, int[] structVariant)
+    public void Add_NewRegionToList(bool loaded, bool isVisitedRegion, int visitedPoints, int numberOfPoints, int levelOfRegion, string typeOfRegion, int structType, int[] structVariant)
     {
         Region region = new Region();
         region.loaded = loaded;
-        region.idRegion = idRegion;
+        region.idRegion = regionList.regionS.Count;
         region.isVisitedRegion = isVisitedRegion;
         region.visitedPoints = visitedPoints;
         region.numberOfPoints = numberOfPoints;

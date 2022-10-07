@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2898799916941776694, guid: 72b85a4f49230154fa6f4b292cb900d9, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2898799916941776696, guid: 72b85a4f49230154fa6f4b292cb900d9, type: 3}
       propertyPath: m_Name
       value: Explorer
@@ -499,7 +503,7 @@ MonoBehaviour:
   tile11: {fileID: 0}
   tile21: {fileID: 0}
   numberOfPoints: 0
-  currentNum: 0
+  thisRegionID: 0
   dataHolder: {fileID: 0}
   pointArray: []
 --- !u!1 &990525556

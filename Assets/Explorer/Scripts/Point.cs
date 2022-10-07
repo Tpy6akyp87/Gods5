@@ -7,6 +7,8 @@ using System.IO;
 
 public class Point : MonoBehaviour
 {
+    public float Xpos;
+    public float Ypos;
     public bool isVisitedPoint;
     public bool isPossibleToMove;
     public bool isExplorerOnMe;
@@ -16,6 +18,51 @@ public class Point : MonoBehaviour
     public bool canGoLeft;
     public int levelOfPoint;
 
+    public Explorer explorer;
+    PointType pointType;
+
+
+    void Start()
+    {
+        explorer = FindObjectOfType<Explorer>();
+        pointType = PointType.Battle;//временно, потом заполнить через рандомное распределение
+        if (Xpos == -0.5 && Ypos == -0.5)
+        {
+            pointType = PointType.Start;
+        }
+        if (Xpos == 4.5 && Ypos == 2.5)
+        {
+            pointType = PointType.Final;
+        }
+    }
+    void OnMouseDown()
+    {
+        if (isPossibleToMove)
+        {
+            explorer.nextPoint = transform.position;
+            if (explorer.transform.position.x != transform.position.x || explorer.transform.position.y != transform.position.y) explorer.needToMove = true;
+            else explorer.needToMove = false;
+        }
+    }
+    void Update()
+    {
+        if (explorer.transform.position.x == transform.position.x && explorer.transform.position.y == transform.position.y)
+        {
+            isExplorerOnMe = true;
+            if (canGoUp)
+                explorer.canGoUp = true;
+            if (canGoDown)
+                explorer.canGoDown = true;
+            if (canGoLeft)
+                explorer.canGoLeft = true;
+            if (canGoRight)
+                explorer.canGoRight = true;
+        }
+        else
+        {
+            isExplorerOnMe = false;
+        }
+    }
 
 
 
@@ -112,4 +159,13 @@ public class Point : MonoBehaviour
     //    enemyTeam.defenders = defenderCount;
     //    File.WriteAllText(Application.dataPath + "/Battle/enemyTeam.json", JsonUtility.ToJson(enemyTeam));
     //}
+}
+
+enum PointType
+{
+    Start,
+    Battle,
+    Treasure,
+    Lore,
+    Final
 }

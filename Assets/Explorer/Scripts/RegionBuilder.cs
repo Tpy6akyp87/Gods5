@@ -16,7 +16,7 @@ public class RegionBuilder : MonoBehaviour
     public GameObject tile11;
     public GameObject tile21;
     public int numberOfPoints;
-    public int currentNum;
+    public int thisRegionID;
     public WorldDataHolder dataHolder;
     public Point [] pointArray;
     void Start()
@@ -27,14 +27,14 @@ public class RegionBuilder : MonoBehaviour
         {
             if (dataHolder.regionList.regionS[i].loaded)
             {
-                currentNum = i; break;
+                thisRegionID = i; break;
             }
         }
-        dataHolder.regionList.regionS[currentNum].loaded = false;
-        if (dataHolder.regionList.regionS[currentNum].isVisitedRegion)
+        
+        if (dataHolder.regionList.regionS[thisRegionID].isVisitedRegion)
         {
-            structType = dataHolder.regionList.regionS[currentNum].structType;
-            structVariant = dataHolder.regionList.regionS[currentNum].structVariant;
+            structType = dataHolder.regionList.regionS[thisRegionID].structType;
+            structVariant = dataHolder.regionList.regionS[thisRegionID].structVariant;
         }
         else 
         {
@@ -42,7 +42,7 @@ public class RegionBuilder : MonoBehaviour
             {
                 structVariant[i] = Random.Range(0, 3);
             }
-            dataHolder.regionList.regionS[currentNum].isVisitedRegion = true;
+            dataHolder.regionList.regionS[thisRegionID].isVisitedRegion = true;
             
         }
         
@@ -79,19 +79,21 @@ public class RegionBuilder : MonoBehaviour
             point.canGoRight = pointArray[i].canGoRight;
             point.canGoLeft = pointArray[i].canGoLeft;
             point.levelOfPoint = pointArray[i].levelOfPoint;
-            dataHolder.regionList.regionS[currentNum].points.Add(point);
+            dataHolder.regionList.regionS[thisRegionID].points.Add(point);
         }
     }
     public void Save_RegionStruct()
     {
-        dataHolder.regionList.regionS[currentNum].isVisitedRegion = true;
-        dataHolder.regionList.regionS[currentNum].structType = structType;
-        dataHolder.regionList.regionS[currentNum].structVariant = structVariant;
-        dataHolder.regionList.regionS[currentNum].numberOfPoints = numberOfPoints;
+        dataHolder.regionList.regionS[thisRegionID].isVisitedRegion = true;
+        dataHolder.regionList.regionS[thisRegionID].structType = structType;
+        dataHolder.regionList.regionS[thisRegionID].structVariant = structVariant;
+        dataHolder.regionList.regionS[thisRegionID].numberOfPoints = numberOfPoints;
         dataHolder.Save_RegionList();
     }
     public void SwitchScene(string nextscene)
     {
+        dataHolder.regionList.regionS[thisRegionID].loaded = false;
+        Save_RegionStruct();
         SceneManager.LoadScene(nextscene);
     }
 }

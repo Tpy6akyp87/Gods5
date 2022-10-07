@@ -6,7 +6,68 @@ using UnityEngine.UI;
 
 public class Explorer : MonoBehaviour
 {
+    public WorldDataHolder dataHolder;
+    public int thisRegionID;
+    public float Xpos;
+    public float Ypos;
+    public float speed;
+    public Vector3 nextPoint;
+    public bool needToMove;
+    public bool canGoUp;
+    public bool canGoDown;
+    public bool canGoRight;
+    public bool canGoLeft;
 
+
+
+
+
+    void Start()
+    {
+        dataHolder = FindObjectOfType<WorldDataHolder>();
+        dataHolder.Load_RegionList();
+        for (int i = 0; i < dataHolder.regionList.regionS.Count; i++)
+        {
+            if (dataHolder.regionList.regionS[i].loaded)
+            {
+                thisRegionID = i; break;
+            }
+        }
+    }
+    void Update()
+    {
+        if (needToMove)
+        {
+            MoveToPoint(nextPoint);
+        }
+        if (canGoUp) // need to add PointList here
+        {
+            for (int i = 0; i < dataHolder.regionList.regionS[thisRegionID].points.Count; i++)
+            {
+                
+            }
+        }
+    }
+
+    public void MoveToPoint(Vector3 pointPosition)
+    {
+        transform.position = Vector3.MoveTowards(transform.position, pointPosition, speed * Time.deltaTime);
+    }
+
+    public void CheckMyPoint(float Xpos, float Ypos) //убрать отсюда, и проверку isExplorerOnMe поставить в Point
+    {
+        for (int i = 0; i < dataHolder.regionList.regionS[thisRegionID].points.Count; i++)
+        {
+            if (dataHolder.regionList.regionS[thisRegionID].points[i].Xpos == Xpos && dataHolder.regionList.regionS[thisRegionID].points[i].Ypos == Ypos)
+            {
+                dataHolder.regionList.regionS[thisRegionID].points[i].isExplorerOnMe = true;
+            }
+            else
+            {
+                dataHolder.regionList.regionS[thisRegionID].points[i].isExplorerOnMe = false;
+            }
+        }
+    }
 
 
 
