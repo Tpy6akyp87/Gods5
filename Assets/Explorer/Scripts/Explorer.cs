@@ -18,6 +18,8 @@ public class Explorer : MonoBehaviour
     public bool canGoRight;
     public bool canGoLeft;
 
+    public bool poinstLoaded;
+
 
 
 
@@ -26,6 +28,7 @@ public class Explorer : MonoBehaviour
     {
         dataHolder = FindObjectOfType<WorldDataHolder>();
         dataHolder.Load_RegionList();
+        
         for (int i = 0; i < dataHolder.regionList.regionS.Count; i++)
         {
             if (dataHolder.regionList.regionS[i].loaded)
@@ -33,19 +36,13 @@ public class Explorer : MonoBehaviour
                 thisRegionID = i; break;
             }
         }
+        CheckMyPoint();
     }
     void Update()
     {
         if (needToMove)
         {
             MoveToPoint(nextPoint);
-        }
-        if (canGoUp) // need to add PointList here
-        {
-            for (int i = 0; i < dataHolder.regionList.regionS[thisRegionID].points.Count; i++)
-            {
-                
-            }
         }
     }
 
@@ -54,19 +51,22 @@ public class Explorer : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, pointPosition, speed * Time.deltaTime);
     }
 
-    public void CheckMyPoint(float Xpos, float Ypos) //убрать отсюда, и проверку isExplorerOnMe поставить в Point
+    public void CheckMyPoint()
     {
+        dataHolder.Load_RegionList();
         for (int i = 0; i < dataHolder.regionList.regionS[thisRegionID].points.Count; i++)
         {
-            if (dataHolder.regionList.regionS[thisRegionID].points[i].Xpos == Xpos && dataHolder.regionList.regionS[thisRegionID].points[i].Ypos == Ypos)
-            {
-                dataHolder.regionList.regionS[thisRegionID].points[i].isExplorerOnMe = true;
-            }
-            else
-            {
-                dataHolder.regionList.regionS[thisRegionID].points[i].isExplorerOnMe = false;
-            }
+            if (dataHolder.regionList.regionS[thisRegionID].points[i].Xpos == transform.position.x && (dataHolder.regionList.regionS[thisRegionID].points[i].Ypos - 1.0) == transform.position.y && canGoUp) 
+                dataHolder.regionList.regionS[thisRegionID].points[i].isPossibleToMove = true;
+            else if (dataHolder.regionList.regionS[thisRegionID].points[i].Xpos == transform.position.x && (dataHolder.regionList.regionS[thisRegionID].points[i].Ypos + 1.0) == transform.position.y && canGoDown) 
+                dataHolder.regionList.regionS[thisRegionID].points[i].isPossibleToMove = true;
+            else if ((dataHolder.regionList.regionS[thisRegionID].points[i].Xpos - 1) == transform.position.x && dataHolder.regionList.regionS[thisRegionID].points[i].Ypos == transform.position.y && canGoLeft)
+                dataHolder.regionList.regionS[thisRegionID].points[i].isPossibleToMove = true;
+            else if ((dataHolder.regionList.regionS[thisRegionID].points[i].Xpos + 1) == transform.position.x && dataHolder.regionList.regionS[thisRegionID].points[i].Ypos == transform.position.y && canGoRight)
+                dataHolder.regionList.regionS[thisRegionID].points[i].isPossibleToMove = true;
+            else dataHolder.regionList.regionS[thisRegionID].points[i].isPossibleToMove = false;
         }
+        dataHolder.Save_RegionList();
     }
 
 

@@ -7,8 +7,8 @@ using System.IO;
 
 public class Point : MonoBehaviour
 {
-    public float Xpos;
-    public float Ypos;
+    //public float Xpos;
+    //public float Ypos;
     public bool isVisitedPoint;
     public bool isPossibleToMove;
     public bool isExplorerOnMe;
@@ -26,11 +26,11 @@ public class Point : MonoBehaviour
     {
         explorer = FindObjectOfType<Explorer>();
         pointType = PointType.Battle;//временно, потом заполнить через рандомное распределение
-        if (Xpos == -0.5 && Ypos == -0.5)
+        if (transform.position.x == -0.5 && transform.position.y == -0.5)
         {
             pointType = PointType.Start;
         }
-        if (Xpos == 4.5 && Ypos == 2.5)
+        if (transform.position.x == 4.5 && transform.position.y == 2.5)
         {
             pointType = PointType.Final;
         }
@@ -41,7 +41,7 @@ public class Point : MonoBehaviour
         {
             explorer.nextPoint = transform.position;
             if (explorer.transform.position.x != transform.position.x || explorer.transform.position.y != transform.position.y) explorer.needToMove = true;
-            else explorer.needToMove = false;
+            else explorer.needToMove = false;//unusable string
         }
     }
     void Update()
@@ -57,11 +57,17 @@ public class Point : MonoBehaviour
                 explorer.canGoLeft = true;
             if (canGoRight)
                 explorer.canGoRight = true;
+            //explorer.CheckMyPoint();
         }
         else
         {
             isExplorerOnMe = false;
         }
+        if (canGoDown && explorer.canGoUp && (transform.position.y - 1) == explorer.transform.position.y && transform.position.x == explorer.transform.position.x) isPossibleToMove = true;
+        else if (canGoUp && explorer.canGoDown && (transform.position.y + 1) == explorer.transform.position.y && transform.position.x == explorer.transform.position.x) isPossibleToMove = true;
+        else if(canGoLeft && explorer.canGoRight && transform.position.y == explorer.transform.position.y && (transform.position.x - 1) == explorer.transform.position.x) isPossibleToMove = true;
+        else if(canGoRight && explorer.canGoLeft && transform.position.y == explorer.transform.position.y && (transform.position.x + 1) == explorer.transform.position.x) isPossibleToMove = true;
+        else isPossibleToMove = false;
     }
 
 
