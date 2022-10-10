@@ -18,12 +18,8 @@ public class Point : MonoBehaviour
     public bool canGoLeft;
     public int levelOfPoint;
     public SpriteRenderer spriteRenderer;
-    //public Color tileColor;
-
     public Explorer explorer;
     PointType pointType;
-
-
     void Start()
     {
         explorer = FindObjectOfType<Explorer>();

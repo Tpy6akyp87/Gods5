@@ -17,13 +17,6 @@ public class Explorer : MonoBehaviour
     public bool canGoDown;
     public bool canGoRight;
     public bool canGoLeft;
-
-    public bool poinstLoaded;
-
-
-
-
-
     void Start()
     {
         dataHolder = FindObjectOfType<WorldDataHolder>();
