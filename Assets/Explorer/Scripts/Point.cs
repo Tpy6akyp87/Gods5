@@ -17,6 +17,8 @@ public class Point : MonoBehaviour
     public bool canGoRight;
     public bool canGoLeft;
     public int levelOfPoint;
+    public SpriteRenderer spriteRenderer;
+    //public Color tileColor;
 
     public Explorer explorer;
     PointType pointType;
@@ -26,6 +28,7 @@ public class Point : MonoBehaviour
     {
         explorer = FindObjectOfType<Explorer>();
         pointType = PointType.Battle;//временно, потом заполнить через рандомное распределение
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         if (transform.position.x == -0.5 && transform.position.y == -0.5)
         {
             pointType = PointType.Start;
@@ -68,6 +71,9 @@ public class Point : MonoBehaviour
         else if(canGoLeft && explorer.canGoRight && transform.position.y == explorer.transform.position.y && (transform.position.x - 1) == explorer.transform.position.x) isPossibleToMove = true;
         else if(canGoRight && explorer.canGoLeft && transform.position.y == explorer.transform.position.y && (transform.position.x + 1) == explorer.transform.position.x) isPossibleToMove = true;
         else isPossibleToMove = false;
+        if (isExplorerOnMe) spriteRenderer.color = Color.blue;
+        else if (!isExplorerOnMe && isPossibleToMove) spriteRenderer.color = Color.green;
+        else if (!isExplorerOnMe && !isPossibleToMove) spriteRenderer.color = Color.white;
     }
 
 
