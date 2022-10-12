@@ -43,7 +43,6 @@ public class RegionBuilder : MonoBehaviour
                 structVariant[i] = Random.Range(0, 3);
             }
             dataHolder.regionList.regionS[thisRegionID].isVisitedRegion = true;
-            
         }
         
         tile00 = Resources.Load<GameObject>(structType.ToString() + structVariant[0].ToString() + ".0-0");

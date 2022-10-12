@@ -36,7 +36,15 @@ public class RegionTileOnMap : MonoBehaviour
                     regionSaved = true;
                 }
             }
-            
+            if (dataHolder.regionList.regionS[idRegion].points != null)
+            {
+                for (int i = 0; i < dataHolder.regionList.regionS[idRegion].points.Count; i++)
+                {
+                    dataHolder.regionList.regionS[idRegion].points[i].isVisitedPoint = false;
+                }
+                dataHolder.Save_RegionList();
+            }
+
         }
         if (!regionSaved)
         {
@@ -44,7 +52,8 @@ public class RegionTileOnMap : MonoBehaviour
             dataHolder.Save_RegionList();
         }
         else LoadRegionData();
-
+       
+        
     }
     void Update()
     {

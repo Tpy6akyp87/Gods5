@@ -7,8 +7,6 @@ using System.IO;
 
 public class Point : MonoBehaviour
 {
-    //public float Xpos;
-    //public float Ypos;
     public bool isVisitedPoint;
     public bool isPossibleToMove;
     public bool isExplorerOnMe;
@@ -19,20 +17,14 @@ public class Point : MonoBehaviour
     public int levelOfPoint;
     public SpriteRenderer spriteRenderer;
     public Explorer explorer;
+    [SerializeField]
     PointType pointType;
     void Start()
     {
         explorer = FindObjectOfType<Explorer>();
-        pointType = PointType.Battle;//временно, потом заполнить через рандомное распределение
+        explorer.dataHolder.Load_RegionList();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        if (transform.position.x == -0.5 && transform.position.y == -0.5)
-        {
-            pointType = PointType.Start;
-        }
-        if (transform.position.x == 4.5 && transform.position.y == 2.5)
-        {
-            pointType = PointType.Final;
-        }
+        GetTypeOfPoint(transform.position.x, transform.position.y, out pointType);
     }
     void OnMouseDown()
     {
@@ -47,6 +39,7 @@ public class Point : MonoBehaviour
     {
         if (explorer.transform.position.x == transform.position.x && explorer.transform.position.y == transform.position.y)
         {
+            EventOnPoint();
             isExplorerOnMe = true;
             if (canGoUp)
                 explorer.canGoUp = true;
@@ -56,12 +49,12 @@ public class Point : MonoBehaviour
                 explorer.canGoLeft = true;
             if (canGoRight)
                 explorer.canGoRight = true;
-            //explorer.CheckMyPoint();
         }
         else
         {
             isExplorerOnMe = false;
         }
+
         if (canGoDown && explorer.canGoUp && (transform.position.y - 1) == explorer.transform.position.y && transform.position.x == explorer.transform.position.x) isPossibleToMove = true;
         else if (canGoUp && explorer.canGoDown && (transform.position.y + 1) == explorer.transform.position.y && transform.position.x == explorer.transform.position.x) isPossibleToMove = true;
         else if(canGoLeft && explorer.canGoRight && transform.position.y == explorer.transform.position.y && (transform.position.x - 1) == explorer.transform.position.x) isPossibleToMove = true;
@@ -70,6 +63,46 @@ public class Point : MonoBehaviour
         if (isExplorerOnMe) spriteRenderer.color = Color.blue;
         else if (!isExplorerOnMe && isPossibleToMove) spriteRenderer.color = Color.green;
         else if (!isExplorerOnMe && !isPossibleToMove) spriteRenderer.color = Color.white;
+    }
+    private void GetTypeOfPoint(float Xpos, float Ypos, out PointType pointType)
+    {
+        pointType = PointType.Battle;
+        if (Xpos == -0.5 && Ypos == -0.5)
+        {
+            pointType = PointType.Start;
+        }
+        if (Xpos == 4.5 && Ypos == 2.5)
+        {
+            pointType = PointType.Final;
+        }
+        for (int i = 0; i < explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points.Count; i++)
+        {
+            if (explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Xpos == Xpos && explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Ypos == Ypos && explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].isVisitedPoint)
+                isVisitedPoint = true;
+        }
+    }
+    private void EventOnPoint()
+    {
+        if (!isVisitedPoint)
+        {
+            isVisitedPoint = true;
+            for (int i = 0; i < explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points.Count; i++)
+            {
+                if (explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Xpos == transform.position.x && explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Ypos == transform.position.y)
+                {
+                    explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].isVisitedPoint = true;
+                }
+            }
+            explorer.dataHolder.Save_RegionList();
+            if (pointType == PointType.Battle)
+            {
+                SwitchScene("BattleScene");
+            }
+        }
+    }
+    public void SwitchScene(string nextscene)
+    {
+        SceneManager.LoadScene(nextscene);
     }
 
 
@@ -87,86 +120,8 @@ public class Point : MonoBehaviour
 
 
 
-    //public StartEnemyTeam enemyTeam;
 
-    //public Text text;
-    //public GameObject toBattle;
 
-    //public bool isVisited;
-    //public bool started;
-
-    //[SerializeField]
-    //private string nextscene = null;
-    //public Explorer explorer;
-
-    //public int healCount;
-    //public int damagerCount;
-    //public int defenderCount;
-
-    //void OnMouseDown()
-    //{
-    //    Debug.Log("клик");
-    //    explorer.needToMove = true;
-    //    explorer.poointToMove = transform.position;
-    //}
-    //public void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.tag == "Player" && !isVisited && started)
-    //    {
-    //        //explorer.needToMove = false;
-    //        Debug.Log("Вашол");
-    //        isVisited = true;
-    //        Debug.Log(transform.position + "  вот тут был  " + isVisited);
-    //        Debug.Log("battle loading");
-    //        explorer.SaveField();
-    //        //toBattle.SetActive(true);
-    //        SaveField();
-    //        SceneManager.LoadScene(nextscene);
-    //    }
-    //}
-    //void Start()
-    //{
-    //    //toBattle.SetActive(false);
-    //    explorer = FindObjectOfType<Explorer>();
-
-    //    healCount = (int)Random.Range(2, 5);
-    //    damagerCount = (int)Random.Range(2, 5);
-    //    defenderCount = (int)Random.Range(2, 5);
-    //}
-
-    //public void LoadPoint()
-    //{
-    //    Debug.Log("Стартуем");
-    //    explorer = FindObjectOfType<Explorer>();
-    //    for (int i = 0; i < explorer.pointToSave.points.Count; i++)
-    //    {
-    //        //text.text += "*";
-    //        Debug.Log("ТУТ  " + transform.position + "ТУТ  " + explorer.pointToSave.points[i]);
-    //        if ((explorer.pointToSave.points[i] - transform.position).magnitude < 0.1)
-    //        {
-    //            isVisited = true;
-    //        }
-    //    }
-    //    started = true;
-    //}
-    //public void SwitchScene(string nextscene)
-    //{
-    //    SceneManager.LoadScene(nextscene);
-    //}
-    //[System.Serializable]
-    //public class StartEnemyTeam
-    //{
-    //    public int healers;
-    //    public int damagers;
-    //    public int defenders;
-    //}
-    //public void SaveField()
-    //{
-    //    enemyTeam.healers = healCount;
-    //    enemyTeam.damagers = damagerCount;
-    //    enemyTeam.defenders = defenderCount;
-    //    File.WriteAllText(Application.dataPath + "/Battle/enemyTeam.json", JsonUtility.ToJson(enemyTeam));
-    //}
 }
 
 enum PointType
