@@ -43,6 +43,7 @@ public class RegionBuilder : MonoBehaviour
                 structVariant[i] = Random.Range(0, 3);
             }
             dataHolder.regionList.regionS[thisRegionID].isVisitedRegion = true;
+            dataHolder.Save_RegionList();
         }
         
         tile00 = Resources.Load<GameObject>(structType.ToString() + structVariant[0].ToString() + ".0-0");
@@ -70,6 +71,7 @@ public class RegionBuilder : MonoBehaviour
             WorldDataHolder.Point point = new WorldDataHolder.Point();
             point.Xpos = pointArray[i].transform.position.x;
             point.Ypos = pointArray[i].transform.position.y;
+            //point.isVisitedPoint = false;
             point.isVisitedPoint = pointArray[i].isVisitedPoint;
             point.isPossibleToMove = pointArray[i].isPossibleToMove;
             point.isExplorerOnMe = pointArray[i].isExplorerOnMe;

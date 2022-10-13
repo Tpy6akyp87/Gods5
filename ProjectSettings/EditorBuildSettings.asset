@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Explorer/ExploreScene.unity
     guid: 395f0e9869435f446b91b0ad196c322c
+  - enabled: 1
+    path: Assets/Battle/BattleScene.unity
+    guid: 99f71529ecca3cb4281702ca418dee76
   m_configObjects: {}
