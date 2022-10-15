@@ -269,6 +269,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: levelOfRegion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structVariant.Array.data[0]
       value: 99
       objectReference: {fileID: 0}
@@ -621,6 +625,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: levelOfRegion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structVariant.Array.data[0]
       value: 99
       objectReference: {fileID: 0}
@@ -644,6 +652,10 @@ PrefabInstance:
       propertyPath: structVariant.Array.data[5]
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c54ec3da61abaa04b8205b4a1c011daa, type: 3}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -972,6 +984,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: levelOfRegion
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structVariant.Array.data[0]
       value: 99
       objectReference: {fileID: 0}
@@ -995,6 +1011,10 @@ PrefabInstance:
       propertyPath: structVariant.Array.data[5]
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 09bec0a4d9713274bb91cbdb893861fb, type: 3}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1084,6 +1104,10 @@ PrefabInstance:
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: levelOfRegion
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structVariant.Array.data[0]
@@ -1300,6 +1324,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: levelOfRegion
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structVariant.Array.data[0]
       value: 99
       objectReference: {fileID: 0}
@@ -1323,6 +1351,10 @@ PrefabInstance:
       propertyPath: structVariant.Array.data[5]
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1556fc7877904dd4e91febf8f2c2d556, type: 3}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1513,6 +1545,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: levelOfRegion
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structVariant.Array.data[0]
       value: 99
       objectReference: {fileID: 0}
@@ -1536,6 +1572,10 @@ PrefabInstance:
       propertyPath: structVariant.Array.data[5]
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6acc3af0bfa4db84fabab20185fc0d01, type: 3}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1627,6 +1667,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: levelOfRegion
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structVariant.Array.data[0]
       value: 99
       objectReference: {fileID: 0}
@@ -1650,6 +1694,10 @@ PrefabInstance:
       propertyPath: structVariant.Array.data[5]
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1556fc7877904dd4e91febf8f2c2d556, type: 3}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1820,6 +1868,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: levelOfRegion
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structVariant.Array.data[0]
       value: 99
       objectReference: {fileID: 0}
@@ -1843,6 +1895,10 @@ PrefabInstance:
       propertyPath: structVariant.Array.data[5]
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1556fc7877904dd4e91febf8f2c2d556, type: 3}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -2013,6 +2069,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: levelOfRegion
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structVariant.Array.data[0]
       value: 99
       objectReference: {fileID: 0}
@@ -2127,6 +2187,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: levelOfRegion
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structVariant.Array.data[0]
       value: 99
       objectReference: {fileID: 0}
@@ -2150,6 +2214,10 @@ PrefabInstance:
       propertyPath: structVariant.Array.data[5]
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c54ec3da61abaa04b8205b4a1c011daa, type: 3}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -2241,6 +2309,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: levelOfRegion
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structVariant.Array.data[0]
       value: 99
       objectReference: {fileID: 0}
@@ -2264,6 +2336,10 @@ PrefabInstance:
       propertyPath: structVariant.Array.data[5]
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1556fc7877904dd4e91febf8f2c2d556, type: 3}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -2729,6 +2805,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: levelOfRegion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structVariant.Array.data[0]
       value: 99
       objectReference: {fileID: 0}
@@ -2752,6 +2832,10 @@ PrefabInstance:
       propertyPath: structVariant.Array.data[5]
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c54ec3da61abaa04b8205b4a1c011daa, type: 3}
     - target: {fileID: 7259445850026380638, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: m_Color.a
       value: 1

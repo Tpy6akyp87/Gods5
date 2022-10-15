@@ -70,4 +70,12 @@ public class WorldDataHolder : MonoBehaviour
         regionList.regionS.Clear();
         Save_RegionList();
     }
+    [ContextMenu("Count")]
+    public void Count_RegionList()
+    {
+        for (int i = 0; i < regionList.regionS.Count; i++)
+        {
+            Debug.Log("id region = " + regionList.regionS[i].idRegion + ", lvl of Region = " + regionList.regionS[i].levelOfRegion);
+        }
+    }
 }

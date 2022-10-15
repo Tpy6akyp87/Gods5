@@ -31,26 +31,16 @@ public class RegionTileOnMap : MonoBehaviour
         {
             for (int i = 0; i < dataHolder.regionList.regionS.Count; i++)
             {
-                Debug.Log(dataHolder.regionList.regionS.Count + "   count of regions");
                 dataHolder.regionList.regionS[i].points.Clear();
                 if (dataHolder.regionList.regionS[i].idRegion == idRegion)
                 {
                     regionSaved = true;
                 }
             }
-            //if (dataHolder.regionList.regionS[idRegion].points != null)
-            //{
-            //    for (int i = 0; i < dataHolder.regionList.regionS[idRegion].points.Count; i++)
-            //    {
-            //        dataHolder.regionList.regionS[idRegion].points[i].isVisitedPoint = false;
-            //    }
-            //    dataHolder.Save_RegionList();
-            //}
-
         }
         if (!regionSaved)
         {
-            dataHolder.Add_NewRegionToList(loaded, visitedRegion = false, visitedPoints = 99, numberOfPoints = 99, levelOfRegion = 99, typeOfRegion = "Wild", structType, structVariant);
+            dataHolder.Add_NewRegionToList(loaded, visitedRegion = false, visitedPoints = 99, numberOfPoints = 99, levelOfRegion, typeOfRegion = "Wild", structType, structVariant);
             dataHolder.Save_RegionList();
         }
         else LoadRegionData();
