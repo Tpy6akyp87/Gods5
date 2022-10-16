@@ -71,7 +71,7 @@ public class RegionBuilder : MonoBehaviour
             WorldDataHolder.Point point = new WorldDataHolder.Point();
             point.Xpos = pointArray[i].transform.position.x;
             point.Ypos = pointArray[i].transform.position.y;
-            //point.isVisitedPoint = false;
+            point.isVisitedPoint = false;
             point.isVisitedPoint = pointArray[i].isVisitedPoint;
             point.isPossibleToMove = pointArray[i].isPossibleToMove;
             point.isExplorerOnMe = pointArray[i].isExplorerOnMe;

@@ -20,6 +20,17 @@ public class RegionTileOnMap : MonoBehaviour
     public bool mouseOnTile;
     public WorldDataHolder dataHolder;
     public RegionTileInfo tileInfo;
+
+
+
+    public void Get_Stats()
+    {
+        
+    }
+    public void Set_Stats()
+    {
+
+    }
     void Start()
     {
         dataHolder = FindObjectOfType<WorldDataHolder>();
@@ -32,15 +43,18 @@ public class RegionTileOnMap : MonoBehaviour
             for (int i = 0; i < dataHolder.regionList.regionS.Count; i++)
             {
                 dataHolder.regionList.regionS[i].points.Clear();
+                dataHolder.Save_RegionList();
                 if (dataHolder.regionList.regionS[i].idRegion == idRegion)
                 {
                     regionSaved = true;
+                    Debug.Log("idRegion = "+ idRegion + "  is saved");
                 }
             }
         }
         if (!regionSaved)
         {
-            dataHolder.Add_NewRegionToList(loaded, visitedRegion = false, visitedPoints = 99, numberOfPoints = 99, levelOfRegion, typeOfRegion = "Wild", structType, structVariant);
+            Debug.Log("idRegion = " + idRegion + "  not saved");
+            dataHolder.Add_NewRegionToList(loaded, idRegion, visitedRegion = false, visitedPoints = 99, numberOfPoints = 99, levelOfRegion, typeOfRegion = "Wild", structType, structVariant);
             dataHolder.Save_RegionList();
         }
         else LoadRegionData();
@@ -67,7 +81,6 @@ public class RegionTileOnMap : MonoBehaviour
                 typeOfRegion = dataHolder.regionList.regionS[i].typeOfRegion;
             }
         }
-
     }
   
 
