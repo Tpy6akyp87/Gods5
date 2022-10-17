@@ -19,10 +19,12 @@ public class RegionBuilder : MonoBehaviour
     public int thisRegionID;
     public WorldDataHolder dataHolder;
     public Point [] pointArray;
+    public Explorer explorer;
     void Start()
     {
         dataHolder = FindObjectOfType<WorldDataHolder>();
         dataHolder.Load_RegionList();
+        explorer = FindObjectOfType<Explorer>();
         for (int i = 0; i < dataHolder.regionList.regionS.Count; i++)
         {
             if (dataHolder.regionList.regionS[i].loaded)
@@ -93,6 +95,10 @@ public class RegionBuilder : MonoBehaviour
     }
     public void SwitchScene(string nextscene)
     {
+        if (nextscene == "World")
+        {
+            explorer.Save_Position(new Vector3(-0.5f, -0.5f, 0.0f));
+        }
         dataHolder.regionList.regionS[thisRegionID].loaded = false;
         Save_RegionStruct();
         SceneManager.LoadScene(nextscene);

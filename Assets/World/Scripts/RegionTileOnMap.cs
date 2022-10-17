@@ -47,13 +47,11 @@ public class RegionTileOnMap : MonoBehaviour
                 if (dataHolder.regionList.regionS[i].idRegion == idRegion)
                 {
                     regionSaved = true;
-                    Debug.Log("idRegion = "+ idRegion + "  is saved");
                 }
             }
         }
         if (!regionSaved)
         {
-            Debug.Log("idRegion = " + idRegion + "  not saved");
             dataHolder.Add_NewRegionToList(loaded, idRegion, visitedRegion = false, visitedPoints = 99, numberOfPoints = 99, levelOfRegion, typeOfRegion = "Wild", structType, structVariant);
             dataHolder.Save_RegionList();
         }
@@ -101,8 +99,6 @@ public class RegionTileOnMap : MonoBehaviour
         {
             if (dataHolder.regionList.regionS[i].idRegion == idRegion)
             {
-                Debug.Log(idRegion);
-                Debug.Log(dataHolder.regionList.regionS[i].idRegion);
                 dataHolder.regionList.regionS[i].loaded = true;
             }
         }

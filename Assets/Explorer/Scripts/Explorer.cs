@@ -30,6 +30,7 @@ public class Explorer : MonoBehaviour
             }
         }
         CheckMyPoint();
+        Load_Position();
     }
     void Update()
     {
@@ -61,7 +62,15 @@ public class Explorer : MonoBehaviour
         }
         dataHolder.Save_RegionList();
     }
-
+    public void Save_Position(Vector3 explorerPosition)
+    {
+        File.WriteAllText(Application.dataPath + "/Explorer/explorerData.json", JsonUtility.ToJson(explorerPosition));
+    }
+    public void Load_Position()
+    {
+        transform.position = JsonUtility.FromJson<Vector3>(File.ReadAllText(Application.dataPath + "/Explorer/explorerData.json"));
+    }
+    
 
 
 

@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 714221703}
   - component: {fileID: 714221707}
   - component: {fileID: 714221708}
+  - component: {fileID: 714221709}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -506,6 +507,24 @@ MonoBehaviour:
   thisRegionID: 0
   dataHolder: {fileID: 0}
   pointArray: []
+  explorer: {fileID: 0}
+--- !u!114 &714221709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714221702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13937ac9404078d4da14fcf3dca23d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTeam:
+    enemyArmyWeight: 0
+    healers: 0
+    damagers: 0
+    defenders: 0
 --- !u!1 &990525556
 GameObject:
   m_ObjectHideFlags: 0
