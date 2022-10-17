@@ -35,7 +35,6 @@ public class Point : MonoBehaviour
         {
             explorer.nextPoint = transform.position;
             if (explorer.transform.position.x != transform.position.x || explorer.transform.position.y != transform.position.y) explorer.needToMove = true;
-           // else explorer.needToMove = false;//unusable string
         }
     }
     void Update()
@@ -128,7 +127,10 @@ public class Point : MonoBehaviour
             {
                 Debug.Log(explorer.thisRegionID + "/" + levelOfPoint);
                 enemyTeam.enemyTeam.enemyArmyWeight = enemyTeam.weight[explorer.thisRegionID, levelOfPoint];
-                File.WriteAllText(Application.dataPath + "/Battle/enemyTeam.json", JsonUtility.ToJson(enemyTeam));
+                enemyTeam.enemyTeam.healers = 2;
+                enemyTeam.enemyTeam.damagers = 3;
+                enemyTeam.enemyTeam.defenders = 4;
+                File.WriteAllText(Application.dataPath + "/Battle/enemyTeam.json", JsonUtility.ToJson(enemyTeam.enemyTeam));
                 SwitchScene("BattleScene");
             }
         }
@@ -137,23 +139,6 @@ public class Point : MonoBehaviour
     {
         SceneManager.LoadScene(nextscene);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 

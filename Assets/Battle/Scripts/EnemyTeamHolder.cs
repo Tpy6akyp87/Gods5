@@ -17,7 +17,7 @@ public class EnemyTeamHolder : MonoBehaviour
         public int damagers;
         public int defenders;
     }
-
+    [ContextMenu("LoadField")]
     public void LoadField()
     {
         enemyTeam = JsonUtility.FromJson<StartEnemyTeam>(File.ReadAllText(Application.dataPath + "/Battle/enemyTeam.json"));
