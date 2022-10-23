@@ -120,6 +120,9 @@ public class Point : MonoBehaviour
     }
     private void EventOnPoint()
     {
+        int healMinWeight = 11;
+        int damagerMinWeight = 11;
+        int defenderMinWeight = 7;
         if (!isVisitedPoint)
         {
             isVisitedPoint = true;
@@ -127,9 +130,9 @@ public class Point : MonoBehaviour
             {
                 Debug.Log(explorer.thisRegionID + "/" + levelOfPoint);
                 enemyTeam.enemyTeam.enemyArmyWeight = enemyTeam.weight[explorer.thisRegionID, levelOfPoint];
-                enemyTeam.enemyTeam.healers = 2;
-                enemyTeam.enemyTeam.damagers = 3;
-                enemyTeam.enemyTeam.defenders = 4;
+                enemyTeam.enemyTeam.healers = Random.Range(2, 5);
+                enemyTeam.enemyTeam.damagers = Random.Range(2, Mathf.FloorToInt((100 - enemyTeam.enemyTeam.healers * healMinWeight) / damagerMinWeight));
+                enemyTeam.enemyTeam.defenders = Mathf.FloorToInt((100 - enemyTeam.enemyTeam.healers * healMinWeight - enemyTeam.enemyTeam.damagers * damagerMinWeight) / defenderMinWeight);
                 File.WriteAllText(Application.dataPath + "/Battle/enemyTeam.json", JsonUtility.ToJson(enemyTeam.enemyTeam));
                 SwitchScene("BattleScene");
             }
