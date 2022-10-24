@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyHealer : EnemyBattle
 {
-    public int heal;
+    
     void Start()
     {
         Xpos = gameObject.transform.position.x;

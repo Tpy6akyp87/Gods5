@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
+using UnityEngine.UI;
 
 public class Field : MonoBehaviour
 {
-    public StartEnemyTeam enemyTeam;
+    public EnemyTeamHolder enemyTeam;
+    public Text enemyArmyWeightText;
     [SerializeField]
     private string nextscene = null;
     
@@ -31,23 +33,26 @@ public class Field : MonoBehaviour
 
     void Start()
     {
-        LoadField();
-        for (int i = 0; i < enemyTeam.healers; i++)
+        enemyTeam.LoadField();
+
+        for (int i = 0; i < enemyTeam.enemyTeam.healers; i++)
         {
             AddUnit(5);
         }
-        for (int i = 0; i < enemyTeam.damagers; i++)
+        for (int i = 0; i < enemyTeam.enemyTeam.damagers; i++)
         {
             AddUnit(0);
         }
-        for (int i = 0; i < enemyTeam.defenders; i++)
+        for (int i = 0; i < enemyTeam.enemyTeam.defenders; i++)
         {
             AddUnit(1);
         }
-
+        enemyArmyWeightText.text = enemyTeam.enemyTeam.enemyArmyWeight.ToString();
     }
-    private void Awake()
+    public void Awake()
     {
+        enemyTeam = FindObjectOfType<EnemyTeamHolder>();
+        enemyTeam.LoadField();
         eHeal = Resources.Load<EnemyHealer>("EnemyHealer"); //5
         eDam = Resources.Load<EnemyDamager>("EnemyDamager"); //0
         eDef = Resources.Load<EnemyDefender>("EnemyDefender"); //1
@@ -242,15 +247,5 @@ public class Field : MonoBehaviour
     {
         SceneManager.LoadScene(nextscene);
     }
-    [System.Serializable]
-    public class StartEnemyTeam
-    {
-        public int healers;
-        public int damagers;
-        public int defenders;
-    }
-    public void LoadField()
-    {
-        enemyTeam = JsonUtility.FromJson<StartEnemyTeam>(File.ReadAllText(Application.dataPath + "/Battle/enemyTeam.json"));
-    }
+    
 }

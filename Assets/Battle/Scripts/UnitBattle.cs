@@ -12,6 +12,7 @@ public class UnitBattle : MonoBehaviour
     public float Xpos;
     public float Ypos;
     public int damage;
+    public int heal;
     public Field field;
     public bool timeToAttack;
     public bool timeToStepForward;

@@ -15,101 +15,141 @@ public class Point : MonoBehaviour
     public bool canGoRight;
     public bool canGoLeft;
     public int levelOfPoint;
+    public EnemyTeamHolder enemyTeam;
+    public SpriteRenderer spriteRenderer;
+    public Explorer explorer;
+    [SerializeField]
+    PointType pointType;
+    void Awake()
+    {
+        enemyTeam = FindObjectOfType<EnemyTeamHolder>();
+        explorer = FindObjectOfType<Explorer>();
+        explorer.dataHolder.Load_RegionList();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        GetTypeOfPoint(transform.position.x, transform.position.y, out pointType);
+        WhereExplorerCanGo();
+    }
+    void OnMouseDown()
+    {
+        if (isPossibleToMove)
+        {
+            explorer.nextPoint = transform.position;
+            if (explorer.transform.position.x != transform.position.x || explorer.transform.position.y != transform.position.y) explorer.needToMove = true;
+        }
+    }
+    void Update()
+    {
+        if (canGoDown && explorer.canGoUp && (transform.position.y - 1) == explorer.transform.position.y && transform.position.x == explorer.transform.position.x) isPossibleToMove = true;
+        else if (canGoUp && explorer.canGoDown && (transform.position.y + 1) == explorer.transform.position.y && transform.position.x == explorer.transform.position.x) isPossibleToMove = true;
+        else if(canGoLeft && explorer.canGoRight && transform.position.y == explorer.transform.position.y && (transform.position.x - 1) == explorer.transform.position.x) isPossibleToMove = true;
+        else if(canGoRight && explorer.canGoLeft && transform.position.y == explorer.transform.position.y && (transform.position.x + 1) == explorer.transform.position.x) isPossibleToMove = true;
+        else isPossibleToMove = false;
+        if (isExplorerOnMe) spriteRenderer.color = Color.blue;
+        else if (!isExplorerOnMe && isPossibleToMove) spriteRenderer.color = Color.green;
+        else if (!isExplorerOnMe && !isPossibleToMove) spriteRenderer.color = Color.white;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            for (int i = 0; i < explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points.Count; i++)
+            {
+                if (explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Xpos == transform.position.x && explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Ypos == transform.position.y)
+                {
+                    explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].isVisitedPoint = true;
+                }
+            }
+            explorer.dataHolder.Save_RegionList();
+            EventOnPoint();
+            isExplorerOnMe = true;
+            if (canGoUp)
+                explorer.canGoUp = true;
+            if (canGoDown)
+                explorer.canGoDown = true;
+            if (canGoLeft)
+                explorer.canGoLeft = true;
+            if (canGoRight)
+                explorer.canGoRight = true;
 
+            explorer.Save_Position(transform.position);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            isExplorerOnMe = false;
+        }
+    }
 
+    public void WhereExplorerCanGo()
+    {
+        if (isVisitedPoint && isExplorerOnMe)
+        {
+            explorer.needToMove = false;
+        }
+    }
+    private void GetTypeOfPoint(float Xpos, float Ypos, out PointType pointType)
+    {
+        pointType = PointType.Battle;
+        if (Xpos == -0.5 && Ypos == -0.5)
+        {
+            pointType = PointType.Start;
+        }
+        if (Xpos == 4.5 && Ypos == 2.5)
+        {
+            pointType = PointType.Final;
+        }
+        for (int i = 0; i < explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points.Count; i++)
+        {
+            if (explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Xpos == Xpos && explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Ypos == Ypos && explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].isVisitedPoint)
+                isVisitedPoint = true;
+        }
+        if (Xpos == -0.5 || Xpos == 0.5)
+        {
+            levelOfPoint = 0;
+        }
+        if (Xpos == 1.5 || Xpos == 2.5)
+        {
+            levelOfPoint = 1;
+        }
+        if (Xpos == 3.5 || Xpos == 4.5)
+        {
+            levelOfPoint = 2;
+        }
+    }
+    private void EventOnPoint()
+    {
+        int healMinWeight = 11;
+        int damagerMinWeight = 11;
+        int defenderMinWeight = 7;
+        if (!isVisitedPoint)
+        {
+            isVisitedPoint = true;
+            if (pointType == PointType.Battle)
+            {
+                Debug.Log(explorer.thisRegionID + "/" + levelOfPoint);
+                enemyTeam.enemyTeam.enemyArmyWeight = enemyTeam.weight[explorer.thisRegionID, levelOfPoint];
+                enemyTeam.enemyTeam.healers = Random.Range(2, 5);
+                enemyTeam.enemyTeam.damagers = Random.Range(2, Mathf.FloorToInt((100 - enemyTeam.enemyTeam.healers * healMinWeight) / damagerMinWeight));
+                enemyTeam.enemyTeam.defenders = Mathf.FloorToInt((100 - enemyTeam.enemyTeam.healers * healMinWeight - enemyTeam.enemyTeam.damagers * damagerMinWeight) / defenderMinWeight);
+                File.WriteAllText(Application.dataPath + "/Battle/enemyTeam.json", JsonUtility.ToJson(enemyTeam.enemyTeam));
+                SwitchScene("BattleScene");
+            }
+        }
+    }
+    public void SwitchScene(string nextscene)
+    {
+        SceneManager.LoadScene(nextscene);
+    }
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //public StartEnemyTeam enemyTeam;
-
-    //public Text text;
-    //public GameObject toBattle;
-
-    //public bool isVisited;
-    //public bool started;
-
-    //[SerializeField]
-    //private string nextscene = null;
-    //public Explorer explorer;
-
-    //public int healCount;
-    //public int damagerCount;
-    //public int defenderCount;
-
-    //void OnMouseDown()
-    //{
-    //    Debug.Log("клик");
-    //    explorer.needToMove = true;
-    //    explorer.poointToMove = transform.position;
-    //}
-    //public void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.tag == "Player" && !isVisited && started)
-    //    {
-    //        //explorer.needToMove = false;
-    //        Debug.Log("Вашол");
-    //        isVisited = true;
-    //        Debug.Log(transform.position + "  вот тут был  " + isVisited);
-    //        Debug.Log("battle loading");
-    //        explorer.SaveField();
-    //        //toBattle.SetActive(true);
-    //        SaveField();
-    //        SceneManager.LoadScene(nextscene);
-    //    }
-    //}
-    //void Start()
-    //{
-    //    //toBattle.SetActive(false);
-    //    explorer = FindObjectOfType<Explorer>();
-
-    //    healCount = (int)Random.Range(2, 5);
-    //    damagerCount = (int)Random.Range(2, 5);
-    //    defenderCount = (int)Random.Range(2, 5);
-    //}
-
-    //public void LoadPoint()
-    //{
-    //    Debug.Log("Стартуем");
-    //    explorer = FindObjectOfType<Explorer>();
-    //    for (int i = 0; i < explorer.pointToSave.points.Count; i++)
-    //    {
-    //        //text.text += "*";
-    //        Debug.Log("ТУТ  " + transform.position + "ТУТ  " + explorer.pointToSave.points[i]);
-    //        if ((explorer.pointToSave.points[i] - transform.position).magnitude < 0.1)
-    //        {
-    //            isVisited = true;
-    //        }
-    //    }
-    //    started = true;
-    //}
-    //public void SwitchScene(string nextscene)
-    //{
-    //    SceneManager.LoadScene(nextscene);
-    //}
-    //[System.Serializable]
-    //public class StartEnemyTeam
-    //{
-    //    public int healers;
-    //    public int damagers;
-    //    public int defenders;
-    //}
-    //public void SaveField()
-    //{
-    //    enemyTeam.healers = healCount;
-    //    enemyTeam.damagers = damagerCount;
-    //    enemyTeam.defenders = defenderCount;
-    //    File.WriteAllText(Application.dataPath + "/Battle/enemyTeam.json", JsonUtility.ToJson(enemyTeam));
-    //}
+enum PointType
+{
+    Start,
+    Battle,
+    Treasure,
+    Lore,
+    Final
 }

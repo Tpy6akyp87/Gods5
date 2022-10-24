@@ -7,16 +7,10 @@ using UnityEngine.UI;
 public class WorldDataHolder : MonoBehaviour
 {    
     public RegionList regionList;
-    // Start is called before the first frame update
-    void Start()
+    [System.Serializable]
+    public class RegionList
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public List<Region> regionS;
     }
     [System.Serializable]
     public class Region
@@ -34,13 +28,10 @@ public class WorldDataHolder : MonoBehaviour
         
     }
     [System.Serializable]
-    public class RegionList
-    {
-        public List<Region> regionS;
-    }
-    [System.Serializable]
     public class Point
     {
+        public float Xpos;
+        public float Ypos;
         public bool isVisitedPoint;
         public bool isPossibleToMove;
         public bool isExplorerOnMe;
@@ -50,7 +41,7 @@ public class WorldDataHolder : MonoBehaviour
         public bool canGoLeft;
         public int levelOfPoint;
     }
-    public void AddField(bool loaded, int idRegion, bool isVisitedRegion, int visitedPoints, int numberOfPoints, int levelOfRegion, string typeOfRegion, int structType, int[] structVariant)
+    public void Add_NewRegionToList(bool loaded, int idRegion, bool isVisitedRegion, int visitedPoints, int numberOfPoints, int levelOfRegion, string typeOfRegion, int structType, int[] structVariant)
     {
         Region region = new Region();
         region.loaded = loaded;
@@ -65,8 +56,26 @@ public class WorldDataHolder : MonoBehaviour
         regionList.regionS.Add(region);
     }
 
-    public void SaveField()
+    public void Save_RegionList()
     {
         File.WriteAllText(Application.dataPath + "/World/regionsData.json", JsonUtility.ToJson(regionList));
+    }
+    public void Load_RegionList()
+    {
+        regionList = JsonUtility.FromJson<RegionList>(File.ReadAllText(Application.dataPath + "/World/regionsData.json"));
+    }
+    [ContextMenu("Clear")]
+    public void Reset_RegionList()
+    {
+        regionList.regionS.Clear();
+        Save_RegionList();
+    }
+    [ContextMenu("Count")]
+    public void Count_RegionList()
+    {
+        for (int i = 0; i < regionList.regionS.Count; i++)
+        {
+            Debug.Log("id region = " + regionList.regionS[i].idRegion + ", lvl of Region = " + regionList.regionS[i].levelOfRegion);
+        }
     }
 }
