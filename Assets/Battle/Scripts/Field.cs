@@ -67,7 +67,6 @@ public class Field : MonoBehaviour
         float hpOnLine = 0;
         UnitBattle[] units;
         units = FindObjectsOfType<UnitBattle>();
-       // Debug.Log("Check  " + emptyLine + "   line");
         for (int i = 0; i < units.Length; i++)
         {
             if (units[i].Ypos == emptyLine)
@@ -75,10 +74,8 @@ public class Field : MonoBehaviour
                 hpOnLine = hpOnLine + units[i].hp;
             }
         }
-       // Debug.Log("Здоровья на линии =  " + hpOnLine);
         if (hpOnLine <= 0)
         {
-            //Debug.Log(emptyLine + "  линия пустая, шагают " + lineTogo1 + "  и  " + lineTogo2 + "  ряды");
             for (int i = 0; i < units.Length; i++)
             {
                 if (units[i].Ypos== lineTogo1|| units[i].Ypos == lineTogo2)

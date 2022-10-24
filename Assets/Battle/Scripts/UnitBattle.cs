@@ -6,18 +6,34 @@ using UnityEngine.UI;
 public class UnitBattle : MonoBehaviour
 {
     public float maxHP;
+    public int damage;//*
+    public int heal;//*
+    public float startTimeToAction;
+    int phisicalDamage;
+    bool inRage;
+    int magicDamage;
+    int magicArmor;
+    int healPower;
+    int lifeSteal;
+    int critChance;
+    int dodgeChance;
+    int phisicalArmor;
+
+
+
+
+
+
+
     public float hp;
     public Image hpBar;
-
     public float Xpos;
     public float Ypos;
-    public int damage;
-    public int heal;
     public Field field;
     public bool timeToAttack;
     public bool timeToStepForward;
     public float timeToAction;
-    public float startTimeToAction = 1.0f;
+    
 
     public bool start;
 
@@ -33,7 +49,6 @@ public class UnitBattle : MonoBehaviour
     void Update()
     {
         hpBar.fillAmount = hp / maxHP;
-        
     }
     public void StepForward(float vectorMove)
     {

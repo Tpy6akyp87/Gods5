@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Defender : CharBattle
 {
-    // Start is called before the first frame update
     void Start()
     {
         Xpos = gameObject.transform.position.x;
@@ -15,7 +14,6 @@ public class Defender : CharBattle
         hpBar = GetComponentInChildren<Image>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (hp <= 0)
