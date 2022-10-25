@@ -48,7 +48,7 @@ public class EnemyDamager : EnemyBattle
         }
         if (timeToAttack && start)
         {
-            FireBall((int)Xpos, (int)Ypos, damage);
+            FireBall((int)Xpos, (int)Ypos, phisicalDamage);
         }
         hpBar.fillAmount = hp / maxHP;
         if (timeToAction <= 0)

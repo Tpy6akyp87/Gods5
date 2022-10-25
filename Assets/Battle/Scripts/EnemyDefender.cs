@@ -48,7 +48,7 @@ public class EnemyDefender : EnemyBattle
         }
         if (timeToAttack && start)
         {
-            Attack((int)Xpos, (int)Ypos, damage);
+            Attack((int)Xpos, (int)Ypos, phisicalDamage);
         }
         hpBar.fillAmount = hp / maxHP;
         if (timeToAction <= 0)

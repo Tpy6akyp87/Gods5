@@ -6,18 +6,16 @@ using UnityEngine.UI;
 public class UnitBattle : MonoBehaviour
 {
     public float maxHP;
-    public int damage;//*
-    public int heal;//*
     public float startTimeToAction;
-    int phisicalDamage;
-    bool inRage;
-    int magicDamage;
-    int magicArmor;
-    int healPower;
-    int lifeSteal;
-    int critChance;
-    int dodgeChance;
-    int phisicalArmor;
+    public int phisicalDamage;
+    public bool inRage;
+    public int magicDamage;
+    public int magicArmor;
+    public int healPower;
+    public int lifeSteal;
+    public int critChance;
+    public int dodgeChance;
+    public int phisicalArmor;
 
 
 

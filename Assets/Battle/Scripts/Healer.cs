@@ -29,7 +29,7 @@ public class Healer : CharBattle
         }
         if (timeToAttack && start)
         {
-            MassHeal((int)Xpos, (int)Ypos, heal);
+            MassHeal((int)Xpos, (int)Ypos, healPower);
         }
         hpBar.fillAmount = hp / maxHP;
         if (timeToAction <= 0)
