@@ -27,7 +27,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.17, y: 0.17, z: 0.17}
-  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1285817994561300897}
   m_RootOrder: 0
@@ -43,7 +42,6 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -113,7 +111,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1285817994100397621}
   - {fileID: 86205394925414071}
@@ -132,7 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beeb0c3ceccfdfe41adeeb803ff5ff16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
 --- !u!61 &1285817994561300911
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -172,16 +168,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 10
+  startTimeToAction: 1
+  phisicalDamage: 0
+  inRage: 0
+  magicDamage: 2
+  magicArmor: 0
+  healPower: 0
+  lifeSteal: 0
+  critChance: 0
+  dodgeChance: 0
+  phisicalArmor: 0
   hp: 0
   hpBar: {fileID: 0}
   Xpos: 0
   Ypos: 0
-  damage: 1
   field: {fileID: 0}
   timeToAttack: 0
   timeToStepForward: 0
   timeToAction: 0
-  startTimeToAction: 1
+  start: 0
 --- !u!1001 &1285817993504869056
 PrefabInstance:
   m_ObjectHideFlags: 0

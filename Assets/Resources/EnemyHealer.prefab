@@ -222,7 +222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beeb0c3ceccfdfe41adeeb803ff5ff16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
 --- !u!61 &5010707697404283900
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -262,18 +261,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 10
+  startTimeToAction: 1.2
+  phisicalDamage: 0
+  inRage: 0
+  magicDamage: 0
+  magicArmor: 0
+  healPower: 1
+  lifeSteal: 0
+  critChance: 0
+  dodgeChance: 0
+  phisicalArmor: 0
   hp: 0
   hpBar: {fileID: 0}
   Xpos: 0
   Ypos: 0
-  damage: 0
   field: {fileID: 0}
   timeToAttack: 0
   timeToStepForward: 0
   timeToAction: 0
-  startTimeToAction: 1.2
   start: 0
-  heal: 2
 --- !u!1 &5010707697500960454
 GameObject:
   m_ObjectHideFlags: 0

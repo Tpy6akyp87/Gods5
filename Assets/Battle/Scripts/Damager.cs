@@ -28,7 +28,7 @@ public class Damager : CharBattle
         }
         if (timeToAttack && start)
         {
-            FireBall((int)Xpos, (int)Ypos, phisicalDamage);
+            FireBall((int)Xpos, (int)Ypos, magicDamage);
         }
         hpBar.fillAmount = hp / maxHP;
         if (timeToAction <= 0)
