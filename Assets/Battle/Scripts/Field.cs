@@ -156,8 +156,8 @@ public class Field : MonoBehaviour
                 case 7: x = 7; break;
             }
             EnemyDamager neweDam = Instantiate(eDam, new Vector3(x, 4, 0), eDam.transform.rotation) as EnemyDamager;
-            neweDam.maxHP *= Mathf.RoundToInt(enemyTeam.enemyTeam.enemyArmyWeight / 100);
-            neweDam.magicDamage *= Mathf.RoundToInt(enemyTeam.enemyTeam.enemyArmyWeight / 100);
+            neweDam.maxHP = Mathf.RoundToInt(neweDam.maxHP*enemyTeam.enemyTeam.enemyArmyWeight / 100);
+            neweDam.magicDamage = Mathf.RoundToInt(neweDam.magicDamage*enemyTeam.enemyTeam.enemyArmyWeight / 100);
             countOf0++;
         }
         if (numberOFUnit == 1 && countOf1 < 8)
@@ -174,8 +174,8 @@ public class Field : MonoBehaviour
                 case 7: x = 7; break;
             }
             EnemyDefender neweDam = Instantiate(eDef, new Vector3(x, 3, 0), eDam.transform.rotation) as EnemyDefender;
-            neweDam.maxHP *= Mathf.RoundToInt(enemyTeam.enemyTeam.enemyArmyWeight / 100);
-            neweDam.phisicalDamage *= Mathf.RoundToInt(enemyTeam.enemyTeam.enemyArmyWeight / 100);
+            neweDam.maxHP = Mathf.RoundToInt(neweDam.maxHP*(enemyTeam.enemyTeam.enemyArmyWeight / 100));
+            neweDam.phisicalDamage = Mathf.RoundToInt(neweDam.phisicalDamage*(enemyTeam.enemyTeam.enemyArmyWeight / 100));
             countOf1++;
         }
         if (numberOFUnit == 2 && countOf2 < 8)
@@ -240,8 +240,8 @@ public class Field : MonoBehaviour
                 case 7: x = 7; break;
             }
             EnemyHealer neweDam = Instantiate(eHeal, new Vector3(x, 5, 0), eDam.transform.rotation) as EnemyHealer;
-            neweDam.maxHP *= Mathf.RoundToInt(enemyTeam.enemyTeam.enemyArmyWeight / 100);
-            neweDam.healPower *= Mathf.RoundToInt(enemyTeam.enemyTeam.enemyArmyWeight / 100);
+            neweDam.maxHP = Mathf.RoundToInt(neweDam.maxHP*enemyTeam.enemyTeam.enemyArmyWeight / 100);
+            neweDam.healPower = Mathf.RoundToInt(neweDam.healPower*enemyTeam.enemyTeam.enemyArmyWeight / 100);
             countOf5++;
         }
     }
