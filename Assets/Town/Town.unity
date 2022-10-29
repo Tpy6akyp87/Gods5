@@ -298,13 +298,39 @@ GameObject:
   - component: {fileID: 329841000}
   - component: {fileID: 329840999}
   - component: {fileID: 329840998}
+  - component: {fileID: 329840997}
   m_Layer: 0
-  m_Name: WindMill (1)
+  m_Name: WindMill 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &329840997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329840996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284954648a1c5f648a31fab42e33ac8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildType: 0
+  level: 1
+  position: {x: 0, y: 0, z: 0}
+  maxHPEffect: 0
+  startTimeToActionEffect: 0
+  phisicalDamageEffect: 0
+  magicDamageEffect: 0
+  magicArmorEffect: 0
+  healPowerEffect: 0
+  lifeStealEffect: 0
+  critChanceEffect: 0
+  dodgeChanceEffect: 0
+  phisicalArmorEffec: 0
 --- !u!61 &329840998
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -617,8 +643,9 @@ GameObject:
   - component: {fileID: 465138808}
   - component: {fileID: 465138809}
   - component: {fileID: 465138810}
+  - component: {fileID: 465138811}
   m_Layer: 0
-  m_Name: WindMill
+  m_Name: WindMill 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -637,7 +664,7 @@ Transform:
   m_Children:
   - {fileID: 769982642}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &465138809
 MonoBehaviour:
@@ -679,6 +706,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &465138811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465138807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284954648a1c5f648a31fab42e33ac8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildType: 0
+  level: 1
+  position: {x: 0, y: 0, z: 0}
+  maxHPEffect: 0
+  startTimeToActionEffect: 0
+  phisicalDamageEffect: 0
+  magicDamageEffect: 0
+  magicArmorEffect: 0
+  healPowerEffect: 0
+  lifeStealEffect: 0
+  critChanceEffect: 0
+  dodgeChanceEffect: 0
+  phisicalArmorEffec: 0
 --- !u!1 &503363414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,13 +1480,39 @@ GameObject:
   - component: {fileID: 835848015}
   - component: {fileID: 835848014}
   - component: {fileID: 835848013}
+  - component: {fileID: 835848012}
   m_Layer: 0
-  m_Name: WindMill (2)
+  m_Name: WindMill 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &835848012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835848011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284954648a1c5f648a31fab42e33ac8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildType: 0
+  level: 2
+  position: {x: 0, y: 0, z: 0}
+  maxHPEffect: 0
+  startTimeToActionEffect: 0
+  phisicalDamageEffect: 0
+  magicDamageEffect: 0
+  magicArmorEffect: 0
+  healPowerEffect: 0
+  lifeStealEffect: 0
+  critChanceEffect: 0
+  dodgeChanceEffect: 0
+  phisicalArmorEffec: 0
 --- !u!61 &835848013
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1501,13 +1579,39 @@ GameObject:
   - component: {fileID: 841243818}
   - component: {fileID: 841243817}
   - component: {fileID: 841243816}
+  - component: {fileID: 841243815}
   m_Layer: 0
-  m_Name: WindMill (5)
+  m_Name: WindMill 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &841243815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841243814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284954648a1c5f648a31fab42e33ac8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildType: 0
+  level: 0
+  position: {x: 0, y: 0, z: 0}
+  maxHPEffect: 0
+  startTimeToActionEffect: 0
+  phisicalDamageEffect: 0
+  magicDamageEffect: 0
+  magicArmorEffect: 0
+  healPowerEffect: 0
+  lifeStealEffect: 0
+  critChanceEffect: 0
+  dodgeChanceEffect: 0
+  phisicalArmorEffec: 0
 --- !u!61 &841243816
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2078,6 +2182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1488556028}
+  - component: {fileID: 1488556029}
   m_Layer: 0
   m_Name: Field
   m_TagString: Untagged
@@ -2122,8 +2227,20 @@ Transform:
   - {fileID: 342358759}
   - {fileID: 311877737}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1488556029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488556027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2f23ce24887564c9f34a572e87f52c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1571853567
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,13 +2498,39 @@ GameObject:
   - component: {fileID: 1747816024}
   - component: {fileID: 1747816023}
   - component: {fileID: 1747816022}
+  - component: {fileID: 1747816021}
   m_Layer: 0
-  m_Name: WindMill (3)
+  m_Name: WindMill 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1747816021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747816020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284954648a1c5f648a31fab42e33ac8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildType: 0
+  level: 0
+  position: {x: 0, y: 0, z: 0}
+  maxHPEffect: 0
+  startTimeToActionEffect: 0
+  phisicalDamageEffect: 0
+  magicDamageEffect: 0
+  magicArmorEffect: 0
+  healPowerEffect: 0
+  lifeStealEffect: 0
+  critChanceEffect: 0
+  dodgeChanceEffect: 0
+  phisicalArmorEffec: 0
 --- !u!61 &1747816022
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2589,7 +2732,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1821799945
 GameObject:
@@ -2930,13 +3073,39 @@ GameObject:
   - component: {fileID: 1943822443}
   - component: {fileID: 1943822442}
   - component: {fileID: 1943822441}
+  - component: {fileID: 1943822440}
   m_Layer: 0
-  m_Name: WindMill (4)
+  m_Name: WindMill 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1943822440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943822439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284954648a1c5f648a31fab42e33ac8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildType: 0
+  level: 0
+  position: {x: 0, y: 0, z: 0}
+  maxHPEffect: 0
+  startTimeToActionEffect: 0
+  phisicalDamageEffect: 0
+  magicDamageEffect: 0
+  magicArmorEffect: 0
+  healPowerEffect: 0
+  lifeStealEffect: 0
+  critChanceEffect: 0
+  dodgeChanceEffect: 0
+  phisicalArmorEffec: 0
 --- !u!61 &1943822441
 BoxCollider2D:
   m_ObjectHideFlags: 0

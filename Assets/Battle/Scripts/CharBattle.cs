@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CharBattle : UnitBattle
 {
-    
+    public int minWeight;
     void Start()
     {
     //    Xpos = gameObject.transform.position.x;

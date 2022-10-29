@@ -9,6 +9,7 @@ public class Healer : CharBattle
     // Start is called before the first frame update
     void Start()
     {
+        minWeight = 11;
         Xpos = gameObject.transform.position.x;
         Ypos = gameObject.transform.position.y;
         field = FindObjectOfType<Field>();

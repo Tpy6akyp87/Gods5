@@ -105,6 +105,7 @@ MonoBehaviour:
   timeToStepForward: 0
   timeToAction: 0
   start: 0
+  minWeight: 11
 --- !u!1 &3682621217854073355
 GameObject:
   m_ObjectHideFlags: 0

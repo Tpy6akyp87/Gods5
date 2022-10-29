@@ -9,6 +9,8 @@ public class Field : MonoBehaviour
 {
     public EnemyTeamHolder enemyTeam;
     public Text enemyArmyWeightText;
+    public Text playerArmyWeightText;
+    public int playerArmyWeight;
     [SerializeField]
     private string nextscene = null;
     
@@ -34,6 +36,7 @@ public class Field : MonoBehaviour
     void Start()
     {
         enemyTeam.LoadField();
+        playerArmyWeight = 0;
 
         for (int i = 0; i < enemyTeam.enemyTeam.healers; i++)
         {
@@ -178,7 +181,7 @@ public class Field : MonoBehaviour
             neweDam.phisicalDamage = Mathf.RoundToInt(neweDam.phisicalDamage*(enemyTeam.enemyTeam.enemyArmyWeight / 100));
             countOf1++;
         }
-        if (numberOFUnit == 2 && countOf2 < 8)
+        if (numberOFUnit == 2 && countOf2 < 8 && (playerArmyWeight + defender.minWeight) <= enemyTeam.enemyTeam.enemyArmyWeight)
         {
             switch (countOf2)
             {
@@ -192,9 +195,11 @@ public class Field : MonoBehaviour
                 case 7: x = 7; break;
             }
             Defender neweDam = Instantiate(defender, new Vector3(x, 2, 0), eDam.transform.rotation) as Defender;
+            playerArmyWeight += defender.minWeight;
+            playerArmyWeightText.text = playerArmyWeight.ToString();
             countOf2++;
         }
-        if (numberOFUnit == 3 && countOf3 < 8)
+        if (numberOFUnit == 3 && countOf3 < 8 && (playerArmyWeight + damager.minWeight) <= enemyTeam.enemyTeam.enemyArmyWeight)
         {
             switch (countOf3)
             {
@@ -208,9 +213,12 @@ public class Field : MonoBehaviour
                 case 7: x = 7; break;
             }
             Damager neweDam = Instantiate(damager, new Vector3(x, 1, 0), eDam.transform.rotation) as Damager;
+            Debug.Log(damager.minWeight);
+            playerArmyWeight += damager.minWeight;
+            playerArmyWeightText.text = playerArmyWeight.ToString();
             countOf3++;
         }
-        if (numberOFUnit == 4 && countOf4 < 8)
+        if (numberOFUnit == 4 && countOf4 < 8 && (playerArmyWeight + healer.minWeight) <= enemyTeam.enemyTeam.enemyArmyWeight)
         {
             switch (countOf4)
             {
@@ -224,6 +232,8 @@ public class Field : MonoBehaviour
                 case 7: x = 7; break;
             }
             Healer neweDam = Instantiate(healer, new Vector3(x, 0, 0), eDam.transform.rotation) as Healer;
+            playerArmyWeight += healer.minWeight;
+            playerArmyWeightText.text = playerArmyWeight.ToString();
             countOf4++;
         }
         if (numberOFUnit == 5 && countOf5 < 8)

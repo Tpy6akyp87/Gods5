@@ -187,6 +187,7 @@ MonoBehaviour:
   timeToStepForward: 0
   timeToAction: 0
   start: 0
+  minWeight: 11
 --- !u!1001 &1285817993504869056
 PrefabInstance:
   m_ObjectHideFlags: 0

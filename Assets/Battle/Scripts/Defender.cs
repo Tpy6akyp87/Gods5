@@ -7,6 +7,7 @@ public class Defender : CharBattle
 {
     void Start()
     {
+        minWeight = 7;
         Xpos = gameObject.transform.position.x;
         Ypos = gameObject.transform.position.y;
         field = FindObjectOfType<Field>();
