@@ -7,6 +7,7 @@ public class ObjPlacer : MonoBehaviour
 {
     public bool isDraging = false;
     public Vector3 startPos;
+    public bool canBeBuilded;
 
     void Start()
     {
@@ -28,9 +29,23 @@ public class ObjPlacer : MonoBehaviour
     void OnMouseUp()
     {
         isDraging = false;
-        if (!isDraging)
+        if (!isDraging && canBeBuilded)
         {
             CheckPlace();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Field")
+        {
+            canBeBuilded = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Field")
+        {
+            canBeBuilded = false;
         }
     }
     public void CheckPlace()
