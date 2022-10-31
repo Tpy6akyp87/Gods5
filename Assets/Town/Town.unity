@@ -345,7 +345,7 @@ MonoBehaviour:
   phisicalDamageEffect: 0
   magicDamageEffect: 0
   magicArmorEffect: 0
-  healPowerEffect: 0
+  healPowerEffect: 3
   lifeStealEffect: 0
   critChanceEffect: 0
   dodgeChanceEffect: 0
@@ -1219,7 +1219,7 @@ MonoBehaviour:
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 0
-  magicDamageEffect: 0
+  magicDamageEffect: 3
   magicArmorEffect: 0
   healPowerEffect: 0
   lifeStealEffect: 0
@@ -2844,6 +2844,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b2f23ce24887564c9f34a572e87f52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  town:
+    buildings: []
 --- !u!1 &965073285
 GameObject:
   m_ObjectHideFlags: 0
@@ -3833,6 +3835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b2f23ce24887564c9f34a572e87f52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  town:
+    buildings: []
 --- !u!61 &1488556030
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5023,7 +5027,7 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
-  phisicalDamageEffect: 0
+  phisicalDamageEffect: 3
   magicDamageEffect: 0
   magicArmorEffect: 0
   healPowerEffect: 0

@@ -6,40 +6,31 @@ using UnityEngine.UI;
 public class CharBattle : UnitBattle
 {
     public int minWeight;
-    void Start()
+    public TownDataHolder townData;
+    void Awake()
     {
-    //    Xpos = gameObject.transform.position.x;
-    //    Ypos = gameObject.transform.position.y;
-    //    field = FindObjectOfType<Field>();
-    //    hp = maxHP;
-    //    hpBar = GetComponentInChildren<Image>();
-    }
+        townData = FindObjectOfType<TownDataHolder>();
+        townData.Load_Town();
+        for (int i = 0; i < townData.town.buildings.Count; i++)
+        {
+            maxHP += townData.town.buildings[i].playerEffects.maxHPEffect;
+            startTimeToAction += townData.town.buildings[i].playerEffects.maxHPEffect;
+            phisicalDamage += townData.town.buildings[i].playerEffects.phisicalDamageEffect;
+            magicDamage += townData.town.buildings[i].playerEffects.magicDamageEffect;
+            magicArmor += townData.town.buildings[i].playerEffects.magicArmorEffect;
+            healPower += townData.town.buildings[i].playerEffects.healPowerEffect;
+            lifeSteal += townData.town.buildings[i].playerEffects.lifeStealEffect;
+            critChance += townData.town.buildings[i].playerEffects.critChanceEffect;
+            dodgeChance += townData.town.buildings[i].playerEffects.dodgeChanceEffect;
+            phisicalArmor += townData.town.buildings[i].playerEffects.phisicalArmorEffect;
+        }
+       
+   
+}
 
     void Update()
     {
-    //    if (hp <= 0)
-    //    {
-    //        Die();
-    //    }
-    //    if (timeToStepForward)
-    //    {
-    //        StepForward(1);
-    //    }
-    //    if (timeToAttack)
-    //    {
-    //        Attack((int)Xpos, (int)Ypos, damage);
-    //    }
-    //    hpBar.fillAmount = hp / maxHP;
-    //    if (timeToAction <= 0)
-    //    {
-    //        Debug.Log("Ёкшон");
-    //        timeToAttack = true;
-    //        timeToAction = startTimeToAction;
-    //    }
-    //    else
-    //    {
-    //        timeToAction -= Time.deltaTime;
-    //    }
+    
     }
 
     
