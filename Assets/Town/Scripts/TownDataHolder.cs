@@ -12,13 +12,15 @@ public class TownDataHolder : MonoBehaviour
     {
         public List<Buildings> buildings;
     }
+    [System.Serializable]
     public class Buildings
     {
-        public BuildType buildType;
+        public int buildType;
         public int level;
         public Vector3 position;
-        public PlayerEffects playerEffects;
+        public PlayerEffects playerEffects = new PlayerEffects();
     }
+    [System.Serializable]
     public class PlayerEffects
     {
         public float maxHPEffect;
@@ -35,7 +37,7 @@ public class TownDataHolder : MonoBehaviour
     }
 
     public void Add_NewBuilding(
-        BuildType buildType,
+        int buildType,
         int level,
         Vector3 position,
         float maxHPEffect,
@@ -53,6 +55,7 @@ public class TownDataHolder : MonoBehaviour
         building.buildType = buildType;
         building.level = level;
         building.position = position;
+        //PlayerEffects building.playerEffects = new PlayerEffects();
         building.playerEffects.maxHPEffect = maxHPEffect;
         building.playerEffects.startTimeToActionEffect = startTimeToActionEffect;
         building.playerEffects.phisicalDamageEffect = phisicalDamageEffect;
