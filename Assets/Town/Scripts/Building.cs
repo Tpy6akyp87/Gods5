@@ -31,7 +31,7 @@ public class Building : MonoBehaviour
     void Start()
     {
         townData = FindObjectOfType<TownDataHolder>();
-        townData.Add_NewBuilding(buildType,level,position,maxHPEffect,startTimeToActionEffect,phisicalDamageEffect,magicDamageEffect,magicArmorEffect,healPowerEffect,lifeStealEffect,critChanceEffect,dodgeChanceEffect,phisicalArmorEffec);
+        townData.Add_NewBuilding(isBuilded, buildType,level,position,maxHPEffect,startTimeToActionEffect,phisicalDamageEffect,magicDamageEffect,magicArmorEffect,healPowerEffect,lifeStealEffect,critChanceEffect,dodgeChanceEffect,phisicalArmorEffec);
         townData.Save_Town();
     }
     void Awake()
