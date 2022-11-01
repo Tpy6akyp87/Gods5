@@ -6,6 +6,7 @@ public class Building : MonoBehaviour
 {
     public TownDataHolder townData;
 
+    public bool isBuilded;
     public int buildType;
     public int level;
     public Vector3 position;
@@ -20,6 +21,11 @@ public class Building : MonoBehaviour
     public int dodgeChanceEffect;
     public int phisicalArmorEffec;
 
+    public SpriteRenderer image;
+    public Sprite sprite0;
+    public Sprite sprite1;
+    public Sprite sprite2;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +34,33 @@ public class Building : MonoBehaviour
         townData.Add_NewBuilding(buildType,level,position,maxHPEffect,startTimeToActionEffect,phisicalDamageEffect,magicDamageEffect,magicArmorEffect,healPowerEffect,lifeStealEffect,critChanceEffect,dodgeChanceEffect,phisicalArmorEffec);
         townData.Save_Town();
     }
+    void Awake()
+    {
+        image = GetComponentInChildren<SpriteRenderer>();
+        image.sprite = sprite1;
+        //sprite = Resources.Load<Sprite>("Assets/Resources/22.png");
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (level == 0)
+        {
+            image.sprite = sprite0;
+        }
+        if (level == 1)
+        {
+            image.sprite = sprite1;
+        }
+        if (level == 2)
+        {
+            image.sprite = sprite2;
+        }
+    }
+    void OnMouseDown()
+    {
+        image.sprite = sprite2;
+        //image.sprite = Resources.Load("Assets/Resources/22.png") as Sprite;
     }
 
 

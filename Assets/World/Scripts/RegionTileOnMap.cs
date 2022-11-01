@@ -52,7 +52,7 @@ public class RegionTileOnMap : MonoBehaviour
         }
         if (!regionSaved)
         {
-            dataHolder.Add_NewRegionToList(loaded, idRegion, visitedRegion = false, visitedPoints = 99, numberOfPoints = 99, levelOfRegion, typeOfRegion = "Wild", structType, structVariant);
+            dataHolder.Add_NewRegionToList(loaded, idRegion, visitedRegion = false, visitedPoints = 99, numberOfPoints = 99, levelOfRegion, typeOfRegion, structType, structVariant);
             dataHolder.Save_RegionList();
         }
         else LoadRegionData();
@@ -103,7 +103,15 @@ public class RegionTileOnMap : MonoBehaviour
             }
         }
         dataHolder.Save_RegionList();
-        SwitchScene("ExploreScene");
+        if (typeOfRegion == "Wild")
+        {
+            SwitchScene("ExploreScene");
+        }
+        if (typeOfRegion == "Town")
+        {
+            SwitchScene("Town");
+        }
+        //SwitchScene("ExploreScene");
     }
     public void SwitchScene(string nextscene)
     {

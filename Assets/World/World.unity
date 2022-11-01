@@ -269,6 +269,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: typeOfRegion
+      value: Wild
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: levelOfRegion
       value: 2
       objectReference: {fileID: 0}
@@ -623,6 +627,10 @@ PrefabInstance:
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: typeOfRegion
+      value: Wild
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: levelOfRegion
@@ -984,6 +992,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: typeOfRegion
+      value: Town
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: levelOfRegion
       value: 6
       objectReference: {fileID: 0}
@@ -1104,6 +1116,10 @@ PrefabInstance:
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: typeOfRegion
+      value: Wild
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: levelOfRegion
@@ -1322,6 +1338,10 @@ PrefabInstance:
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: typeOfRegion
+      value: Wild
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: levelOfRegion
@@ -1560,6 +1580,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: typeOfRegion
+      value: Wild
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: levelOfRegion
       value: 8
       objectReference: {fileID: 0}
@@ -1680,6 +1704,10 @@ PrefabInstance:
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: typeOfRegion
+      value: Wild
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: levelOfRegion
@@ -1883,6 +1911,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: typeOfRegion
+      value: Wild
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: levelOfRegion
       value: 10
       objectReference: {fileID: 0}
@@ -2084,6 +2116,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: typeOfRegion
+      value: Wild
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: levelOfRegion
       value: 5
       objectReference: {fileID: 0}
@@ -2200,6 +2236,10 @@ PrefabInstance:
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: typeOfRegion
+      value: Wild
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: levelOfRegion
@@ -2322,6 +2362,10 @@ PrefabInstance:
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: typeOfRegion
+      value: Wild
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: levelOfRegion
@@ -2818,6 +2862,10 @@ PrefabInstance:
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: structType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
+      propertyPath: typeOfRegion
+      value: Wild
       objectReference: {fileID: 0}
     - target: {fileID: 3642338833434649036, guid: 8788bb1dc0fe7cd49930673aa00f987f, type: 3}
       propertyPath: levelOfRegion

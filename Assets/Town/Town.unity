@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  isBuilded: 0
   buildType: 3
   level: 0
   position: {x: 0, y: 0, z: 0}
@@ -350,6 +351,10 @@ MonoBehaviour:
   critChanceEffect: 0
   dodgeChanceEffect: 0
   phisicalArmorEffec: 0
+  image: {fileID: 0}
+  sprite0: {fileID: 21300000, guid: be58b32dcd767b44e8f6c27fb9348519, type: 3}
+  sprite1: {fileID: 21300000, guid: 37f4882042032834cadee4e14f700af9, type: 3}
+  sprite2: {fileID: 21300000, guid: 28f1dad3541586140aa48e5f087a3838, type: 3}
 --- !u!61 &94014679
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -594,8 +599,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  isBuilded: 0
   buildType: 5
-  level: 1
+  level: 0
   position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
@@ -607,6 +613,10 @@ MonoBehaviour:
   critChanceEffect: 0
   dodgeChanceEffect: 0
   phisicalArmorEffec: 0
+  image: {fileID: 0}
+  sprite0: {fileID: 21300000, guid: be58b32dcd767b44e8f6c27fb9348519, type: 3}
+  sprite1: {fileID: 21300000, guid: 37f4882042032834cadee4e14f700af9, type: 3}
+  sprite2: {fileID: 21300000, guid: 28f1dad3541586140aa48e5f087a3838, type: 3}
 --- !u!61 &282572398
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -812,6 +822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  isBuilded: 0
   buildType: 0
   level: 1
   position: {x: 0, y: 0, z: 0}
@@ -825,6 +836,10 @@ MonoBehaviour:
   critChanceEffect: 0
   dodgeChanceEffect: 0
   phisicalArmorEffec: 0
+  image: {fileID: 0}
+  sprite0: {fileID: 0}
+  sprite1: {fileID: 0}
+  sprite2: {fileID: 0}
 --- !u!61 &329840998
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1077,8 +1092,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  isBuilded: 0
   buildType: 9
-  level: 1
+  level: 0
   position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
@@ -1090,6 +1106,10 @@ MonoBehaviour:
   critChanceEffect: 0
   dodgeChanceEffect: 0
   phisicalArmorEffec: 0
+  image: {fileID: 0}
+  sprite0: {fileID: 21300000, guid: be58b32dcd767b44e8f6c27fb9348519, type: 3}
+  sprite1: {fileID: 21300000, guid: 37f4882042032834cadee4e14f700af9, type: 3}
+  sprite2: {fileID: 21300000, guid: 28f1dad3541586140aa48e5f087a3838, type: 3}
 --- !u!61 &357302294
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1213,6 +1233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  isBuilded: 0
   buildType: 2
   level: 0
   position: {x: 0, y: 0, z: 0}
@@ -1226,6 +1247,10 @@ MonoBehaviour:
   critChanceEffect: 0
   dodgeChanceEffect: 0
   phisicalArmorEffec: 0
+  image: {fileID: 0}
+  sprite0: {fileID: 21300000, guid: be58b32dcd767b44e8f6c27fb9348519, type: 3}
+  sprite1: {fileID: 21300000, guid: 37f4882042032834cadee4e14f700af9, type: 3}
+  sprite2: {fileID: 21300000, guid: 28f1dad3541586140aa48e5f087a3838, type: 3}
 --- !u!61 &383667184
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1487,6 +1512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  isBuilded: 0
   buildType: 0
   level: 1
   position: {x: 0, y: 0, z: 0}
@@ -1500,6 +1526,10 @@ MonoBehaviour:
   critChanceEffect: 0
   dodgeChanceEffect: 0
   phisicalArmorEffec: 0
+  image: {fileID: 0}
+  sprite0: {fileID: 0}
+  sprite1: {fileID: 0}
+  sprite2: {fileID: 0}
 --- !u!1 &503363414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,8 +2093,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  isBuilded: 0
   buildType: 6
-  level: 1
+  level: 0
   position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
@@ -2076,6 +2107,10 @@ MonoBehaviour:
   critChanceEffect: 0
   dodgeChanceEffect: 0
   phisicalArmorEffec: 0
+  image: {fileID: 0}
+  sprite0: {fileID: 21300000, guid: be58b32dcd767b44e8f6c27fb9348519, type: 3}
+  sprite1: {fileID: 21300000, guid: 37f4882042032834cadee4e14f700af9, type: 3}
+  sprite2: {fileID: 21300000, guid: 28f1dad3541586140aa48e5f087a3838, type: 3}
 --- !u!61 &713677931
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2565,6 +2600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  isBuilded: 0
   buildType: 0
   level: 2
   position: {x: 0, y: 0, z: 0}
@@ -2578,6 +2614,10 @@ MonoBehaviour:
   critChanceEffect: 0
   dodgeChanceEffect: 0
   phisicalArmorEffec: 0
+  image: {fileID: 0}
+  sprite0: {fileID: 0}
+  sprite1: {fileID: 0}
+  sprite2: {fileID: 0}
 --- !u!61 &835848013
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2666,6 +2706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  isBuilded: 0
   buildType: 0
   level: 5
   position: {x: 0, y: 0, z: 0}
@@ -2679,6 +2720,10 @@ MonoBehaviour:
   critChanceEffect: 0
   dodgeChanceEffect: 0
   phisicalArmorEffec: 0
+  image: {fileID: 0}
+  sprite0: {fileID: 0}
+  sprite1: {fileID: 0}
+  sprite2: {fileID: 0}
 --- !u!61 &841243816
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3330,6 +3375,139 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130861673}
   m_CullTransparentMesh: 1
+--- !u!1 &1133682446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1133682447}
+  - component: {fileID: 1133682450}
+  - component: {fileID: 1133682449}
+  - component: {fileID: 1133682448}
+  m_Layer: 5
+  m_Name: BackToWorldMap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1133682447
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133682446}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1183016138}
+  m_Father: {fileID: 1915475751}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 252.7, y: -239.1}
+  m_SizeDelta: {x: 80, y: 71.03}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1133682448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133682446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1133682449}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1915475752}
+        m_TargetAssemblyTypeName: TownUI, Assembly-CSharp
+        m_MethodName: SwitchScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: World
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1133682449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133682446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7405991, g: 1, b: 0.6933962, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1133682450
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133682446}
+  m_CullTransparentMesh: 1
 --- !u!1 &1168601093
 GameObject:
   m_ObjectHideFlags: 0
@@ -3412,6 +3590,85 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1183016137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1183016138}
+  - component: {fileID: 1183016140}
+  - component: {fileID: 1183016139}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1183016138
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183016137}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1133682447}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1183016139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183016137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.23031329, g: 0.2830189, b: 0.22027414, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Back To World Map
+--- !u!222 &1183016140
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183016137}
+  m_CullTransparentMesh: 1
 --- !u!1 &1250442528
 GameObject:
   m_ObjectHideFlags: 0
@@ -3444,8 +3701,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  isBuilded: 0
   buildType: 4
-  level: 1
+  level: 0
   position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
@@ -3457,6 +3715,10 @@ MonoBehaviour:
   critChanceEffect: 0
   dodgeChanceEffect: 0
   phisicalArmorEffec: 0
+  image: {fileID: 0}
+  sprite0: {fileID: 21300000, guid: be58b32dcd767b44e8f6c27fb9348519, type: 3}
+  sprite1: {fileID: 21300000, guid: 37f4882042032834cadee4e14f700af9, type: 3}
+  sprite2: {fileID: 21300000, guid: 28f1dad3541586140aa48e5f087a3838, type: 3}
 --- !u!61 &1250442530
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3662,8 +3924,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  isBuilded: 0
   buildType: 7
-  level: 1
+  level: 0
   position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
@@ -3675,6 +3938,10 @@ MonoBehaviour:
   critChanceEffect: 0
   dodgeChanceEffect: 0
   phisicalArmorEffec: 0
+  image: {fileID: 0}
+  sprite0: {fileID: 21300000, guid: be58b32dcd767b44e8f6c27fb9348519, type: 3}
+  sprite1: {fileID: 21300000, guid: 37f4882042032834cadee4e14f700af9, type: 3}
+  sprite2: {fileID: 21300000, guid: 28f1dad3541586140aa48e5f087a3838, type: 3}
 --- !u!61 &1307264245
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4262,6 +4529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  isBuilded: 0
   buildType: 0
   level: 3
   position: {x: 0, y: 0, z: 0}
@@ -4275,6 +4543,10 @@ MonoBehaviour:
   critChanceEffect: 0
   dodgeChanceEffect: 0
   phisicalArmorEffec: 0
+  image: {fileID: 0}
+  sprite0: {fileID: 0}
+  sprite1: {fileID: 0}
+  sprite2: {fileID: 0}
 --- !u!61 &1747816022
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4725,6 +4997,119 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1915475747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1915475751}
+  - component: {fileID: 1915475750}
+  - component: {fileID: 1915475749}
+  - component: {fileID: 1915475748}
+  - component: {fileID: 1915475752}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1915475748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915475747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1915475749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915475747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1915475750
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915475747}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 1
+  m_Camera: {fileID: 904548170}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1915475751
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915475747}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 1133682447}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &1915475752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915475747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc5d8a5970914b94282f134015ae7046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1931010183
 GameObject:
   m_ObjectHideFlags: 0
@@ -4839,6 +5224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  isBuilded: 0
   buildType: 0
   level: 4
   position: {x: 0, y: 0, z: 0}
@@ -4852,6 +5238,10 @@ MonoBehaviour:
   critChanceEffect: 0
   dodgeChanceEffect: 0
   phisicalArmorEffec: 0
+  image: {fileID: 0}
+  sprite0: {fileID: 0}
+  sprite1: {fileID: 0}
+  sprite2: {fileID: 0}
 --- !u!61 &1943822441
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5022,6 +5412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  isBuilded: 0
   buildType: 1
   level: 0
   position: {x: 0, y: 0, z: 0}
@@ -5035,6 +5426,10 @@ MonoBehaviour:
   critChanceEffect: 0
   dodgeChanceEffect: 0
   phisicalArmorEffec: 0
+  image: {fileID: 0}
+  sprite0: {fileID: 21300000, guid: be58b32dcd767b44e8f6c27fb9348519, type: 3}
+  sprite1: {fileID: 21300000, guid: 37f4882042032834cadee4e14f700af9, type: 3}
+  sprite2: {fileID: 21300000, guid: 28f1dad3541586140aa48e5f087a3838, type: 3}
 --- !u!61 &1992990432
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5101,7 +5496,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 61ee08ffd290ae342a6aeb668d2e0393, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 027a5fd37fcced8479f3ea6a118fa0cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5158,8 +5553,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  isBuilded: 0
   buildType: 8
-  level: 1
+  level: 0
   position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
@@ -5171,6 +5567,10 @@ MonoBehaviour:
   critChanceEffect: 0
   dodgeChanceEffect: 0
   phisicalArmorEffec: 0
+  image: {fileID: 0}
+  sprite0: {fileID: 21300000, guid: be58b32dcd767b44e8f6c27fb9348519, type: 3}
+  sprite1: {fileID: 21300000, guid: 37f4882042032834cadee4e14f700af9, type: 3}
+  sprite2: {fileID: 21300000, guid: 28f1dad3541586140aa48e5f087a3838, type: 3}
 --- !u!61 &2005680647
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class TownDataHolder : MonoBehaviour
     [System.Serializable]
     public class Buildings
     {
+        public bool isBuilded;
         public int buildType;
         public int level;
         public Vector3 position;
