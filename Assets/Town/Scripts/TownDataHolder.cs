@@ -38,6 +38,7 @@ public class TownDataHolder : MonoBehaviour
     }
 
     public void Add_NewBuilding(
+        bool isBuilded,
         int buildType,
         int level,
         Vector3 position,
@@ -53,6 +54,7 @@ public class TownDataHolder : MonoBehaviour
         int phisicalArmorEffect)
     {
         Buildings building = new Buildings();
+        building.isBuilded = isBuilded;
         building.buildType = buildType;
         building.level = level;
         building.position = position;
