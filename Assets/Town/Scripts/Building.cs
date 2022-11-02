@@ -62,6 +62,10 @@ public class Building : MonoBehaviour
         image.sprite = sprite2;
         //image.sprite = Resources.Load("Assets/Resources/22.png") as Sprite;
     }
+    public void UpgradeBuilding()
+    {
+        level++;
+    }
 
 
 
