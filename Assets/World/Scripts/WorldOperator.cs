@@ -17,7 +17,7 @@ public class WorldOperator : MonoBehaviour
     {
         for (int i = 0; i < regionTiles.Length; i++)
         {
-            dataHolder.Add_NewRegionToList(regionTiles[i].loaded, regionTiles[i].idRegion, regionTiles[i].visitedRegion, regionTiles[i].visitedPoints, regionTiles[i].numberOfPoints, regionTiles[i].levelOfRegion, regionTiles[i].typeOfRegion, regionTiles[i].structType = 0, regionTiles[i].structVariant);
+            dataHolder.Add_NewRegionToList(regionTiles[i].loaded, regionTiles[i].idRegion, regionTiles[i].isVisitedRegion, regionTiles[i].visitedPoints, regionTiles[i].numberOfPoints, regionTiles[i].levelOfRegion, regionTiles[i].typeOfRegion, regionTiles[i].structType = 0, regionTiles[i].structVariant);
         }
     }
 
