@@ -31,6 +31,7 @@ public class RegionTileOnMap : MonoBehaviour
     {
 
     }
+    
     void Start()
     {
         dataHolder = FindObjectOfType<WorldDataHolder>();
@@ -56,13 +57,13 @@ public class RegionTileOnMap : MonoBehaviour
             dataHolder.Save_RegionList();
         }
         else LoadRegionData();
-       
-        
     }
+
     void Update()
     {
         if (mouseOnTile)
         {
+            LoadRegionData();
             tileInfo.GetRegionData(idRegion, visitedRegion, visitedPoints, numberOfPoints, levelOfRegion, typeOfRegion);
         }
     }
