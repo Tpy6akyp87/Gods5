@@ -70,7 +70,7 @@ public class RegionTileOnMap : MonoBehaviour
 
     void OnMouseDown()
     {
-        dataHolder.Load_RegionList();
+        //dataHolder.Load_RegionList();
         for (int i = 0; i < dataHolder.regionList.regionS.Count; i++)
         {
             if (dataHolder.regionList.regionS[i].idRegion == idRegion)

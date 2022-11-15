@@ -83,6 +83,13 @@ public class WorldDataHolder : MonoBehaviour
         Load_RegionList();
         RegionTileOnMap[] regions = FindObjectsOfType<RegionTileOnMap>();
         Debug.Log("zahodil");
+        if (regionList.regionS.Count == 0)
+        {
+            for (int i = 0; i < regions.Length; i++)
+            {
+                Add_NewRegionToList(regions[i].loaded, regions[i].idRegion, regions[i].isVisitedRegion, regions[i].visitedPoints, regions[i].numberOfPoints, regions[i].levelOfRegion, regions[i].typeOfRegion, regions[i].structType, regions[i].structVariant);
+            }
+        }
         for (int i = 0; i < regions.Length; i++)
         {
             for (int j = 0; j < regionList.regionS.Count; j++)
@@ -91,12 +98,7 @@ public class WorldDataHolder : MonoBehaviour
                 {
                     regions[i].Take_Data(regionList.regionS[j]);
                 }
-                    else
-                {
-                    Add_NewRegionToList(regions[i].loaded, regions[i].idRegion, regions[i].isVisitedRegion, regions[i].visitedPoints, regions[i].numberOfPoints, regions[i].levelOfRegion, regions[i].typeOfRegion, regions[i].structType, regions[i].structVariant);
-                }
             }
-            Add_NewRegionToList(regions[i].loaded, regions[i].idRegion, regions[i].isVisitedRegion, regions[i].visitedPoints, regions[i].numberOfPoints, regions[i].levelOfRegion, regions[i].typeOfRegion, regions[i].structType, regions[i].structVariant);
         }
         Save_RegionList();
     }
@@ -113,10 +115,10 @@ public class WorldDataHolder : MonoBehaviour
 
 
 
-    [ContextMenu("Clear")]
-    public void Reset_RegionList()
-    {
-        regionList.regionS.Clear();
-        Save_RegionList();
-    }
+    //[ContextMenu("Clear")]
+    //public void Reset_RegionList()
+    //{
+    //    regionList.regionS.Clear();
+    //    Save_RegionList();
+    //}
 }
