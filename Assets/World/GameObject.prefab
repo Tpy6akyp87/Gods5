@@ -58,12 +58,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.24595052, y: 0.42403474}
-      - {x: -0.49334675, y: -0.001429677}
-      - {x: -0.24549788, y: -0.42294875}
-      - {x: 0.24599585, y: -0.4245154}
-      - {x: 0.49027327, y: 0.0009304285}
-      - {x: 0.2492873, y: 0.42416006}
+    - - {x: -0.22532205, y: 0.3869035}
+      - {x: -0.4259604, y: 0.0013207868}
+      - {x: -0.21249233, y: -0.36106333}
+      - {x: 0.22399214, y: -0.36125472}
+      - {x: 0.4228869, y: 0.0009304285}
+      - {x: 0.21628168, y: 0.38290313}
 --- !u!114 &3642338833434649036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +76,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d1bb0497a752d41a0269452f2e9736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loaded: 0
+  idRegion: 0
+  isVisitedRegion: 0
+  visitedPoints: 0
+  numberOfPoints: 0
+  levelOfRegion: 0
+  typeOfRegion: 
+  structType: 0
+  structVariant: 000000000000000000000000000000000000000000000000
+  mouseOnTile: 0
+  dataHolder: {fileID: 0}
+  tileInfo: {fileID: 0}
 --- !u!1 &4918696911599146100
 GameObject:
   m_ObjectHideFlags: 0

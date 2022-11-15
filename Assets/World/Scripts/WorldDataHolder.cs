@@ -5,14 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class WorldDataHolder : MonoBehaviour
-{    
+{
     public RegionList regionList;
     public PlayerData playerData;
 
     void Start()
     {
         playerData = FindObjectOfType<PlayerData>();
-        //Get_RegionList();
+        Get_RegionList();
     }
     [System.Serializable]
     public class RegionList
@@ -32,7 +32,7 @@ public class WorldDataHolder : MonoBehaviour
         public int structType;
         public int[] structVariant = new int[6];
         public List<Point> points;
-        
+
     }
     [System.Serializable]
     public class Point
@@ -67,7 +67,6 @@ public class WorldDataHolder : MonoBehaviour
 
     public void Save_RegionList()
     {
-        //File.WriteAllText(Application.dataPath + "/World/regionsData.json", JsonUtility.ToJson(regionList));
         playerData.worldData = regionList;
         playerData.SaveGame();
     }
@@ -75,20 +74,43 @@ public class WorldDataHolder : MonoBehaviour
     public void Load_RegionList()
     {
         playerData.LoadGame();
-        regionList = playerData.worldData; 
-        //regionList = JsonUtility.FromJson<RegionList>(File.ReadAllText(Application.dataPath + "/World/regionsData.json"));
+        regionList = playerData.worldData;
     }
 
     [ContextMenu("Get_RegionList()")]
     public void Get_RegionList()
     {
+        Load_RegionList();
         RegionTileOnMap[] regions = FindObjectsOfType<RegionTileOnMap>();
+        Debug.Log("zahodil");
         for (int i = 0; i < regions.Length; i++)
         {
+            for (int j = 0; j < regionList.regionS.Count; j++)
+            {
+                if (regions[i].idRegion == regionList.regionS[j].idRegion)
+                {
+                    regions[i].Take_Data(regionList.regionS[j]);
+                }
+                    else
+                {
+                    Add_NewRegionToList(regions[i].loaded, regions[i].idRegion, regions[i].isVisitedRegion, regions[i].visitedPoints, regions[i].numberOfPoints, regions[i].levelOfRegion, regions[i].typeOfRegion, regions[i].structType, regions[i].structVariant);
+                }
+            }
             Add_NewRegionToList(regions[i].loaded, regions[i].idRegion, regions[i].isVisitedRegion, regions[i].visitedPoints, regions[i].numberOfPoints, regions[i].levelOfRegion, regions[i].typeOfRegion, regions[i].structType, regions[i].structVariant);
         }
         Save_RegionList();
     }
+
+
+
+
+
+
+
+
+
+
+
 
 
     [ContextMenu("Clear")]
@@ -97,13 +119,4 @@ public class WorldDataHolder : MonoBehaviour
         regionList.regionS.Clear();
         Save_RegionList();
     }
-    [ContextMenu("Count")]
-    public void Count_RegionList()
-    {
-        for (int i = 0; i < regionList.regionS.Count; i++)
-        {
-            Debug.Log("id region = " + regionList.regionS[i].idRegion + ", lvl of Region = " + regionList.regionS[i].levelOfRegion);
-        }
-    }
-
 }

@@ -7,6 +7,11 @@ using UnityEngine.UI;
 public class TownDataHolder : MonoBehaviour
 {
     public Town town;
+    public PlayerData playerData;
+    void Start()
+    {
+        playerData = FindObjectOfType<PlayerData>();
+    }
     [System.Serializable]
     public class Town
     {
@@ -74,12 +79,16 @@ public class TownDataHolder : MonoBehaviour
 
     public void Save_Town()
     {
-        File.WriteAllText(Application.dataPath + "/Town/townData.json", JsonUtility.ToJson(town));
+        playerData.townData = town;
+        playerData.SaveGame();
     }
+
     public void Load_Town()
     {
-        town = JsonUtility.FromJson<Town>(File.ReadAllText(Application.dataPath + "/Town/townData.json"));
+        playerData.LoadGame();
+        town = playerData.townData;
     }
+
     [ContextMenu("Clear")]
     public void Reset_Town()
     {

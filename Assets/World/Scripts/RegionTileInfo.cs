@@ -35,10 +35,18 @@ public class RegionTileInfo : MonoBehaviour
         {
             txtvisitedRegion.text = "Не посещено";
         }
-        
         txtvisitedPoints.text = "Посещено мест " + visitedPoints.ToString();
         txtnumberOfPoints.text = "Всего мест " + numberOfPoints.ToString();
         txtlevelOfRegion.text = "Сложность региона = " + levelOfRegion.ToString();
         txttypeOfRegion.text = "Тип региона - " + typeOfRegion.ToString();
+    }
+    public void NoneRegionData()
+    {
+        txtidRegion.text = "";
+        txtvisitedRegion.text = "";
+        txtvisitedPoints.text = "" ;
+        txtnumberOfPoints.text = "";
+        txtlevelOfRegion.text = "";
+        txttypeOfRegion.text = "";
     }
 }
