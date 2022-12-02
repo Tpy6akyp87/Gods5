@@ -9,6 +9,8 @@ public class PlayerData : MonoBehaviour
 {
     public WorldDataHolder.RegionList worldData;
     public TownDataHolder.Town townData;
+    public WorldDataHolder worldDataHolder;
+    public TownDataHolder townDataHolder;
 
     [Serializable]
     class SaveData
@@ -27,7 +29,7 @@ public class PlayerData : MonoBehaviour
         data.savedTownData = townData;
         bf.Serialize(file, data);
         file.Close();
-        Debug.Log("Game data saved!");
+        //Debug.Log("Game data saved!");
     }
     public void LoadGame()
     {
@@ -41,10 +43,10 @@ public class PlayerData : MonoBehaviour
             file.Close();
             worldData = data.savedWorldData;
             townData = data.savedTownData;
-            Debug.Log("Game data loaded!");
+            //Debug.Log("Game data loaded!");
         }
         else
-            Debug.LogError("There is no save data!");
+            Debug.Log("There is no save data!");
     }
     [ContextMenu("ResetData")]
     public void ResetData()
@@ -54,18 +56,15 @@ public class PlayerData : MonoBehaviour
             File.Delete(Application.persistentDataPath + "/MySaveData.dat");
             worldData = null;
             townData = null;
-            Debug.Log("Data reset complete!");
+           // Debug.Log("Data reset complete!");
         }
         else
-            Debug.LogError("No save data to delete.");
+            Debug.Log("No save data to delete.");
     }
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
     }
 
-    // Update is called once per frame
     void Update()
     {
         

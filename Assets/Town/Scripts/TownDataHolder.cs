@@ -12,6 +12,10 @@ public class TownDataHolder : MonoBehaviour
     {
         playerData = FindObjectOfType<PlayerData>();
     }
+    public void MyOwnAwake()
+    {
+        playerData = FindObjectOfType<PlayerData>();
+    }
     [System.Serializable]
     public class Town
     {

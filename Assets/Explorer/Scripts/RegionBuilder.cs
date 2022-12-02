@@ -25,6 +25,7 @@ public class RegionBuilder : MonoBehaviour
         dataHolder = FindObjectOfType<WorldDataHolder>();
         dataHolder.Load_RegionList();
         explorer = FindObjectOfType<Explorer>();
+        //dataHolder.Load_RegionList();
         for (int i = 0; i < dataHolder.regionList.regionS.Count; i++)
         {
             if (dataHolder.regionList.regionS[i].loaded)
@@ -64,26 +65,34 @@ public class RegionBuilder : MonoBehaviour
         CountPoints();
         Save_RegionStruct();
     }
+    [ContextMenu("qw")]
     public void CountPoints()
     {
         pointArray = FindObjectsOfType<Point>();
+        explorer.pointArray = pointArray;
         numberOfPoints = pointArray.Length;
-        for (int i = 0; i < pointArray.Length; i++)
+        if (dataHolder.regionList.regionS[thisRegionID].points.Count == 0)
         {
-            WorldDataHolder.Point point = new WorldDataHolder.Point();
-            point.Xpos = pointArray[i].transform.position.x;
-            point.Ypos = pointArray[i].transform.position.y;
-            point.isVisitedPoint = false;
-            point.isVisitedPoint = pointArray[i].isVisitedPoint;
-            point.isPossibleToMove = pointArray[i].isPossibleToMove;
-            point.isExplorerOnMe = pointArray[i].isExplorerOnMe;
-            point.canGoUp = pointArray[i].canGoUp;
-            point.canGoDown = pointArray[i].canGoDown;
-            point.canGoRight = pointArray[i].canGoRight;
-            point.canGoLeft = pointArray[i].canGoLeft;
-            point.levelOfPoint = pointArray[i].levelOfPoint;
-            dataHolder.regionList.regionS[thisRegionID].points.Add(point);
+            for (int i = 0; i < pointArray.Length; i++)
+            {
+                Debug.Log("points added (Count Points)");
+                dataHolder.Add_NewPointToRegion(
+                    thisRegionID,
+                    pointArray[i].transform.position.x,
+                    pointArray[i].transform.position.y,
+                    pointArray[i].isVisitedPoint,
+                    pointArray[i].isPossibleToMove,
+                    pointArray[i].isExplorerOnMe,
+                    pointArray[i].canGoUp,
+                    pointArray[i].canGoDown,
+                    pointArray[i].canGoRight,
+                    pointArray[i].canGoLeft,
+                    pointArray[i].levelOfPoint);
+                Debug.Log("points added  RegBuil85");
+            }
+
         }
+        dataHolder.Save_RegionList();
     }
     public void Save_RegionStruct()
     {
@@ -93,11 +102,14 @@ public class RegionBuilder : MonoBehaviour
         dataHolder.regionList.regionS[thisRegionID].numberOfPoints = numberOfPoints;
         dataHolder.Save_RegionList();
     }
+    [ContextMenu("clearposition")]
     public void SwitchScene(string nextscene)
     {
+        explorer = FindObjectOfType<Explorer>();
         if (nextscene == "World")
         {
             explorer.Save_Position(new Vector3(-0.5f, -0.5f, 0.0f));
+            dataHolder.regionList.regionS[thisRegionID].points.Clear();
         }
         dataHolder.regionList.regionS[thisRegionID].loaded = false;
         Save_RegionStruct();

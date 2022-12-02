@@ -9,7 +9,7 @@ public class WorldDataHolder : MonoBehaviour
     public RegionList regionList;
     public PlayerData playerData;
 
-    void Start()
+    public void MyOwnAwake()
     {
         playerData = FindObjectOfType<PlayerData>();
         Get_RegionList();
@@ -31,11 +31,11 @@ public class WorldDataHolder : MonoBehaviour
         public string typeOfRegion;
         public int structType;
         public int[] structVariant = new int[6];
-        public List<Point> points;
+        public List<rPoint> points;
 
     }
     [System.Serializable]
-    public class Point
+    public class rPoint
     {
         public float Xpos;
         public float Ypos;
@@ -62,17 +62,40 @@ public class WorldDataHolder : MonoBehaviour
         region.typeOfRegion = typeOfRegion;
         region.structType = structType;
         region.structVariant = structVariant;
+        region.points = new List<rPoint>();
         regionList.regionS.Add(region);
+    }
+    [ContextMenu("111")]
+    public void AAA()
+    {
+        Add_NewPointToRegion(5, 2.0f, 2.0f, true, true, true, true, true, true, true, 2);
+    }
+    public void Add_NewPointToRegion(int regionId, float Xpos, float Ypos, bool isVisitedPoint, bool isPossibleToMove, bool isExplorerOnMe, bool canGoUp, bool canGoDown, bool canGoRight, bool canGoLeft, int levelOfPoint)
+    {
+        rPoint point = new rPoint();
+        point.Xpos = Xpos;
+        point.Ypos = Ypos;
+        point.isVisitedPoint = isVisitedPoint;
+        point.isPossibleToMove = isPossibleToMove;
+        point.isExplorerOnMe = isExplorerOnMe;
+        point.canGoUp = canGoUp;
+        point.canGoDown = canGoDown;
+        point.canGoRight = canGoRight;
+        point.canGoLeft = canGoLeft;
+        point.levelOfPoint = levelOfPoint;
+        regionList.regionS[regionId].points.Add(point);
     }
 
     public void Save_RegionList()
     {
         playerData.worldData = regionList;
         playerData.SaveGame();
+        Load_RegionList();
     }
     [ContextMenu("Load_RegionList()")]
     public void Load_RegionList()
     {
+        playerData = FindObjectOfType<PlayerData>();
         playerData.LoadGame();
         regionList = playerData.worldData;
     }

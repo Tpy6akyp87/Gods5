@@ -50,6 +50,15 @@ public class Point : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Debug.Log(" OnTriggerEnter2D ");
+        Debug.Log("points count  " + explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points.Count);
+        //for (int i = 0; i < explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points.Count; i++)
+        //{
+        //    if (explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Xpos == transform.position.x && explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Ypos == transform.position.y && explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].isVisitedPoint)
+        //    {
+        //        isVisitedPoint = true;
+        //    }
+        //}
         if (collision.tag == "Player")
         {
             for (int i = 0; i < explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points.Count; i++)
@@ -91,6 +100,7 @@ public class Point : MonoBehaviour
     }
     private void GetTypeOfPoint(float Xpos, float Ypos, out PointType pointType)
     {
+        //Debug.Log(" GetTypeOfPoint ");
         pointType = PointType.Battle;
         if (Xpos == -0.5 && Ypos == -0.5)
         {
@@ -100,10 +110,14 @@ public class Point : MonoBehaviour
         {
             pointType = PointType.Final;
         }
+
+        //Debug.Log("points count  " + explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points.Count);
         for (int i = 0; i < explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points.Count; i++)
         {
             if (explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Xpos == Xpos && explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Ypos == Ypos && explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].isVisitedPoint)
-                isVisitedPoint = true;
+            {
+                isVisitedPoint = true; 
+            }
         }
         if (Xpos == -0.5 || Xpos == 0.5)
         {
@@ -120,14 +134,17 @@ public class Point : MonoBehaviour
     }
     private void EventOnPoint()
     {
+        Debug.Log(" EventOnPoint " + isVisitedPoint);
         int healMinWeight = 11;
         int damagerMinWeight = 11;
         int defenderMinWeight = 7;
+        //GetTypeOfPoint(transform.position.x, transform.position.y, out pointType);
         if (!isVisitedPoint)
         {
             isVisitedPoint = true;
             if (pointType == PointType.Battle)
             {
+                
                 Debug.Log(explorer.thisRegionID + "/" + levelOfPoint);
                 enemyTeam.enemyTeam.enemyArmyWeight = enemyTeam.weight[explorer.thisRegionID, levelOfPoint];
                 enemyTeam.enemyTeam.healers = Random.Range(2, 5);
