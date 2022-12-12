@@ -43,6 +43,13 @@ public class Explorer : MonoBehaviour
         {
             MoveToPoint(nextPoint);
         }
+        else
+        {
+            for (int i = 0; i < pointArray.Length; i++)
+            {
+                pointArray[i].Check_PointPosition();
+            }
+        }
     }
 
     public void MoveToPoint(Vector3 pointPosition)
@@ -79,7 +86,10 @@ public class Explorer : MonoBehaviour
         bf.Serialize(file, data);
         file.Close();
         Debug.Log("Explorer position saved!");
-
+        for (int i = 0; i < pointArray.Length; i++)
+        {
+            pointArray[i].Check_PointPosition();
+        }
         //File.WriteAllText(Application.dataPath + "/Explorer/explorerData.json", JsonUtility.ToJson(explorerPosition));
     }
     public void Load_Position(out Vector3 explorerPosition)

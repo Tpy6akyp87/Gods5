@@ -18,6 +18,8 @@ public class Point : MonoBehaviour
     public EnemyTeamHolder enemyTeam;
     public SpriteRenderer spriteRenderer;
     public Explorer explorer;
+
+    public bool explmoveToMe;
     [SerializeField]
     PointType pointType;
     void Awake()
@@ -26,27 +28,39 @@ public class Point : MonoBehaviour
         explorer = FindObjectOfType<Explorer>();
         explorer.dataHolder.Load_RegionList();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer.color = Color.red;
         GetTypeOfPoint(transform.position.x, transform.position.y, out pointType);
         WhereExplorerCanGo();
+    }
+    private void Start()
+    {
+        Check_PointPosition();
     }
     void OnMouseDown()
     {
         if (isPossibleToMove)
         {
+            explmoveToMe = true;
             explorer.nextPoint = transform.position;
             if (explorer.transform.position.x != transform.position.x || explorer.transform.position.y != transform.position.y) explorer.needToMove = true;
         }
     }
     void Update()
     {
+        if (explmoveToMe)
+        {
+            if (explorer.transform.position == transform.position)
+            {
+                explmoveToMe = false;
+                explorer.needToMove = false;
+            }     
+        }
+
         if (canGoDown && explorer.canGoUp && (transform.position.y - 1) == explorer.transform.position.y && transform.position.x == explorer.transform.position.x) isPossibleToMove = true;
         else if (canGoUp && explorer.canGoDown && (transform.position.y + 1) == explorer.transform.position.y && transform.position.x == explorer.transform.position.x) isPossibleToMove = true;
-        else if(canGoLeft && explorer.canGoRight && transform.position.y == explorer.transform.position.y && (transform.position.x - 1) == explorer.transform.position.x) isPossibleToMove = true;
-        else if(canGoRight && explorer.canGoLeft && transform.position.y == explorer.transform.position.y && (transform.position.x + 1) == explorer.transform.position.x) isPossibleToMove = true;
+        else if (canGoLeft && explorer.canGoRight && transform.position.y == explorer.transform.position.y && (transform.position.x - 1) == explorer.transform.position.x) isPossibleToMove = true;
+        else if (canGoRight && explorer.canGoLeft && transform.position.y == explorer.transform.position.y && (transform.position.x + 1) == explorer.transform.position.x) isPossibleToMove = true;
         else isPossibleToMove = false;
-        if (isExplorerOnMe) spriteRenderer.color = Color.blue;
-        else if (!isExplorerOnMe && isPossibleToMove) spriteRenderer.color = Color.green;
-        else if (!isExplorerOnMe && !isPossibleToMove) spriteRenderer.color = Color.white;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -71,14 +85,19 @@ public class Point : MonoBehaviour
             explorer.dataHolder.Save_RegionList();
             EventOnPoint();
             isExplorerOnMe = true;
+            explorer.Save_Position(transform.position);
             if (canGoUp)
                 explorer.canGoUp = true;
+            else explorer.canGoUp = false;
             if (canGoDown)
                 explorer.canGoDown = true;
+            else explorer.canGoDown = false;
             if (canGoLeft)
                 explorer.canGoLeft = true;
+            else explorer.canGoLeft = false;
             if (canGoRight)
                 explorer.canGoRight = true;
+            else explorer.canGoRight = false;
 
             explorer.Save_Position(transform.position);
         }
@@ -159,7 +178,17 @@ public class Point : MonoBehaviour
     {
         SceneManager.LoadScene(nextscene);
     }
-
+    public void Check_PointPosition()
+    {
+        if (canGoDown && explorer.canGoUp && (transform.position.y - 1) == explorer.transform.position.y && transform.position.x == explorer.transform.position.x) isPossibleToMove = true;
+        else if (canGoUp && explorer.canGoDown && (transform.position.y + 1) == explorer.transform.position.y && transform.position.x == explorer.transform.position.x) isPossibleToMove = true;
+        else if (canGoLeft && explorer.canGoRight && transform.position.y == explorer.transform.position.y && (transform.position.x - 1) == explorer.transform.position.x) isPossibleToMove = true;
+        else if (canGoRight && explorer.canGoLeft && transform.position.y == explorer.transform.position.y && (transform.position.x + 1) == explorer.transform.position.x) isPossibleToMove = true;
+        else isPossibleToMove = false;
+        if (isExplorerOnMe) spriteRenderer.color = Color.blue;
+        else if (!isExplorerOnMe && isPossibleToMove) spriteRenderer.color = Color.green;
+        else if (!isExplorerOnMe && !isPossibleToMove) spriteRenderer.color = Color.white;
+    }
 }
 
 enum PointType
