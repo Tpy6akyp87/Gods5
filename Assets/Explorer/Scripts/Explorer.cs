@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Explorer : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class Explorer : MonoBehaviour
     public Point[] pointArray;
     public Vector3 explorerPosition;
 
+    public Text textLog;
    
     void Start()
     {
@@ -47,6 +49,7 @@ public class Explorer : MonoBehaviour
         {
             for (int i = 0; i < pointArray.Length; i++)
             {
+                pointArray[i].GetComponent<Point>().enabled = true;// помоглось?
                 pointArray[i].Check_PointPosition();
             }
         }

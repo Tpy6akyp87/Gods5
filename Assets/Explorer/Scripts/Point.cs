@@ -19,6 +19,8 @@ public class Point : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Explorer explorer;
 
+    public Point pointScript;
+
     public bool explmoveToMe;
     [SerializeField]
     PointType pointType;
@@ -31,6 +33,7 @@ public class Point : MonoBehaviour
         spriteRenderer.color = Color.red;
         GetTypeOfPoint(transform.position.x, transform.position.y, out pointType);
         WhereExplorerCanGo();
+        explorer.textLog.text += "pointAwake";
     }
     private void Start()
     {
