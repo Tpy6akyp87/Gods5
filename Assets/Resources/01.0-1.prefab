@@ -787,12 +787,15 @@ MonoBehaviour:
   isPossibleToMove: 0
   isExplorerOnMe: 0
   canGoUp: 1
-  canGoDown: 0
-  canGoRight: 1
+  canGoDown: 1
+  canGoRight: 0
   canGoLeft: 1
   levelOfPoint: 0
+  enemyTeam: {fileID: 0}
   spriteRenderer: {fileID: 0}
   explorer: {fileID: 0}
+  explmoveToMe: 0
+  pointType: 0
 --- !u!50 &2013767176057436422
 Rigidbody2D:
   serializedVersion: 4
@@ -1024,13 +1027,16 @@ MonoBehaviour:
   isVisitedPoint: 0
   isPossibleToMove: 0
   isExplorerOnMe: 0
-  canGoUp: 1
+  canGoUp: 0
   canGoDown: 1
-  canGoRight: 0
+  canGoRight: 1
   canGoLeft: 0
   levelOfPoint: 0
+  enemyTeam: {fileID: 0}
   spriteRenderer: {fileID: 0}
   explorer: {fileID: 0}
+  explmoveToMe: 0
+  pointType: 0
 --- !u!50 &2013767176126501014
 Rigidbody2D:
   serializedVersion: 4
@@ -1387,8 +1393,11 @@ MonoBehaviour:
   canGoRight: 1
   canGoLeft: 0
   levelOfPoint: 0
+  enemyTeam: {fileID: 0}
   spriteRenderer: {fileID: 0}
   explorer: {fileID: 0}
+  explmoveToMe: 0
+  pointType: 0
 --- !u!50 &2013767176648649738
 Rigidbody2D:
   serializedVersion: 4
