@@ -254,8 +254,12 @@ MonoBehaviour:
   canGoRight: 1
   canGoLeft: 1
   levelOfPoint: 0
+  enemyTeam: {fileID: 0}
   spriteRenderer: {fileID: 0}
   explorer: {fileID: 0}
+  pointScript: {fileID: 0}
+  explmoveToMe: 0
+  pointType: 0
 --- !u!50 &7118819987091871584
 Rigidbody2D:
   serializedVersion: 4
@@ -410,8 +414,12 @@ MonoBehaviour:
   canGoRight: 1
   canGoLeft: 0
   levelOfPoint: 0
+  enemyTeam: {fileID: 0}
   spriteRenderer: {fileID: 0}
   explorer: {fileID: 0}
+  pointScript: {fileID: 7118819987103875009}
+  explmoveToMe: 0
+  pointType: 0
 --- !u!50 &7118819987103875020
 Rigidbody2D:
   serializedVersion: 4
@@ -812,8 +820,12 @@ MonoBehaviour:
   canGoRight: 0
   canGoLeft: 1
   levelOfPoint: 0
+  enemyTeam: {fileID: 0}
   spriteRenderer: {fileID: 0}
   explorer: {fileID: 0}
+  pointScript: {fileID: 0}
+  explmoveToMe: 0
+  pointType: 0
 --- !u!50 &7118819987516147396
 Rigidbody2D:
   serializedVersion: 4
@@ -1214,8 +1226,12 @@ MonoBehaviour:
   canGoRight: 1
   canGoLeft: 0
   levelOfPoint: 0
+  enemyTeam: {fileID: 0}
   spriteRenderer: {fileID: 0}
   explorer: {fileID: 0}
+  pointScript: {fileID: 0}
+  explmoveToMe: 0
+  pointType: 0
 --- !u!50 &7118819987817418744
 Rigidbody2D:
   serializedVersion: 4
