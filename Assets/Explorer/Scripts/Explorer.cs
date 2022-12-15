@@ -24,7 +24,7 @@ public class Explorer : MonoBehaviour
 
     public Text textLog;
    
-    void Start()
+    void Awake()
     {
         dataHolder = FindObjectOfType<WorldDataHolder>();
         dataHolder.Load_RegionList();
@@ -93,6 +93,7 @@ public class Explorer : MonoBehaviour
         {
             pointArray[i].Check_PointPosition();
         }
+        textLog.text += "Save_Position";
         //File.WriteAllText(Application.dataPath + "/Explorer/explorerData.json", JsonUtility.ToJson(explorerPosition));
     }
     public void Load_Position(out Vector3 explorerPosition)

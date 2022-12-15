@@ -20,7 +20,6 @@ public class Point : MonoBehaviour
     public Explorer explorer;
 
     public Point pointScript;
-
     public bool explmoveToMe;
     [SerializeField]
     PointType pointType;
@@ -33,7 +32,6 @@ public class Point : MonoBehaviour
         spriteRenderer.color = Color.red;
         GetTypeOfPoint(transform.position.x, transform.position.y, out pointType);
         WhereExplorerCanGo();
-        explorer.textLog.text += "pointAwake";
     }
     private void Start()
     {
@@ -78,11 +76,13 @@ public class Point : MonoBehaviour
         //}
         if (collision.tag == "Player")
         {
+            explorer.textLog.text += "collision";
             for (int i = 0; i < explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points.Count; i++)
             {
                 if (explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Xpos == transform.position.x && explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Ypos == transform.position.y)
                 {
                     explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].isVisitedPoint = true;
+                    explorer.textLog.text += "true";
                 }
             }
             explorer.dataHolder.Save_RegionList();
@@ -101,6 +101,10 @@ public class Point : MonoBehaviour
             if (canGoRight)
                 explorer.canGoRight = true;
             else explorer.canGoRight = false;
+
+            explorer.textLog.text += canGoUp.ToString() + canGoDown.ToString() + canGoLeft.ToString() + canGoRight.ToString();
+            explorer.textLog.text += " / ";
+            explorer.textLog.text += explorer.canGoUp.ToString() + explorer.canGoDown.ToString() + explorer.canGoLeft.ToString() + explorer.canGoRight.ToString();
 
             explorer.Save_Position(transform.position);
         }
@@ -156,6 +160,7 @@ public class Point : MonoBehaviour
     }
     private void EventOnPoint()
     {
+        explorer.textLog.text += " EventOnPoint ";
         Debug.Log(" EventOnPoint " + isVisitedPoint);
         int healMinWeight = 11;
         int damagerMinWeight = 11;
@@ -163,6 +168,7 @@ public class Point : MonoBehaviour
         //GetTypeOfPoint(transform.position.x, transform.position.y, out pointType);
         if (!isVisitedPoint)
         {
+            explorer.textLog.text += " isVisitedPoint " + isVisitedPoint.ToString();
             isVisitedPoint = true;
             if (pointType == PointType.Battle)
             {
@@ -179,6 +185,7 @@ public class Point : MonoBehaviour
     }
     public void SwitchScene(string nextscene)
     {
+        explorer.textLog.text += " SwitchScene " + nextscene;
         SceneManager.LoadScene(nextscene);
     }
     public void Check_PointPosition()
