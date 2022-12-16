@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class TownUI : MonoBehaviour
 {
+    public TownDataHolder townData;
     // Start is called before the first frame update
     void Start()
     {
-        
+        townData = FindObjectOfType<TownDataHolder>();
     }
 
     // Update is called once per frame
@@ -18,6 +19,7 @@ public class TownUI : MonoBehaviour
     }
     public void SwitchScene(string nextscene)
     {
+        townData.Save_Town();
         SceneManager.LoadScene(nextscene);
     }
 }

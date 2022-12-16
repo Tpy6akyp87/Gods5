@@ -15,6 +15,7 @@ public class TownDataHolder : MonoBehaviour
     public void MyOwnAwake()
     {
         playerData = FindObjectOfType<PlayerData>();
+        Get_Buildings();
     }
     [System.Serializable]
     public class Town
@@ -24,10 +25,10 @@ public class TownDataHolder : MonoBehaviour
     [System.Serializable]
     public class Buildings
     {
+        public int idBuild;
         public bool isBuilded;
         public int buildType;
         public int level;
-        public Vector3 position;
         public PlayerEffects playerEffects = new PlayerEffects();
     }
     [System.Serializable]
@@ -47,10 +48,10 @@ public class TownDataHolder : MonoBehaviour
     }
 
     public void Add_NewBuilding(
+        int idBuild,
         bool isBuilded,
         int buildType,
         int level,
-        Vector3 position,
         float maxHPEffect,
         float startTimeToActionEffect,
         int phisicalDamageEffect,
@@ -63,10 +64,10 @@ public class TownDataHolder : MonoBehaviour
         int phisicalArmorEffect)
     {
         Buildings building = new Buildings();
+        building.idBuild = idBuild;
         building.isBuilded = isBuilded;
         building.buildType = buildType;
         building.level = level;
-        building.position = position;
         //PlayerEffects building.playerEffects = new PlayerEffects();
         building.playerEffects.maxHPEffect = maxHPEffect;
         building.playerEffects.startTimeToActionEffect = startTimeToActionEffect;
@@ -83,6 +84,17 @@ public class TownDataHolder : MonoBehaviour
 
     public void Save_Town()
     {
+        Building[] buildings = FindObjectsOfType<Building>();
+        for (int i = 0; i < buildings.Length; i++)
+        {
+            for (int j = 0; j < town.buildings.Count; j++)
+            {
+                if (buildings[i].idBuild == town.buildings[j].idBuild)
+                {
+                    town.buildings[j].level = buildings[i].level;
+                }
+            }
+        }
         playerData.townData = town;
         playerData.SaveGame();
     }
@@ -100,7 +112,43 @@ public class TownDataHolder : MonoBehaviour
         Save_Town();
     }
 
-
+    public void Get_Buildings()
+    {
+        Load_Town();
+        Building[] buildings = FindObjectsOfType<Building>();
+        if (town.buildings.Count == 0)
+        {
+            for (int i = 0; i < buildings.Length; i++)
+            {
+               Add_NewBuilding(
+               buildings[i].idBuild,
+               buildings[i].isBuilded,
+               buildings[i].buildType,
+               buildings[i].level,
+               buildings[i].maxHPEffect,
+               buildings[i].startTimeToActionEffect,
+               buildings[i].phisicalDamageEffect,
+               buildings[i].magicDamageEffect,
+               buildings[i].magicArmorEffect,
+               buildings[i].healPowerEffect,
+               buildings[i].lifeStealEffect,
+               buildings[i].critChanceEffect,
+               buildings[i].dodgeChanceEffect,
+               buildings[i].phisicalArmorEffec);
+            }
+        }
+        for (int i = 0; i < buildings.Length; i++)
+        {
+            for (int j = 0; j < town.buildings.Count; j++)
+            {
+                if (buildings[i].idBuild == town.buildings[j].idBuild)
+                {
+                    buildings[i].Take_Data(town.buildings[j]);
+                }
+            }
+        }
+        Save_Town();
+    }
 
 
 

@@ -5,11 +5,10 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     public TownDataHolder townData;
-
+    public int idBuild;
     public bool isBuilded;
     public int buildType;
     public int level;
-    public Vector3 position;
     public float maxHPEffect;
     public float startTimeToActionEffect;
     public int phisicalDamageEffect;
@@ -31,8 +30,8 @@ public class Building : MonoBehaviour
     void Start()
     {
         townData = FindObjectOfType<TownDataHolder>();
-        townData.Add_NewBuilding(isBuilded, buildType,level,position,maxHPEffect,startTimeToActionEffect,phisicalDamageEffect,magicDamageEffect,magicArmorEffect,healPowerEffect,lifeStealEffect,critChanceEffect,dodgeChanceEffect,phisicalArmorEffec);
-        townData.Save_Town();
+      //  townData.Add_NewBuilding(idBuild, isBuilded, buildType,level,maxHPEffect,startTimeToActionEffect,phisicalDamageEffect,magicDamageEffect,magicArmorEffect,healPowerEffect,lifeStealEffect,critChanceEffect,dodgeChanceEffect,phisicalArmorEffec);
+        //townData.Save_Town();
     }
     void Awake()
     {
@@ -66,6 +65,12 @@ public class Building : MonoBehaviour
     {
         level++;
     }
+    public void Take_Data(TownDataHolder.Buildings buildings)
+    {
+        isBuilded = buildings.isBuilded;
+        level = buildings.level;
+    }
+
 
 
 

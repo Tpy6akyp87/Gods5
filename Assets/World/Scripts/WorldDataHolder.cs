@@ -137,11 +137,4 @@ public class WorldDataHolder : MonoBehaviour
 
 
 
-
-    //[ContextMenu("Clear")]
-    //public void Reset_RegionList()
-    //{
-    //    regionList.regionS.Clear();
-    //    Save_RegionList();
-    //}
 }
