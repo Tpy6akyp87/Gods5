@@ -35,27 +35,27 @@ public class Field : MonoBehaviour
 
     void Start()
     {
-        enemyTeam.LoadField();
+        enemyTeam.Load_EnemyTeam();
         playerArmyWeight = 0;
 
-        for (int i = 0; i < enemyTeam.enemyTeam.healers; i++)
+        for (int i = 0; i < enemyTeam.healers; i++)
         {
             AddUnit(5);
         }
-        for (int i = 0; i < enemyTeam.enemyTeam.damagers; i++)
+        for (int i = 0; i < enemyTeam.damagers; i++)
         {
             AddUnit(0);
         }
-        for (int i = 0; i < enemyTeam.enemyTeam.defenders; i++)
+        for (int i = 0; i < enemyTeam.defenders; i++)
         {
             AddUnit(1);
         }
-        enemyArmyWeightText.text = enemyTeam.enemyTeam.enemyArmyWeight.ToString();
+        enemyArmyWeightText.text = enemyTeam.enemyArmyWeight.ToString();
     }
     public void Awake()
     {
         enemyTeam = FindObjectOfType<EnemyTeamHolder>();
-        enemyTeam.LoadField();
+        enemyTeam.Load_EnemyTeam();
         eHeal = Resources.Load<EnemyHealer>("EnemyHealer"); //5
         eDam = Resources.Load<EnemyDamager>("EnemyDamager"); //0
         eDef = Resources.Load<EnemyDefender>("EnemyDefender"); //1
@@ -159,8 +159,8 @@ public class Field : MonoBehaviour
                 case 7: x = 7; break;
             }
             EnemyDamager neweDam = Instantiate(eDam, new Vector3(x, 4, 0), eDam.transform.rotation) as EnemyDamager;
-            neweDam.maxHP = Mathf.RoundToInt(neweDam.maxHP*enemyTeam.enemyTeam.enemyArmyWeight / 100);
-            neweDam.magicDamage = Mathf.RoundToInt(neweDam.magicDamage*enemyTeam.enemyTeam.enemyArmyWeight / 100);
+            neweDam.maxHP = Mathf.RoundToInt(neweDam.maxHP*enemyTeam.enemyArmyWeight / 100);
+            neweDam.magicDamage = Mathf.RoundToInt(neweDam.magicDamage*enemyTeam.enemyArmyWeight / 100);
             countOf0++;
         }
         if (numberOFUnit == 1 && countOf1 < 8)
@@ -177,11 +177,11 @@ public class Field : MonoBehaviour
                 case 7: x = 7; break;
             }
             EnemyDefender neweDam = Instantiate(eDef, new Vector3(x, 3, 0), eDam.transform.rotation) as EnemyDefender;
-            neweDam.maxHP = Mathf.RoundToInt(neweDam.maxHP*(enemyTeam.enemyTeam.enemyArmyWeight / 100));
-            neweDam.phisicalDamage = Mathf.RoundToInt(neweDam.phisicalDamage*(enemyTeam.enemyTeam.enemyArmyWeight / 100));
+            neweDam.maxHP = Mathf.RoundToInt(neweDam.maxHP*(enemyTeam.enemyArmyWeight / 100));
+            neweDam.phisicalDamage = Mathf.RoundToInt(neweDam.phisicalDamage*(enemyTeam.enemyArmyWeight / 100));
             countOf1++;
         }
-        if (numberOFUnit == 2 && countOf2 < 8 && (playerArmyWeight + defender.minWeight) <= enemyTeam.enemyTeam.enemyArmyWeight)
+        if (numberOFUnit == 2 && countOf2 < 8 && (playerArmyWeight + defender.minWeight) <= enemyTeam.enemyArmyWeight)
         {
             switch (countOf2)
             {
@@ -199,7 +199,7 @@ public class Field : MonoBehaviour
             playerArmyWeightText.text = playerArmyWeight.ToString();
             countOf2++;
         }
-        if (numberOFUnit == 3 && countOf3 < 8 && (playerArmyWeight + damager.minWeight) <= enemyTeam.enemyTeam.enemyArmyWeight)
+        if (numberOFUnit == 3 && countOf3 < 8 && (playerArmyWeight + damager.minWeight) <= enemyTeam.enemyArmyWeight)
         {
             switch (countOf3)
             {
@@ -218,7 +218,7 @@ public class Field : MonoBehaviour
             playerArmyWeightText.text = playerArmyWeight.ToString();
             countOf3++;
         }
-        if (numberOFUnit == 4 && countOf4 < 8 && (playerArmyWeight + healer.minWeight) <= enemyTeam.enemyTeam.enemyArmyWeight)
+        if (numberOFUnit == 4 && countOf4 < 8 && (playerArmyWeight + healer.minWeight) <= enemyTeam.enemyArmyWeight)
         {
             switch (countOf4)
             {
@@ -250,8 +250,8 @@ public class Field : MonoBehaviour
                 case 7: x = 7; break;
             }
             EnemyHealer neweDam = Instantiate(eHeal, new Vector3(x, 5, 0), eDam.transform.rotation) as EnemyHealer;
-            neweDam.maxHP = Mathf.RoundToInt(neweDam.maxHP*enemyTeam.enemyTeam.enemyArmyWeight / 100);
-            neweDam.healPower = Mathf.RoundToInt(neweDam.healPower*enemyTeam.enemyTeam.enemyArmyWeight / 100);
+            neweDam.maxHP = Mathf.RoundToInt(neweDam.maxHP*enemyTeam.enemyArmyWeight / 100);
+            neweDam.healPower = Mathf.RoundToInt(neweDam.healPower*enemyTeam.enemyArmyWeight / 100);
             countOf5++;
         }
     }

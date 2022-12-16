@@ -139,6 +139,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2898799916941776694, guid: 72b85a4f49230154fa6f4b292cb900d9, type: 3}
+      propertyPath: textEx
+      value: 
+      objectReference: {fileID: 1853897828}
+    - target: {fileID: 2898799916941776694, guid: 72b85a4f49230154fa6f4b292cb900d9, type: 3}
       propertyPath: textLog
       value: 
       objectReference: {fileID: 1854743201}
@@ -504,11 +508,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13937ac9404078d4da14fcf3dca23d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTeam:
-    enemyArmyWeight: 0
-    healers: 0
-    damagers: 0
-    defenders: 0
+  enemyArmyWeight: 0
+  healers: 0
+  damagers: 0
+  defenders: 0
 --- !u!224 &990525557 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5172101305869842219, guid: 2ee0af3aa2b4dad4c9c5a48a7180a137, type: 3}
@@ -691,8 +694,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 2.34, y: -515}
-  m_SizeDelta: {x: 854.23, y: 81.99}
+  m_AnchoredPosition: {x: -211.81, y: 107}
+  m_SizeDelta: {x: 386.61, y: 81.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1853897828
 MonoBehaviour:
@@ -770,7 +773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -532.39, y: -360}
+  m_AnchoredPosition: {x: -1274, y: -360}
   m_SizeDelta: {x: 215.23, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1854743201

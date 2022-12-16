@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
 
+
 public class Point : MonoBehaviour
 {
     public bool isVisitedPoint;
@@ -65,15 +66,6 @@ public class Point : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log(" OnTriggerEnter2D ");
-        Debug.Log("points count  " + explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points.Count);
-        //for (int i = 0; i < explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points.Count; i++)
-        //{
-        //    if (explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Xpos == transform.position.x && explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Ypos == transform.position.y && explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].isVisitedPoint)
-        //    {
-        //        isVisitedPoint = true;
-        //    }
-        //}
         if (collision.tag == "Player")
         {
             explorer.textLog.text += "collision";
@@ -82,13 +74,12 @@ public class Point : MonoBehaviour
                 if (explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Xpos == transform.position.x && explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].Ypos == transform.position.y)
                 {
                     explorer.dataHolder.regionList.regionS[explorer.thisRegionID].points[i].isVisitedPoint = true;
-                    explorer.textLog.text += "true";
                 }
             }
             explorer.dataHolder.Save_RegionList();
             EventOnPoint();
             isExplorerOnMe = true;
-            explorer.Save_Position(transform.position);
+            //explorer.Save_Position(transform.position);
             if (canGoUp)
                 explorer.canGoUp = true;
             else explorer.canGoUp = false;
@@ -170,15 +161,20 @@ public class Point : MonoBehaviour
         {
             explorer.textLog.text += " isVisitedPoint " + isVisitedPoint.ToString();
             isVisitedPoint = true;
+            explorer.textLog.text += " if " + pointType.ToString() + PointType.Battle.ToString();
             if (pointType == PointType.Battle)
             {
-                
-                Debug.Log(explorer.thisRegionID + "/" + levelOfPoint);
-                enemyTeam.enemyTeam.enemyArmyWeight = enemyTeam.weight[explorer.thisRegionID, levelOfPoint];
-                enemyTeam.enemyTeam.healers = Random.Range(2, 5);
-                enemyTeam.enemyTeam.damagers = Random.Range(2, Mathf.FloorToInt((100 - enemyTeam.enemyTeam.healers * healMinWeight) / damagerMinWeight));
-                enemyTeam.enemyTeam.defenders = Mathf.FloorToInt((100 - enemyTeam.enemyTeam.healers * healMinWeight - enemyTeam.enemyTeam.damagers * damagerMinWeight) / defenderMinWeight);
-                File.WriteAllText(Application.dataPath + "/Battle/enemyTeam.json", JsonUtility.ToJson(enemyTeam.enemyTeam));
+                explorer.textLog.text += "1 SwSc";
+                enemyTeam.enemyArmyWeight = enemyTeam.weight[explorer.thisRegionID, levelOfPoint];
+                explorer.textLog.text += "2 SwSc";
+                enemyTeam.healers = Random.Range(2, 5);
+                explorer.textLog.text += "3 SwSc";
+                enemyTeam.damagers = Random.Range(2, Mathf.FloorToInt((100 - enemyTeam.healers * healMinWeight) / damagerMinWeight));
+                explorer.textLog.text += "4 SwSc";
+                enemyTeam.defenders = Mathf.FloorToInt((100 - enemyTeam.healers * healMinWeight - enemyTeam.damagers * damagerMinWeight) / defenderMinWeight); 
+                explorer.textLog.text += "5 SwSc";
+                enemyTeam.Save_EnemyTeam();
+                explorer.textLog.text += "6 SwSc";
                 SwitchScene("BattleScene");
             }
         }
@@ -199,7 +195,10 @@ public class Point : MonoBehaviour
         else if (!isExplorerOnMe && isPossibleToMove) spriteRenderer.color = Color.green;
         else if (!isExplorerOnMe && !isPossibleToMove) spriteRenderer.color = Color.white;
     }
+
+    
 }
+
 
 enum PointType
 {

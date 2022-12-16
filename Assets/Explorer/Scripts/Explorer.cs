@@ -23,7 +23,8 @@ public class Explorer : MonoBehaviour
     public Vector3 explorerPosition;
 
     public Text textLog;
-   
+    public Text textEx;
+
     void Awake()
     {
         dataHolder = FindObjectOfType<WorldDataHolder>();
@@ -43,10 +44,12 @@ public class Explorer : MonoBehaviour
     {
         if (needToMove)
         {
+            textEx.text = "needToMove = " + needToMove.ToString();
             MoveToPoint(nextPoint);
         }
         else
         {
+            textEx.text = "needToMove = " + needToMove.ToString();
             for (int i = 0; i < pointArray.Length; i++)
             {
                 pointArray[i].GetComponent<Point>().enabled = true;// помоглось?
@@ -89,12 +92,6 @@ public class Explorer : MonoBehaviour
         bf.Serialize(file, data);
         file.Close();
         Debug.Log("Explorer position saved!");
-        for (int i = 0; i < pointArray.Length; i++)
-        {
-            pointArray[i].Check_PointPosition();
-        }
-        textLog.text += "Save_Position";
-        //File.WriteAllText(Application.dataPath + "/Explorer/explorerData.json", JsonUtility.ToJson(explorerPosition));
     }
     public void Load_Position(out Vector3 explorerPosition)
     {
@@ -115,9 +112,6 @@ public class Explorer : MonoBehaviour
         }
         else
             Debug.Log("There is no Explorer position!");
-
-        
-        //transform.position = JsonUtility.FromJson<Vector3>(File.ReadAllText(Application.dataPath + "/Explorer/explorerData.json"));
     }
     [System.Serializable]
     class SaveData
