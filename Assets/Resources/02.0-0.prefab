@@ -172,8 +172,12 @@ MonoBehaviour:
   canGoRight: 0
   canGoLeft: 0
   levelOfPoint: 0
+  enemyTeam: {fileID: 0}
   spriteRenderer: {fileID: 0}
   explorer: {fileID: 0}
+  pointScript: {fileID: 0}
+  explmoveToMe: 0
+  pointType: 0
 --- !u!50 &1193152918904540365
 Rigidbody2D:
   serializedVersion: 4
@@ -221,7 +225,7 @@ Transform:
   m_GameObject: {fileID: 1193152918998823422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1193152918904540364}
   m_RootOrder: 1
@@ -266,8 +270,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -9
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.3270737, g: 0.9245283, b: 0.46181175, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 5cd9d96dd488b2d4fa0ffcf978cc637b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -410,8 +414,12 @@ MonoBehaviour:
   canGoRight: 1
   canGoLeft: 0
   levelOfPoint: 0
+  enemyTeam: {fileID: 0}
   spriteRenderer: {fileID: 0}
   explorer: {fileID: 0}
+  pointScript: {fileID: 0}
+  explmoveToMe: 0
+  pointType: 0
 --- !u!50 &1193152919012219477
 Rigidbody2D:
   serializedVersion: 4
@@ -459,7 +467,7 @@ Transform:
   m_GameObject: {fileID: 1193152919022617578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1193152919629294345}
   m_RootOrder: 1
@@ -504,8 +512,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -9
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.6933962, g: 0.7669215, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0034f4cf6217f7c4f8e2d3fe14eba6c4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -787,7 +795,7 @@ Transform:
   m_GameObject: {fileID: 1193152919413623076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1193152919771631613}
   m_RootOrder: 1
@@ -832,8 +840,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -9
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.6933962, g: 0.7669215, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0034f4cf6217f7c4f8e2d3fe14eba6c4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1115,7 +1123,7 @@ Transform:
   m_GameObject: {fileID: 1193152919583873287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1193152919012219476}
   m_RootOrder: 1
@@ -1160,8 +1168,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -9
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.6933962, g: 0.7669215, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0034f4cf6217f7c4f8e2d3fe14eba6c4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1304,8 +1312,12 @@ MonoBehaviour:
   canGoRight: 1
   canGoLeft: 0
   levelOfPoint: 0
+  enemyTeam: {fileID: 0}
   spriteRenderer: {fileID: 0}
   explorer: {fileID: 0}
+  pointScript: {fileID: 0}
+  explmoveToMe: 0
+  pointType: 0
 --- !u!50 &1193152919629294346
 Rigidbody2D:
   serializedVersion: 4
@@ -1542,8 +1554,12 @@ MonoBehaviour:
   canGoRight: 0
   canGoLeft: 1
   levelOfPoint: 0
+  enemyTeam: {fileID: 0}
   spriteRenderer: {fileID: 0}
   explorer: {fileID: 0}
+  pointScript: {fileID: 0}
+  explmoveToMe: 0
+  pointType: 0
 --- !u!50 &1193152919771631614
 Rigidbody2D:
   serializedVersion: 4
