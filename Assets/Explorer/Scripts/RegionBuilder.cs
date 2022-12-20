@@ -73,6 +73,17 @@ public class RegionBuilder : MonoBehaviour
         pointArray = FindObjectsOfType<Point>();
         explorer.pointArray = pointArray;
         numberOfPoints = pointArray.Length;
+        for (int i = 0; i < pointArray.Length; i++)
+        {
+            if (pointArray[i].canGoUp)
+            {
+                GameObject neweRoad = Instantiate(road, pointArray[i].transform.position + new Vector3(0, 0.5f, 0), Quaternion.Euler(0f, 0f, 90f)) as GameObject;
+            }
+            if (pointArray[i].canGoRight)
+            {
+                GameObject neweRoad = Instantiate(road, pointArray[i].transform.position + new Vector3(0.5f, 0f, 0), Quaternion.Euler(0f, 0f, 0f)) as GameObject;
+            }
+        }
         if (dataHolder.regionList.regionS[thisRegionID].points.Count == 0)
         {
             for (int i = 0; i < pointArray.Length; i++)
@@ -90,15 +101,6 @@ public class RegionBuilder : MonoBehaviour
                     pointArray[i].canGoRight,
                     pointArray[i].canGoLeft,
                     pointArray[i].levelOfPoint);
-                if (pointArray[i].canGoUp)
-                {
-                    GameObject neweRoad = Instantiate(road, pointArray[i].transform.position + new Vector3(0, 0.5f, 0), Quaternion.Euler(0f,0f,90f)) as GameObject;
-                }
-                if (pointArray[i].canGoRight)
-                {
-                    GameObject neweRoad = Instantiate(road, pointArray[i].transform.position + new Vector3(0.5f, 0f, 0), Quaternion.Euler(0f, 0f, 0f)) as GameObject;
-                }
-
                 Debug.Log("points added  RegBuil85");
             }
 
