@@ -19,6 +19,7 @@ public class Point : MonoBehaviour
     public EnemyTeamHolder enemyTeam;
     public SpriteRenderer spriteRenderer;
     public Explorer explorer;
+   // public Animator animator;
 
     public Point pointScript;
     public bool explmoveToMe;
@@ -26,17 +27,20 @@ public class Point : MonoBehaviour
     PointType pointType;
     void Awake()
     {
+        //animator = GetComponent<>
         enemyTeam = FindObjectOfType<EnemyTeamHolder>();
         explorer = FindObjectOfType<Explorer>();
         explorer.dataHolder.Load_RegionList();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        spriteRenderer.color = Color.red;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        //spriteRenderer.color = Color.red;
+        spriteRenderer.sprite = Resources.Load("Assets/Resources/Sprites/battlePoint/battlePoint1.png") as Sprite;
         GetTypeOfPoint(transform.position.x, transform.position.y, out pointType);
         WhereExplorerCanGo();
     }
     private void Start()
     {
         Check_PointPosition();
+        spriteRenderer.sprite = Resources.Load("Assets/Resources/Sprites/battlePoint/battlePoint1.png") as Sprite;
     }
     void OnMouseDown()
     {
@@ -49,6 +53,7 @@ public class Point : MonoBehaviour
     }
     void Update()
     {
+        spriteRenderer.sprite = Resources.Load("Assets/Resources/Sprites/battlePoint/battlePoint1.png") as Sprite;
         if (explmoveToMe)
         {
             if (explorer.transform.position == transform.position)
