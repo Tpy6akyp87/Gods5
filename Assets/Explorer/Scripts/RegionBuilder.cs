@@ -21,6 +21,7 @@ public class RegionBuilder : MonoBehaviour
     public Point [] pointArray;
     public Explorer explorer;
     public GameObject road;
+    public GameObject roadVert;
     void Start()
     {
         dataHolder = FindObjectOfType<WorldDataHolder>();
@@ -57,6 +58,7 @@ public class RegionBuilder : MonoBehaviour
         tile11 = Resources.Load<GameObject>(structType.ToString() + structVariant[4].ToString() + ".1-1");
         tile21 = Resources.Load<GameObject>(structType.ToString() + structVariant[5].ToString() + ".2-1");
         road = Resources.Load<GameObject>("Road");
+        roadVert = Resources.Load<GameObject>("RoadVert");
 
         GameObject neweTile00 = Instantiate(tile00, new Vector3(0f, 0f, 0), tile00.transform.rotation) as GameObject;
         GameObject neweTile10 = Instantiate(tile10, new Vector3(2f, 0f, 0), tile10.transform.rotation) as GameObject;
@@ -77,7 +79,7 @@ public class RegionBuilder : MonoBehaviour
         {
             if (pointArray[i].canGoUp)
             {
-                GameObject neweRoad = Instantiate(road, pointArray[i].transform.position + new Vector3(0, 0.5f, 0), Quaternion.Euler(0f, 0f, 90f)) as GameObject;
+                GameObject neweRoad = Instantiate(roadVert, pointArray[i].transform.position + new Vector3(0, 0.5f, 0), Quaternion.Euler(0f, 0f, 0f)) as GameObject;
             }
             if (pointArray[i].canGoRight)
             {
