@@ -20,11 +20,14 @@ public class TownDataHolder : MonoBehaviour
     [System.Serializable]
     public class Town
     {
+        public int townLevel;
+
         public List<Buildings> buildings;
     }
     [System.Serializable]
     public class Buildings
     {
+        public int weightBuild;
         public int idBuild;
         public bool isBuilded;
         public int buildType;
@@ -48,6 +51,7 @@ public class TownDataHolder : MonoBehaviour
     }
 
     public void Add_NewBuilding(
+        int weightBuild,
         int idBuild,
         bool isBuilded,
         int buildType,
@@ -64,6 +68,7 @@ public class TownDataHolder : MonoBehaviour
         int phisicalArmorEffect)
     {
         Buildings building = new Buildings();
+        building.weightBuild = weightBuild;
         building.idBuild = idBuild;
         building.isBuilded = isBuilded;
         building.buildType = buildType;
@@ -121,6 +126,7 @@ public class TownDataHolder : MonoBehaviour
             for (int i = 0; i < buildings.Length; i++)
             {
                Add_NewBuilding(
+               buildings[i].weightBuild,
                buildings[i].idBuild,
                buildings[i].isBuilded,
                buildings[i].buildType,

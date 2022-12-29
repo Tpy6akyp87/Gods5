@@ -10,6 +10,7 @@ public class Field : MonoBehaviour
     public EnemyTeamHolder enemyTeam;
     public Text enemyArmyWeightText;
     public Text playerArmyWeightText;
+    public int playerArmyLimit;
     public int playerArmyWeight;
     [SerializeField]
     private string nextscene = null;

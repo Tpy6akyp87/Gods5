@@ -5,6 +5,7 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     public TownDataHolder townData;
+    public int weightBuild;
     public int idBuild;
     public bool isBuilded;
     public int buildType;

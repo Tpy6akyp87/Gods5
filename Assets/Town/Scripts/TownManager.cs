@@ -14,6 +14,7 @@ public class TownManager : MonoBehaviour
         for (int i = 0; i < buildings.Length; i++)
         {
             townData.Add_NewBuilding(
+                buildings[i].weightBuild,
                 buildings[i].idBuild, 
                 buildings[i].isBuilded, 
                 buildings[i].buildType, 
