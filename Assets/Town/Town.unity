@@ -458,11 +458,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  weightBuild: 10
   idBuild: 3
   isBuilded: 0
   buildType: 3
   level: 0
-  position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 0
@@ -721,11 +721,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  weightBuild: 10
   idBuild: 5
   isBuilded: 0
   buildType: 5
   level: 0
-  position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 0
@@ -945,11 +945,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  weightBuild: 0
   idBuild: 0
   isBuilded: 0
   buildType: 0
   level: 1
-  position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 0
@@ -1216,11 +1216,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  weightBuild: 10
   idBuild: 9
   isBuilded: 0
   buildType: 9
   level: 0
-  position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 0
@@ -1358,11 +1358,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  weightBuild: 10
   idBuild: 2
   isBuilded: 0
   buildType: 2
   level: 0
-  position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 0
@@ -1638,11 +1638,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  weightBuild: 0
   idBuild: 0
   isBuilded: 0
   buildType: 0
   level: 1
-  position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 0
@@ -2220,11 +2220,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  weightBuild: 10
   idBuild: 6
   isBuilded: 0
   buildType: 6
   level: 0
-  position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 0
@@ -2728,11 +2728,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  weightBuild: 0
   idBuild: 0
   isBuilded: 0
   buildType: 0
   level: 2
-  position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 0
@@ -2835,11 +2835,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  weightBuild: 0
   idBuild: 0
   isBuilded: 0
   buildType: 0
   level: 5
-  position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 0
@@ -3021,6 +3021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   town:
+    townLevel: 0
     buildings: []
   playerData: {fileID: 0}
 --- !u!114 &904548174
@@ -3949,11 +3950,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  weightBuild: 10
   idBuild: 4
   isBuilded: 0
   buildType: 4
   level: 0
-  position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 0
@@ -4173,11 +4174,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  weightBuild: 10
   idBuild: 7
   isBuilded: 0
   buildType: 7
   level: 0
-  position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 0
@@ -4489,6 +4490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   town:
+    townLevel: 0
     buildings: []
   playerData: {fileID: 0}
 --- !u!61 &1488556030
@@ -4916,11 +4918,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  weightBuild: 0
   idBuild: 0
   isBuilded: 0
   buildType: 0
   level: 3
-  position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 0
@@ -5622,6 +5624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5d8a5970914b94282f134015ae7046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  townData: {fileID: 0}
 --- !u!1 &1931010183
 GameObject:
   m_ObjectHideFlags: 0
@@ -5736,11 +5739,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  weightBuild: 0
   idBuild: 0
   isBuilded: 0
   buildType: 0
   level: 4
-  position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 0
@@ -5925,11 +5928,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  weightBuild: 10
   idBuild: 1
   isBuilded: 0
   buildType: 1
   level: 0
-  position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 3
@@ -6068,11 +6071,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   townData: {fileID: 0}
+  weightBuild: 10
   idBuild: 8
   isBuilded: 0
   buildType: 8
   level: 0
-  position: {x: 0, y: 0, z: 0}
   maxHPEffect: 0
   startTimeToActionEffect: 0
   phisicalDamageEffect: 0

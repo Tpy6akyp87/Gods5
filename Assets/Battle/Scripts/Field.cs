@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class Field : MonoBehaviour
 {
+    public PlayerData playerData;
     public EnemyTeamHolder enemyTeam;
     public Text enemyArmyWeightText;
     public Text playerArmyWeightText;
@@ -37,6 +38,9 @@ public class Field : MonoBehaviour
     void Start()
     {
         enemyTeam.Load_EnemyTeam();
+        playerData = FindObjectOfType<PlayerData>();
+        playerData.LoadGame();
+        playerArmyLimit = 100 + playerData.townData.townLevel;
         playerArmyWeight = 0;
 
         for (int i = 0; i < enemyTeam.healers; i++)

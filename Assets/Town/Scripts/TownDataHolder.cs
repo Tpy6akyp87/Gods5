@@ -16,6 +16,13 @@ public class TownDataHolder : MonoBehaviour
     {
         playerData = FindObjectOfType<PlayerData>();
         Get_Buildings();
+        for (int i = 0; i < town.buildings.Count; i++)
+        {
+            if (town.buildings[i].isBuilded)
+            {
+                town.townLevel += town.buildings[i].weightBuild;
+            }
+        }
     }
     [System.Serializable]
     public class Town
@@ -97,6 +104,7 @@ public class TownDataHolder : MonoBehaviour
                 if (buildings[i].idBuild == town.buildings[j].idBuild)
                 {
                     town.buildings[j].level = buildings[i].level;
+                    town.buildings[j].isBuilded = buildings[i].isBuilded;
                 }
             }
         }

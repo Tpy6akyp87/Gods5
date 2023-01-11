@@ -65,17 +65,13 @@ public class Building : MonoBehaviour
     public void UpgradeBuilding()
     {
         level++;
+        isBuilded = true;
     }
     public void Take_Data(TownDataHolder.Buildings buildings)
     {
         isBuilded = buildings.isBuilded;
         level = buildings.level;
     }
-
-
-
-
-
 
     public enum BuildType
     {

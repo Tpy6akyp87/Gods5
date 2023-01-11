@@ -12,6 +12,7 @@ public class WorldDataHolder : MonoBehaviour
     public void MyOwnAwake()
     {
         playerData = FindObjectOfType<PlayerData>();
+        playerData.playerArmyLimit = 100 + playerData.townData.townLevel;
         Get_RegionList();
     }
     [System.Serializable]
@@ -65,11 +66,11 @@ public class WorldDataHolder : MonoBehaviour
         region.points = new List<rPoint>();
         regionList.regionS.Add(region);
     }
-    [ContextMenu("111")]
-    public void AAA()
-    {
-        Add_NewPointToRegion(5, 2.0f, 2.0f, true, true, true, true, true, true, true, 2);
-    }
+    //[ContextMenu("111")]
+    //public void AAA()
+    //{
+    //    Add_NewPointToRegion(5, 2.0f, 2.0f, true, true, true, true, true, true, true, 2);
+    //}
     public void Add_NewPointToRegion(int regionId, float Xpos, float Ypos, bool isVisitedPoint, bool isPossibleToMove, bool isExplorerOnMe, bool canGoUp, bool canGoDown, bool canGoRight, bool canGoLeft, int levelOfPoint)
     {
         rPoint point = new rPoint();
@@ -105,7 +106,6 @@ public class WorldDataHolder : MonoBehaviour
     {
         Load_RegionList();
         RegionTileOnMap[] regions = FindObjectsOfType<RegionTileOnMap>();
-        Debug.Log("zahodil");
         if (regionList.regionS.Count == 0)
         {
             for (int i = 0; i < regions.Length; i++)
@@ -125,16 +125,4 @@ public class WorldDataHolder : MonoBehaviour
         }
         Save_RegionList();
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }
