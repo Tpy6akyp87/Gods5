@@ -12,7 +12,7 @@ public class MySceneManager : MonoBehaviour
         dataHolder.MyOwnAwake();
         townData = FindObjectOfType<TownDataHolder>();
         townData.MyOwnAwake();
-        Debug.Log("MySceneManager");
+        dataHolder.GetPlArmLvl();
     }
 
 }

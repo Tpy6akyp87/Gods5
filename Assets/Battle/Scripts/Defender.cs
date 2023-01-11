@@ -13,12 +13,14 @@ public class Defender : CharBattle
         field = FindObjectOfType<Field>();
         hp = maxHP;
         hpBar = GetComponentInChildren<Image>();
+        playerData = FindObjectOfType<PlayerData>();
     }
 
     void Update()
     {
         if (hp <= 0)
         {
+            playerData.playerArmyLimit -= minWeight;
             Die();
         }
         if (timeToStepForward)

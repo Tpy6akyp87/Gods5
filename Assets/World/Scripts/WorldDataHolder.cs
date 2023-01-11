@@ -12,7 +12,6 @@ public class WorldDataHolder : MonoBehaviour
     public void MyOwnAwake()
     {
         playerData = FindObjectOfType<PlayerData>();
-        playerData.playerArmyLimit = 100 + playerData.townData.townLevel;
         Get_RegionList();
     }
     [System.Serializable]
@@ -124,5 +123,14 @@ public class WorldDataHolder : MonoBehaviour
             }
         }
         Save_RegionList();
+    }
+    public void GetPlArmLvl()
+    {
+        playerData.LoadGame();
+        if (playerData.playerArmyLimit == 0)
+        {
+            playerData.playerArmyLimit = 100 + playerData.townData.townLevel;
+        }
+        playerData.SaveGame();
     }
 }

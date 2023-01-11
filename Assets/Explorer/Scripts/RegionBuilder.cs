@@ -125,6 +125,7 @@ public class RegionBuilder : MonoBehaviour
         {
             explorer.Save_Position(new Vector3(-0.5f, -0.5f, 0.0f));
             dataHolder.regionList.regionS[thisRegionID].points.Clear();
+            dataHolder.playerData.playerArmyLimit = 0;
         }
         dataHolder.regionList.regionS[thisRegionID].loaded = false;
         Save_RegionStruct();

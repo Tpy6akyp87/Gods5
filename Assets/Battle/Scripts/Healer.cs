@@ -15,6 +15,7 @@ public class Healer : CharBattle
         field = FindObjectOfType<Field>();
         hp = maxHP;
         hpBar = GetComponentInChildren<Image>();
+        playerData = FindObjectOfType<PlayerData>();
     }
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class Healer : CharBattle
         if (hp <= 0)
         {
             Die();
+            playerData.playerArmyLimit -= minWeight;
         }
         if (timeToStepForward)
         {

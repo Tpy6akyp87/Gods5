@@ -31,7 +31,8 @@ public class UnitBattle : MonoBehaviour
     public bool timeToAttack;
     public bool timeToStepForward;
     public float timeToAction;
-    
+
+    public PlayerData playerData;
 
     public bool start;
 
@@ -42,7 +43,7 @@ public class UnitBattle : MonoBehaviour
         hp = maxHP;
         hpBar = GetComponentInChildren<Image>();
     }
-
+    
     // Update is called once per frame
     void Update()
     {

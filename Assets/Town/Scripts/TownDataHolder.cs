@@ -16,6 +16,7 @@ public class TownDataHolder : MonoBehaviour
     {
         playerData = FindObjectOfType<PlayerData>();
         Get_Buildings();
+        town.townLevel = 0;
         for (int i = 0; i < town.buildings.Count; i++)
         {
             if (town.buildings[i].isBuilded)

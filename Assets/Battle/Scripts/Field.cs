@@ -263,6 +263,7 @@ public class Field : MonoBehaviour
 
     public void EndBattle()
     {
+        playerData.SaveGame();//*
         SceneManager.LoadScene(nextscene);
     }
     

@@ -14,6 +14,7 @@ public class Damager : CharBattle
         field = FindObjectOfType<Field>();
         hp = maxHP;
         hpBar = GetComponentInChildren<Image>();
+        playerData = FindObjectOfType<PlayerData>();
     }
 
     // Update is called once per frame
@@ -21,6 +22,7 @@ public class Damager : CharBattle
     {
         if (hp <= 0)
         {
+            playerData.playerArmyLimit -= minWeight;
             Die();
         }
         if (timeToStepForward)
