@@ -24,6 +24,7 @@ public class RegionTileOnMap : MonoBehaviour
     
     void Start()
     {
+        levelOfRegion = idRegion;
         dataHolder = FindObjectOfType<WorldDataHolder>();
         tileInfo = FindObjectOfType<RegionTileInfo>();
     }

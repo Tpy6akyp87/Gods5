@@ -26,7 +26,7 @@ public class Building : MonoBehaviour
     public Sprite sprite1;
     public Sprite sprite2;
 
-
+    public int[] priceToBuild = new int[9];
     // Start is called before the first frame update
     void Start()
     {
