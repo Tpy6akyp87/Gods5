@@ -5,37 +5,47 @@ using UnityEngine.EventSystems;
 
 public class MapMove : MonoBehaviour
 {
-    public bool isDraging;
-    public Vector3 usePosition;
-    public Vector3 newPosition;
-    // Start is called before the first frame update
-    void Start()
+    public Vector3 Origin;
+    public Vector3 Difference;
+    public Vector3 ResetCamera;
+
+    public bool drag = false;
+
+
+
+    private void Start()
     {
-        transform.position = new Vector3(2.54f, 1.7f, 0.0f);
-        newPosition = transform.position;
+        ResetCamera = Camera.main.transform.position;
     }
 
-    // Update is called once per frame
-   
-    void Update()
+    private void Update()
     {
-        Vector3 myMousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f);
-        usePosition = new Vector3(Camera.main.ScreenToWorldPoint(myMousePosition).x, Camera.main.ScreenToWorldPoint(myMousePosition).y, 0.0f);
-        if (isDraging)
+       
+    }
+    private void LateUpdate()
+    {
+        if (Input.GetMouseButton(0))
         {
-            //Vector3 newPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f);
-            
-            
-            newPosition = new Vector3(transform.position.x, transform.position.y, 0.0f);
-            transform.position = new Vector3(Camera.main.ScreenToWorldPoint(myMousePosition).x + newPosition.x, Camera.main.ScreenToWorldPoint(myMousePosition).y + newPosition.y, 0.0f) ;
+            Difference = (Camera.main.ScreenToWorldPoint(Input.mousePosition)) - Camera.main.transform.position;
+            if (drag == false)
+            {
+                drag = true;
+                Origin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            }
+
         }
-    }
-    void OnMouseDown()
-    {
-        isDraging = true;
-    }
-    void OnMouseUp()
-    {
-        isDraging = false;        
+        else
+        {
+            drag = false;
+        }
+
+        if (drag)
+        {
+            Camera.main.transform.position = Origin - Difference * 0.5f;
+        }
+
+        if (Input.GetMouseButton(1))
+            Camera.main.transform.position = ResetCamera;
+
     }
 }
