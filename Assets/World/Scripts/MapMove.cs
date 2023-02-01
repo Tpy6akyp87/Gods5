@@ -44,7 +44,7 @@ public class MapMove : MonoBehaviour
 
         if (drag)
         {
-            Camera.main.transform.position = Origin - Difference * 0.5f;
+            Camera.main.transform.position = Origin - Difference;// * 0.5f;
         }
 
         if (Input.GetMouseButton(1))

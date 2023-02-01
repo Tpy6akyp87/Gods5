@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class camScr : MonoBehaviour
 {
+    public float xUP;
+    public float xDOWN;
+    public float yUP;
+    public float yDOWN;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,9 +17,9 @@ public class camScr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x < 1.478423f) transform.position = new Vector3(1.478423f, transform.position.y, transform.position.z);
-        if (transform.position.x > 7.074637) transform.position = new Vector3(7.074637f, transform.position.y, transform.position.z);
-        if (transform.position.y < -0.8268458f) transform.position = new Vector3(transform.position.x, -0.8268458f, transform.position.z);
-        if (transform.position.y > 2.573785f) transform.position = new Vector3(transform.position.x, 2.573785f, transform.position.z);
+        if (transform.position.x < xDOWN) transform.position = new Vector3(xDOWN, transform.position.y, transform.position.z);
+        if (transform.position.x > xUP) transform.position = new Vector3(xUP, transform.position.y, transform.position.z);
+        if (transform.position.y < yDOWN) transform.position = new Vector3(transform.position.x, yDOWN, transform.position.z);
+        if (transform.position.y > yUP) transform.position = new Vector3(transform.position.x, yUP, transform.position.z);
     }
 }
