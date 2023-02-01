@@ -8,6 +8,7 @@ public class MapMove : MonoBehaviour
     public Vector3 Origin;
     public Vector3 Difference;
     public Vector3 ResetCamera;
+    public GameObject World;
 
     public bool drag = false;
 
@@ -22,14 +23,16 @@ public class MapMove : MonoBehaviour
     {
        
     }
+
     private void LateUpdate()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetKey(KeyCode.Mouse0)) // (0))// .GetMouseButton(0))
         {
             Difference = (Camera.main.ScreenToWorldPoint(Input.mousePosition)) - Camera.main.transform.position;
             if (drag == false)
             {
                 drag = true;
+                Debug.Log(" drag = true;");
                 Origin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             }
 

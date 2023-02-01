@@ -20,13 +20,18 @@ public class RegionTileOnMap : MonoBehaviour
     public bool mouseOnTile;
     public WorldDataHolder dataHolder;
     public RegionTileInfo tileInfo;
-      
-    
+
+    public Button yesButton;
+    public Button cancelButton;
+
+
     void Start()
     {
         levelOfRegion = idRegion;
         dataHolder = FindObjectOfType<WorldDataHolder>();
         tileInfo = FindObjectOfType<RegionTileInfo>();
+        yesButton.gameObject.SetActive(false);
+        cancelButton.gameObject.SetActive(false);
     }
 
     public void Take_Data(WorldDataHolder.Region savedRegion)
@@ -71,7 +76,29 @@ public class RegionTileOnMap : MonoBehaviour
 
     void OnMouseDown()
     {
-        //dataHolder.Load_RegionList();
+        yesButton.gameObject.SetActive(true);
+        cancelButton.gameObject.SetActive(true);
+
+        //for (int i = 0; i < dataHolder.regionList.regionS.Count; i++)
+        //{
+        //    if (dataHolder.regionList.regionS[i].idRegion == idRegion)
+        //    {
+        //        dataHolder.regionList.regionS[i].loaded = true;
+        //    }
+        //}
+        //dataHolder.Save_RegionList();
+        //if (typeOfRegion == "Wild")
+        //{
+        //    SwitchScene("ExploreScene");
+        //}
+        //if (typeOfRegion == "Town")
+        //{
+        //    SwitchScene("Town");
+        //}
+    }
+    public void YesButton()
+    {
+        Debug.Log("YesButton");
         for (int i = 0; i < dataHolder.regionList.regionS.Count; i++)
         {
             if (dataHolder.regionList.regionS[i].idRegion == idRegion)
@@ -88,9 +115,13 @@ public class RegionTileOnMap : MonoBehaviour
         {
             SwitchScene("Town");
         }
-        //SwitchScene("ExploreScene");
     }
-    public void SwitchScene(string nextscene)
+    public void CancelButton()
+    {
+        yesButton.gameObject.SetActive(false);
+        cancelButton.gameObject.SetActive(false);
+    }
+        public void SwitchScene(string nextscene)
     {
         SceneManager.LoadScene(nextscene);
     }
