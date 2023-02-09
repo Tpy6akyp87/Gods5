@@ -5,6 +5,8 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     public TownDataHolder townData;
+    public ResourseHolder resourses;
+    public ResourseHolder.Resourses coast;
     public int weightBuild;
     public int idBuild;
     public bool isBuilded;
@@ -30,6 +32,7 @@ public class Building : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        resourses = FindObjectOfType<ResourseHolder>();
         townData = FindObjectOfType<TownDataHolder>();
       //  townData.Add_NewBuilding(idBuild, isBuilded, buildType,level,maxHPEffect,startTimeToActionEffect,phisicalDamageEffect,magicDamageEffect,magicArmorEffect,healPowerEffect,lifeStealEffect,critChanceEffect,dodgeChanceEffect,phisicalArmorEffec);
         //townData.Save_Town();
@@ -64,15 +67,47 @@ public class Building : MonoBehaviour
     }
     public void UpgradeBuilding()
     {
-        level++;
-        isBuilded = true;
+        resourses.Load_Resourses();
+        bool isEnought = false;
+        ResMinsCoast(resourses, coast, out isEnought);
+        if (isEnought)
+        {
+            resourses.resources.stone -= coast.stone;
+            resourses.resources.wood -= coast.wood;
+            resourses.resources.clay -= coast.clay;
+            resourses.resources.fiber -= coast.fiber;
+            resourses.resources.iron -= coast.iron;
+            resourses.resources.charcoal -= coast.charcoal;
+            resourses.resources.cloth -= coast.cloth;
+            resourses.resources.skyStone -= coast.skyStone;
+            resourses.resources.fireStone -= coast.fireStone;
+            resourses.Save_Resourses();
+            level++;
+            isBuilded = true;
+        }
+        
+        
     }
     public void Take_Data(TownDataHolder.Buildings buildings)
     {
         isBuilded = buildings.isBuilded;
         level = buildings.level;
     }
-
+    public void ResMinsCoast(ResourseHolder resourses, ResourseHolder.Resourses coast, out bool enought)
+    {
+        enought = false;
+        if (
+            resourses.resources.stone >= coast.stone &&
+            resourses.resources.wood >= coast.wood &&
+            resourses.resources.clay >= coast.clay &&
+            resourses.resources.fiber >= coast.fiber &&
+            resourses.resources.iron >= coast.iron &&
+            resourses.resources.charcoal >= coast.charcoal &&
+            resourses.resources.cloth >= coast.cloth &&
+            resourses.resources.skyStone >= coast.skyStone &&
+            resourses.resources.fireStone >= coast.fireStone
+            ) enought = true;
+    }
     public enum BuildType
     {
         WindMill,

@@ -9,6 +9,7 @@ public class PlayerData : MonoBehaviour
 {
     public WorldDataHolder.RegionList worldData;
     public TownDataHolder.Town townData;
+    public ResourseHolder.Resourses resourseData;
     public int playerArmyLimit;
     //public WorldDataHolder worldDataHolder;
     //public TownDataHolder townDataHolder;
@@ -18,6 +19,7 @@ public class PlayerData : MonoBehaviour
     {
         public WorldDataHolder.RegionList savedWorldData;
         public TownDataHolder.Town savedTownData;
+        public ResourseHolder.Resourses savedResourseData;
         public int savedPlayerArmyLimit;
     }
 
@@ -29,6 +31,7 @@ public class PlayerData : MonoBehaviour
         SaveData data = new SaveData();
         data.savedWorldData = worldData;
         data.savedTownData = townData;
+        data.savedResourseData = resourseData;
         data.savedPlayerArmyLimit = playerArmyLimit;
         bf.Serialize(file, data);
         file.Close();
@@ -45,6 +48,7 @@ public class PlayerData : MonoBehaviour
             file.Close();
             worldData = data.savedWorldData;
             townData = data.savedTownData;
+            resourseData = data.savedResourseData;
             playerArmyLimit = data.savedPlayerArmyLimit;
         }
         else
@@ -58,6 +62,7 @@ public class PlayerData : MonoBehaviour
             File.Delete(Application.persistentDataPath + "/MySaveData.dat");
             worldData = null;
             townData = null;
+            resourseData = null;
             playerArmyLimit = 0;
         }
         else

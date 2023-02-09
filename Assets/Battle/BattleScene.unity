@@ -1926,8 +1926,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
-  - component: {fileID: 519420030}
-  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1943,22 +1941,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13937ac9404078d4da14fcf3dca23d20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyArmyWeight: 0
-  healers: 0
-  damagers: 0
-  defenders: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -2028,22 +2010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee6f86b8ff1c209448bf85a6231c6309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b2f23ce24887564c9f34a572e87f52c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  town:
-    townLevel: 0
-    buildings: []
-  playerData: {fileID: 0}
 --- !u!1 &552510725
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,6 +3307,110 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &989117754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 989117759}
+  - component: {fileID: 989117758}
+  - component: {fileID: 989117757}
+  - component: {fileID: 989117756}
+  - component: {fileID: 989117755}
+  m_Layer: 0
+  m_Name: Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &989117755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989117754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47ffd3aa68fecf4f9022173cac03933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regionList:
+    regionS: []
+  playerData: {fileID: 0}
+--- !u!114 &989117756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989117754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2f23ce24887564c9f34a572e87f52c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  town:
+    townLevel: 0
+    buildings: []
+  playerData: {fileID: 0}
+--- !u!114 &989117757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989117754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7eaa11b622638f4da75b56341d354f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resources:
+    stone: 0
+    wood: 0
+    clay: 0
+    fiber: 0
+    iron: 0
+    charcoal: 0
+    cloth: 0
+    skyStone: 0
+    fireStone: 0
+  playerData: {fileID: 0}
+--- !u!114 &989117758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989117754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13937ac9404078d4da14fcf3dca23d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyArmyWeight: 0
+  healers: 0
+  damagers: 0
+  defenders: 0
+--- !u!4 &989117759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989117754}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6658378, y: 1.647186, z: -12.3265295}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1092599521
 GameObject:
   m_ObjectHideFlags: 0

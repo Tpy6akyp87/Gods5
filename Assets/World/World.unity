@@ -1161,6 +1161,7 @@ GameObject:
   - component: {fileID: 849151941}
   - component: {fileID: 849151942}
   - component: {fileID: 849151937}
+  - component: {fileID: 849151939}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -1209,6 +1210,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &849151939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849151936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7eaa11b622638f4da75b56341d354f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resources:
+    stone: 0
+    wood: 0
+    clay: 0
+    fiber: 0
+    iron: 0
+    charcoal: 0
+    cloth: 0
+    skyStone: 0
+    fireStone: 0
+  playerData: {fileID: 0}
 --- !u!114 &849151940
 MonoBehaviour:
   m_ObjectHideFlags: 0
