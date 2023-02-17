@@ -27,7 +27,7 @@ public class ResourseHolder : MonoBehaviour
         public int skyStone;
         public int fireStone;
     }
-    public void Get_Resourses()
+    public void Get_Resourses()// для получения лута нужно сделать метод для вызова из эндофбатл, со случайно генерацией кол-ва ресурсов. + ввести ресурс опыта.
     {
         playerData.LoadGame();
         Load_Resourses();

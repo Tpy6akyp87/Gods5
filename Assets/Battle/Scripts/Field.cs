@@ -27,6 +27,7 @@ public class Field : MonoBehaviour
     public Damager damager;
     public Healer healer;
     public UnitBattle[] units;
+    public EndOfBattle endOfBattle;
 
     int countOf0 = 0;
     int countOf1 = 0;
@@ -37,6 +38,7 @@ public class Field : MonoBehaviour
 
     void Start()
     {
+        endOfBattle = FindObjectOfType<EndOfBattle>();
         enemyTeam.Load_EnemyTeam();
         playerData = FindObjectOfType<PlayerData>();
         playerData.LoadGame();
@@ -125,6 +127,7 @@ public class Field : MonoBehaviour
         units = FindObjectsOfType<UnitBattle>();
         if (start)
         {
+            endOfBattle.startCount = true;
             for (int i = 0; i < units.Length; i++)
             {
                 units[i].start = true;
@@ -132,6 +135,7 @@ public class Field : MonoBehaviour
         }
         else
         {
+            endOfBattle.startCount = false;
             for (int i = 0; i < units.Length; i++)
             {
                 units[i].hp = 0;

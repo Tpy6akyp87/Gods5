@@ -212,6 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 35158567}
   - component: {fileID: 35158568}
+  - component: {fileID: 35158569}
   m_Layer: 0
   m_Name: Field
   m_TagString: Untagged
@@ -307,6 +308,20 @@ MonoBehaviour:
   damager: {fileID: 0}
   healer: {fileID: 0}
   units: []
+--- !u!114 &35158569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35158566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f48c54856b7bfb4fb815dc645f75ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBattles: []
+  charBattles: []
 --- !u!1 &62126095
 GameObject:
   m_ObjectHideFlags: 0

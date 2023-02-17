@@ -33,11 +33,13 @@ public class UnitBattle : MonoBehaviour
     public float timeToAction;
 
     public PlayerData playerData;
+    
 
     public bool start;
 
     void Start()
     {
+        
         UpdatePosition();
         field = FindObjectOfType<Field>();
         hp = maxHP;
@@ -59,12 +61,14 @@ public class UnitBattle : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
+        
         Debug.Log("Somebody die");
         field.CheckSide((int)Xpos, (int)Ypos);
         field.CheckLine(1, 0, -1);
         field.CheckLine(2, 1, 0);
         field.CheckLine(3, 4, 5);
         field.CheckLine(4, 5, 6);
+        //field.endOfBattle.CountOf_Army();
     }
     public void UpdatePosition()
     {
