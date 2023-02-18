@@ -38,8 +38,7 @@ public class EndOfBattle : MonoBehaviour
                 Debug.Log("false");
             }
             startCount = false;
-            resourseHolder.resources.charcoal += Mathf.RoundToInt(12*field.enemyTeam.enemyArmyWeight/100);
-            resourseHolder.Save_Resourses();
+            resourseHolder.Get_Resourses(field.enemyTeam.enemyArmyWeight);
         }
     
         if (charBattles.Length == 0)
