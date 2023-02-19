@@ -40,7 +40,7 @@ public class Building : MonoBehaviour
     void Awake()
     {
         image = GetComponentInChildren<SpriteRenderer>();
-        image.sprite = sprite1;
+        //image.sprite = sprite1;
         //sprite = Resources.Load<Sprite>("Assets/Resources/22.png");
     }
 
@@ -49,7 +49,7 @@ public class Building : MonoBehaviour
     {
         if (level == 0)
         {
-            image.sprite = sprite0;
+            //image.sprite = sprite0;
         }
         if (level == 1)
         {

@@ -8,10 +8,13 @@ public class ResourseHolder : MonoBehaviour
 {
     public Resourses resources;
     public PlayerData playerData;
+    public ResouceInfo resouceInfo;
     void Start()
     {
         playerData = FindObjectOfType<PlayerData>();
+        resouceInfo = FindObjectOfType<ResouceInfo>();
         Load_Resourses();
+        resouceInfo.GetResouces_Info(resources.stone, resources.wood, resources.clay, resources.fiber, resources.iron, resources.charcoal, resources.cloth, resources.skyStone, resources.fireStone);
        // Get_Resourses();
 
     }
@@ -99,10 +102,12 @@ public class ResourseHolder : MonoBehaviour
     {
         playerData.LoadGame();
         resources = playerData.resourseData;
+        resouceInfo.GetResouces_Info(resources.stone, resources.wood, resources.clay, resources.fiber, resources.iron, resources.charcoal, resources.cloth, resources.skyStone, resources.fireStone);
     }
     public void Save_Resourses()
     {
         playerData.resourseData = resources;
         playerData.SaveGame();
+        resouceInfo.GetResouces_Info(resources.stone, resources.wood, resources.clay, resources.fiber, resources.iron, resources.charcoal, resources.cloth, resources.skyStone, resources.fireStone);
     }
 }
