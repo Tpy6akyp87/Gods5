@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Building : MonoBehaviour
 {
@@ -27,14 +28,21 @@ public class Building : MonoBehaviour
     public Sprite sprite0;
     public Sprite sprite1;
     public Sprite sprite2;
+    public Button buildButton;
+    public Button cancelButton;
+
+    public TownUI townUI;
 
     public int[] priceToBuild = new int[9];
     // Start is called before the first frame update
     void Start()
     {
+        townUI = FindObjectOfType<TownUI>();
         resourses = FindObjectOfType<ResourseHolder>();
         townData = FindObjectOfType<TownDataHolder>();
-      //  townData.Add_NewBuilding(idBuild, isBuilded, buildType,level,maxHPEffect,startTimeToActionEffect,phisicalDamageEffect,magicDamageEffect,magicArmorEffect,healPowerEffect,lifeStealEffect,critChanceEffect,dodgeChanceEffect,phisicalArmorEffec);
+        buildButton.gameObject.SetActive(false);
+        cancelButton.gameObject.SetActive(false);
+        //  townData.Add_NewBuilding(idBuild, isBuilded, buildType,level,maxHPEffect,startTimeToActionEffect,phisicalDamageEffect,magicDamageEffect,magicArmorEffect,healPowerEffect,lifeStealEffect,critChanceEffect,dodgeChanceEffect,phisicalArmorEffec);
         //townData.Save_Town();
     }
     void Awake()
@@ -62,11 +70,21 @@ public class Building : MonoBehaviour
     }
     void OnMouseDown()
     {
-        image.sprite = sprite2;
+        buildButton.gameObject.SetActive(true);
+        cancelButton.gameObject.SetActive(true);
+        townUI.Get_TownInfo(buildType.ToString(), isBuilded,level, coast.stone, coast.wood, coast.clay, coast.fiber, coast.iron, coast.charcoal, coast.cloth, coast.skyStone, coast.fireStone);
+        //town Info
+        //image.sprite = sprite2;
         //image.sprite = Resources.Load("Assets/Resources/22.png") as Sprite;
+    }
+    public void CancelButton()
+    {
+        buildButton.gameObject.SetActive(false);
+        cancelButton.gameObject.SetActive(false);
     }
     public void UpgradeBuilding()
     {
+        Debug.Log("UpgradeBuilding");
         resourses.Load_Resourses();
         bool isEnought = false;
         ResMinsCoast(resourses, coast, out isEnought);
@@ -85,8 +103,9 @@ public class Building : MonoBehaviour
             level++;
             isBuilded = true;
         }
-        
-        
+        townUI.Get_TownInfo(buildType.ToString(), isBuilded, level, coast.stone, coast.wood, coast.clay, coast.fiber, coast.iron, coast.charcoal, coast.cloth, coast.skyStone, coast.fireStone);
+
+
     }
     public void Take_Data(TownDataHolder.Buildings buildings)
     {
