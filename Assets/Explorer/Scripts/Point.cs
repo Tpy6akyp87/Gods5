@@ -19,6 +19,7 @@ public class Point : MonoBehaviour
     public EnemyTeamHolder enemyTeam;
     public SpriteRenderer spriteRenderer;
     public Explorer explorer;
+    public ResourseHolder resourseHolder;
    // public Animator animator;
 
     public Point pointScript;
@@ -40,6 +41,7 @@ public class Point : MonoBehaviour
     private void Start()
     {
         Check_PointPosition();
+        resourseHolder = FindObjectOfType<ResourseHolder>();
         spriteRenderer.sprite = Resources.Load("Assets/Resources/Sprites/battlePoint/battlePoint1.png") as Sprite;
     }
     void OnMouseDown()
@@ -53,7 +55,7 @@ public class Point : MonoBehaviour
     }
     void Update()
     {
-        spriteRenderer.sprite = Resources.Load("Assets/Resources/Sprites/battlePoint/battlePoint1.png") as Sprite;
+        //spriteRenderer.sprite = Resources.Load("Assets/Resources/Sprites/battlePoint/battlePoint1.png") as Sprite;
         if (explmoveToMe)
         {
             if (explorer.transform.position == transform.position)
@@ -124,6 +126,23 @@ public class Point : MonoBehaviour
     {
         //Debug.Log(" GetTypeOfPoint ");
         pointType = PointType.Battle;
+        int rnd = Random.Range(0, 100);
+        if (rnd <15)
+        {
+            pointType = PointType.Treasure;
+        }
+        if (rnd >= 15 && rnd < 30)
+        {
+            pointType = PointType.Lore;
+        }
+        if (rnd >= 30 && rnd < 50)
+        {
+            pointType = PointType.Exp;
+        }
+        if (rnd >= 50)
+        {
+            pointType = PointType.Battle;
+        }
         if (Xpos == -0.5 && Ypos == -0.5)
         {
             pointType = PointType.Start;
@@ -182,6 +201,25 @@ public class Point : MonoBehaviour
                 explorer.textLog.text += "6 SwSc";
                 SwitchScene("BattleScene");
             }
+            if (pointType == PointType.Treasure)
+            {
+                resourseHolder.Get_Resourses(Random.Range(100, 300));
+                Debug.Log("gain Random Res ");
+            }
+            if (pointType == PointType.Lore)
+            {
+                Debug.Log(" упил мужик шл€пу, а она ему как раз");
+            }
+            if (pointType == PointType.Exp)
+            {
+                int exp = Random.Range(30, 70);
+                Debug.Log("gain exp = " + exp);
+                resourseHolder.resources.exp += exp;
+            }
+            if (pointType == PointType.Final)
+            {
+                SwitchScene("World");
+            }
         }
     }
     public void SwitchScene(string nextscene)
@@ -210,6 +248,7 @@ enum PointType
     Start,
     Battle,
     Treasure,
+    Exp,
     Lore,
     Final
 }

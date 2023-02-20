@@ -3773,6 +3773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5d8a5970914b94282f134015ae7046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  townData: {fileID: 598436490}
   tname: {fileID: 690833266}
   tisBiulded: {fileID: 466186314}
   tlevel: {fileID: 1477584393}
@@ -6806,6 +6807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5d8a5970914b94282f134015ae7046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  townData: {fileID: 0}
   tname: {fileID: 0}
   tisBiulded: {fileID: 0}
   tlevel: {fileID: 0}

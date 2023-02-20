@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class TownUI : MonoBehaviour
 {
+    public TownDataHolder townData;
+
     public Text tname;
     public Text tisBiulded;
     public Text tlevel;
@@ -18,6 +20,10 @@ public class TownUI : MonoBehaviour
     public Text tcoastCloth;
     public Text tcoastSkystone;
     public Text tcoastFirestone;
+    void Start()
+    {
+        townData = FindObjectOfType<TownDataHolder>();
+    }
 
     public void Get_TownInfo(string name, bool isBuilded, int level, int coastStone, int coastWood, int coastClay, int coastFiber, int coastIron, int coastCharcoal, int coastCloth, int coastSkystone, int coastFirestone)
     {
@@ -34,5 +40,11 @@ public class TownUI : MonoBehaviour
         tcoastCloth.text = coastCloth.ToString();
         tcoastSkystone.text = coastSkystone.ToString();
         tcoastFirestone.text = coastFirestone.ToString();
+    }
+
+    public void SwitchScene(string nextscene)
+    {
+        townData.Save_Town();
+        SceneManager.LoadScene(nextscene);
     }
 }
