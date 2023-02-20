@@ -169,6 +169,8 @@ MonoBehaviour:
   enemyTeam: {fileID: 0}
   spriteRenderer: {fileID: 0}
   explorer: {fileID: 0}
+  resourseHolder: {fileID: 0}
+  animator: {fileID: 0}
   pointScript: {fileID: 0}
   explmoveToMe: 0
   pointType: 0
@@ -347,6 +349,8 @@ MonoBehaviour:
   enemyTeam: {fileID: 0}
   spriteRenderer: {fileID: 0}
   explorer: {fileID: 0}
+  resourseHolder: {fileID: 0}
+  animator: {fileID: 0}
   pointScript: {fileID: 7118819987103875009}
   explmoveToMe: 0
   pointType: 0
@@ -525,6 +529,8 @@ MonoBehaviour:
   enemyTeam: {fileID: 0}
   spriteRenderer: {fileID: 0}
   explorer: {fileID: 0}
+  resourseHolder: {fileID: 0}
+  animator: {fileID: 0}
   pointScript: {fileID: 0}
   explmoveToMe: 0
   pointType: 0
@@ -703,6 +709,8 @@ MonoBehaviour:
   enemyTeam: {fileID: 0}
   spriteRenderer: {fileID: 0}
   explorer: {fileID: 0}
+  resourseHolder: {fileID: 0}
+  animator: {fileID: 0}
   pointScript: {fileID: 0}
   explmoveToMe: 0
   pointType: 0

@@ -20,7 +20,7 @@ public class Point : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Explorer explorer;
     public ResourseHolder resourseHolder;
-   // public Animator animator;
+    public Animator animator;
 
     public Point pointScript;
     public bool explmoveToMe;
@@ -28,21 +28,35 @@ public class Point : MonoBehaviour
     PointType pointType;
     void Awake()
     {
-        //animator = GetComponent<>
+        animator = GetComponentInChildren<Animator>();
         enemyTeam = FindObjectOfType<EnemyTeamHolder>();
         explorer = FindObjectOfType<Explorer>();
         explorer.dataHolder.Load_RegionList();
         spriteRenderer = GetComponent<SpriteRenderer>();
         //spriteRenderer.color = Color.red;
-        spriteRenderer.sprite = Resources.Load("Assets/Resources/Sprites/battlePoint/battlePoint1.png") as Sprite;
         GetTypeOfPoint(transform.position.x, transform.position.y, out pointType);
+        if (pointType == PointType.Treasure)
+        {
+            animator.SetInteger("State",1);
+            //spriteRenderer.sprite = Resources.Load("Assets/Explorer/Images/treasure.png") as Sprite;
+        }
+        if (pointType == PointType.Lore)
+        {
+            animator.SetInteger("State", 2);
+            //spriteRenderer.sprite = Resources.Load("Assets/Explorer/Images/treasure.png") as Sprite;
+        }
+        if (pointType == PointType.Exp)
+        {
+            animator.SetInteger("State", 3);
+            //spriteRenderer.sprite = Resources.Load("Assets/Explorer/Images/treasure.png") as Sprite;
+        }
+        //spriteRenderer.sprite = Resources.Load("Assets/Resources/Sprites/battlePoint/battlePoint1.png") as Sprite;
         WhereExplorerCanGo();
     }
     private void Start()
     {
         Check_PointPosition();
         resourseHolder = FindObjectOfType<ResourseHolder>();
-        spriteRenderer.sprite = Resources.Load("Assets/Resources/Sprites/battlePoint/battlePoint1.png") as Sprite;
     }
     void OnMouseDown()
     {
