@@ -8,6 +8,7 @@ public class HexGen : MonoBehaviour
     public GameObject chunk1;
     public GameObject chunk2;
     public GameObject EnemyStart;
+    public Queue queue;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,8 @@ public class HexGen : MonoBehaviour
         GameObject newchunk1 = Instantiate(chunk1, new Vector3(0f, 0f, 0f), chunk1.transform.rotation) as GameObject;
         GameObject newchunk2 = Instantiate(chunk2, new Vector3(0f, 0f, 0f), chunk2.transform.rotation) as GameObject;
         GameObject newEnemyStart = Instantiate(EnemyStart, new Vector3(0f, 0f, 0f), EnemyStart.transform.rotation) as GameObject;
+        queue = FindObjectOfType<Queue>();
+        queue.MyStart();
     }
 
     // Update is called once per frame
