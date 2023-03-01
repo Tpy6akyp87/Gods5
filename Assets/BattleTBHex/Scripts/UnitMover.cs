@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class UnitMover : MonoBehaviour
+public class UnitMover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public bool myTurn;
     public float moveDistance;
@@ -56,7 +57,18 @@ public class UnitMover : MonoBehaviour
     void Update()
     {
         if (myTurn) sprite.color = Color.green;
-        else sprite.color = Color.white;
+        //else sprite.color = Color.white;
     }
 
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Debug.Log("OnPointerExit");
+        sprite.color = Color.white;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("OnPointerUp");
+        sprite.color = Color.blue;
+    }
 }

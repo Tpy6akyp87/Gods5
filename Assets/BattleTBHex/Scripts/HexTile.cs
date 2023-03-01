@@ -34,7 +34,6 @@ public class HexTile : MonoBehaviour
     }
     public void Check_OnMe()
     {
-        Debug.Log("Check_OnMe");
         UnitMover[] unitMovers;
         unitMovers = FindObjectsOfType<UnitMover>();
         empty = true;

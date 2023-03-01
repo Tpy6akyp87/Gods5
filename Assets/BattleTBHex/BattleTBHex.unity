@@ -337,7 +337,6 @@ MonoBehaviour:
   moveDistance: 1
   speed: 1
   initative: 2
-  target: 0
   sprite: {fileID: 0}
   queue: {fileID: 0}
 --- !u!212 &1467437174
@@ -466,7 +465,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 9b1b44ce94ef0c64bb4f67164d7ef8f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3b1a783552f88e24a91a8d0c8ba8cd7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -507,7 +506,6 @@ MonoBehaviour:
   moveDistance: 1
   speed: 1
   initative: 1
-  target: 0
   sprite: {fileID: 0}
   queue: {fileID: 0}
 --- !u!114 &1631005566
@@ -570,6 +568,7 @@ GameObject:
   - component: {fileID: 1669091794}
   - component: {fileID: 1669091793}
   - component: {fileID: 1669091792}
+  - component: {fileID: 1669091795}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -642,6 +641,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1669091795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669091791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56666c5a40171f54783dd416a44f42bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1 &1849555696
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +743,6 @@ MonoBehaviour:
   moveDistance: 1
   speed: 1
   initative: 3
-  target: 0
   sprite: {fileID: 0}
   queue: {fileID: 0}
 --- !u!212 &1849555701
