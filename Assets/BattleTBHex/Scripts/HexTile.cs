@@ -31,8 +31,6 @@ public class HexTile : MonoBehaviour
                 unitMovers[i].Move_To(transform.position);
             }
         }
-        
-        Debug.Log("OnMouseDown");
     }
     public void Check_OnMe()
     {

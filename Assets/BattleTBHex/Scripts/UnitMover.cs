@@ -17,10 +17,9 @@ public class UnitMover : MonoBehaviour
         queue = FindObjectOfType<Queue>();
     }
 
-    [ContextMenu("MyTurn_Test")]
-    public void MyTurn_Test()
+    public void MyTurn()
     {
-        Debug.Log("MyTurn_Test");
+        Debug.Log("MyTurn");
         HexTile[] hexTiles = FindObjectsOfType<HexTile>();
         Debug.Log(hexTiles.Length);
         for (int i = 0; i < hexTiles.Length; i++)

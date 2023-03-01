@@ -18,7 +18,7 @@ public class Queue : MonoBehaviour
                     unitMovers[j] = tempMover;
                 }
         unitMovers[0].myTurn = true;
-        unitMovers[0].MyTurn_Test();
+        unitMovers[0].MyTurn();
     }
     [ContextMenu("Next_Turn")]
     public void Next_Turn()
@@ -31,13 +31,13 @@ public class Queue : MonoBehaviour
                 {
                     unitMovers[i].myTurn = false;
                     unitMovers[0].myTurn = true;
-                    unitMovers[0].MyTurn_Test();
+                    unitMovers[0].MyTurn();
                 }
                 else
                 {
                     unitMovers[i].myTurn = false;
                     unitMovers[i+1].myTurn = true;
-                    unitMovers[i + 1].MyTurn_Test();
+                    unitMovers[i + 1].MyTurn();
                 }
                 break;
             }
