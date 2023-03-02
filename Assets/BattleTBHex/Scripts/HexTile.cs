@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class HexTile : MonoBehaviour
+public class HexTile : MonoBehaviour, IPointerEnterHandler
 {
     public bool empty;
-    //public bool unitOnMe;
     public bool canMoveOnMe;
     public SpriteRenderer sprite;
     void Start()
@@ -13,24 +13,11 @@ public class HexTile : MonoBehaviour
         sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (canMoveOnMe) sprite.color = Color.gray;
         else sprite.color = Color.white;
 
-    }
-    void OnMouseDown()
-    {
-        UnitMover[] unitMovers;
-        unitMovers = FindObjectsOfType<UnitMover>();
-        for (int i = 0; i < unitMovers.Length; i++)
-        {
-            if (unitMovers[i].myTurn == true && canMoveOnMe)
-            {
-                unitMovers[i].Move_To(transform.position);
-            }
-        }
     }
     public void Check_OnMe()
     {
@@ -41,8 +28,21 @@ public class HexTile : MonoBehaviour
         {
             if (unitMovers[i].transform.position == transform.position)
             {
-                //unitOnMe = true;
                 empty = false;
+            }
+        }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        UnitMover[] unitMovers;
+        unitMovers = FindObjectsOfType<UnitMover>();
+        for (int i = 0; i < unitMovers.Length; i++)
+        {
+            if (unitMovers[i].myTurn == true && canMoveOnMe)
+            {
+                unitMovers[i].moveTo = transform.position;
+                break;
             }
         }
     }

@@ -335,10 +335,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTurn: 0
   moveDistance: 1
-  speed: 1
+  speed: 0.1
   initative: 2
   sprite: {fileID: 0}
   queue: {fileID: 0}
+  switcher: 0
+  moveTo: {x: 0, y: 0, z: 0}
 --- !u!212 &1467437174
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -504,10 +506,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTurn: 0
   moveDistance: 1
-  speed: 1
+  speed: 0.1
   initative: 1
   sprite: {fileID: 0}
   queue: {fileID: 0}
+  switcher: 0
+  moveTo: {x: 0, y: 0, z: 0}
 --- !u!114 &1631005566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,10 +745,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTurn: 0
   moveDistance: 1
-  speed: 1
+  speed: 0.1
   initative: 3
   sprite: {fileID: 0}
   queue: {fileID: 0}
+  switcher: 0
+  moveTo: {x: 0, y: 0, z: 0}
 --- !u!212 &1849555701
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -1,9 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UnitMover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class UnitMover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public bool myTurn;
     public float moveDistance;
@@ -11,32 +10,25 @@ public class UnitMover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public int initative;
     public SpriteRenderer sprite;
     public Queue queue;
+    public CharStateIs switcher;
+    public Vector3 moveTo;
 
     void Start()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
         queue = FindObjectOfType<Queue>();
+        switcher = CharStateIs.Start;
     }
 
     public void MyTurn()
     {
-        Debug.Log("MyTurn");
         HexTile[] hexTiles = FindObjectsOfType<HexTile>();
-        Debug.Log(hexTiles.Length);
         for (int i = 0; i < hexTiles.Length; i++)
-        {
-            //hexTiles[i].sprite.color = Color.white;
             hexTiles[i].Check_OnMe();
-        }
 
         for (int i = 0; i < hexTiles.Length; i++)
-        {
             if ((transform.position - hexTiles[i].transform.position).magnitude > 0.5f && (transform.position - hexTiles[i].transform.position).magnitude < moveDistance && hexTiles[i].empty)
-            {
-                //hexTiles[i].sprite.color = Color.gray;
                 hexTiles[i].canMoveOnMe = true;
-            }
-        }
     }
     public void Move_To(Vector3 move_to)
     {
@@ -52,12 +44,47 @@ public class UnitMover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         HexTile[] hexTiles = FindObjectsOfType<HexTile>();
         for (int i = 0; i < hexTiles.Length; i++)
             hexTiles[i].canMoveOnMe = false;
-        queue.Next_Turn();
+        switcher = CharStateIs.Ability;
+        //queue.Next_Turn();
     }
     void Update()
     {
-        if (myTurn) sprite.color = Color.green;
-        //else sprite.color = Color.white;
+        if (myTurn)
+            switch (switcher)
+            {
+                case CharStateIs.Start:
+                    {
+                        sprite.color = Color.green;
+                        MyTurn();
+                        switcher = CharStateIs.Move;
+                    }
+                    break;
+                case CharStateIs.Move:
+                    {
+                        if (Input.GetMouseButton(0))
+                        {
+                            Move_To(moveTo);
+                        }
+                    }
+                    break;
+                case CharStateIs.Ability:
+                    {
+                        if (Input.GetMouseButton(0))
+                        {
+                            switcher = CharStateIs.Next;
+                        }
+                    }
+                    break;
+                case CharStateIs.Next:
+                    {
+                        if (Input.GetMouseButton(1))
+                        {
+                            switcher = CharStateIs.Start;
+                            queue.Next_Turn();
+                        }
+                    }
+                    break;
+            }
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -70,5 +97,25 @@ public class UnitMover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         Debug.Log("OnPointerUp");
         sprite.color = Color.blue;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (myTurn)
+        {
+            Debug.Log("Healed");
+        }
+        else
+        {
+            Debug.Log("Damaged");
+        }
+    }
+
+    public enum CharStateIs
+    {
+        Start,
+        Move,
+        Ability,
+        Next
     }
 }
