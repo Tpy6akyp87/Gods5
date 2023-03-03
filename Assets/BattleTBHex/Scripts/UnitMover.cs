@@ -58,6 +58,7 @@ public class UnitMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IPo
                         {
                             switcher = CharStateIs.Start;
                             queue.Next_Turn();
+                            sprite.color = Color.white;
                         }
                     }
                     break;

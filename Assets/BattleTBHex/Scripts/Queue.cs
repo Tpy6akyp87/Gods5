@@ -4,40 +4,40 @@ using UnityEngine;
 
 public class Queue : MonoBehaviour
 {
-    public UnitMover[] unitMovers;
+    public HexUnit[] hexUnits;
     public void MyStart()
     {
-        UnitMover tempMover;
-        unitMovers = FindObjectsOfType<UnitMover>();
-        for (int i = 0; i < unitMovers.Length -1; i++)
-            for (int j = i+1; j < unitMovers.Length; j++)
-                if (unitMovers[i].initative > unitMovers[j].initative)
+        HexUnit tempMover;
+        hexUnits = FindObjectsOfType<HexUnit>();
+        for (int i = 0; i < hexUnits.Length -1; i++)
+            for (int j = i+1; j < hexUnits.Length; j++)
+                if (hexUnits[i].initative > hexUnits[j].initative)
                 {
-                    tempMover = unitMovers[i];
-                    unitMovers[i] = unitMovers[j];
-                    unitMovers[j] = tempMover;
+                    tempMover = hexUnits[i];
+                    hexUnits[i] = hexUnits[j];
+                    hexUnits[j] = tempMover;
                 }
-        unitMovers[0].myTurn = true;
-        unitMovers[0].MyTurn();
+        hexUnits[0].myTurn = true;
+        hexUnits[0].MyTurn();
     }
     [ContextMenu("Next_Turn")]
     public void Next_Turn()
     {
-        for (int i = 0; i < unitMovers.Length; i++)
+        for (int i = 0; i < hexUnits.Length; i++)
         {
-            if (unitMovers[i].myTurn == true)
+            if (hexUnits[i].myTurn == true)
             {
-                if (i == unitMovers.Length - 1)
+                if (i == hexUnits.Length - 1)
                 {
-                    unitMovers[i].myTurn = false;
-                    unitMovers[0].myTurn = true;
-                    unitMovers[0].MyTurn();
+                    hexUnits[i].myTurn = false;
+                    hexUnits[0].myTurn = true;
+                    hexUnits[0].MyTurn();
                 }
                 else
                 {
-                    unitMovers[i].myTurn = false;
-                    unitMovers[i+1].myTurn = true;
-                    unitMovers[i + 1].MyTurn();
+                    hexUnits[i].myTurn = false;
+                    hexUnits[i+1].myTurn = true;
+                    hexUnits[i + 1].MyTurn();
                 }
                 break;
             }

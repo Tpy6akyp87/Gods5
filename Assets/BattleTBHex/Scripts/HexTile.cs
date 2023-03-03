@@ -21,12 +21,11 @@ public class HexTile : MonoBehaviour, IPointerEnterHandler
     }
     public void Check_OnMe()
     {
-        UnitMover[] unitMovers;
-        unitMovers = FindObjectsOfType<UnitMover>();
+        HexUnit[] hexUnits = FindObjectsOfType<UnitMover>();
         empty = true;
-        for (int i = 0; i < unitMovers.Length; i++)
+        for (int i = 0; i < hexUnits.Length; i++)
         {
-            if (unitMovers[i].transform.position == transform.position)
+            if (hexUnits[i].transform.position == transform.position)
             {
                 empty = false;
             }

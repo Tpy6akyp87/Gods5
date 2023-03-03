@@ -20,6 +20,10 @@ public class HexUnit : MonoBehaviour
     {
         
     }
+    public void Receive_Damage()
+    {
+        Debug.Log(name + " Receive_Damage ");
+    }
     public void MyTurn()
     {
         HexTile[] hexTiles = FindObjectsOfType<HexTile>();
