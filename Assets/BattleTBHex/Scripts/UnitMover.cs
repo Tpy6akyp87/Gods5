@@ -2,12 +2,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UnitMover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class UnitMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    public bool myTurn;
-    public float moveDistance;
-    public float speed;
-    public int initative;
+    
     public SpriteRenderer sprite;
     public Queue queue;
     public CharStateIs switcher;
@@ -20,33 +17,8 @@ public class UnitMover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         switcher = CharStateIs.Start;
     }
 
-    public void MyTurn()
-    {
-        HexTile[] hexTiles = FindObjectsOfType<HexTile>();
-        for (int i = 0; i < hexTiles.Length; i++)
-            hexTiles[i].Check_OnMe();
-
-        for (int i = 0; i < hexTiles.Length; i++)
-            if ((transform.position - hexTiles[i].transform.position).magnitude > 0.5f && (transform.position - hexTiles[i].transform.position).magnitude < moveDistance && hexTiles[i].empty)
-                hexTiles[i].canMoveOnMe = true;
-    }
-    public void Move_To(Vector3 move_to)
-    {
-        StartCoroutine(Move_to(move_to));
-    }
-    IEnumerator Move_to(Vector3 move_to)
-    {
-        while (transform.position != move_to)
-        {
-            yield return null;
-            transform.position = Vector3.MoveTowards(transform.position, move_to, speed * Time.deltaTime);
-        }
-        HexTile[] hexTiles = FindObjectsOfType<HexTile>();
-        for (int i = 0; i < hexTiles.Length; i++)
-            hexTiles[i].canMoveOnMe = false;
-        switcher = CharStateIs.Ability;
-        //queue.Next_Turn();
-    }
+    
+    
     void Update()
     {
         if (myTurn)
@@ -65,10 +37,15 @@ public class UnitMover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
                         {
                             Move_To(moveTo);
                         }
+                        if (endMove)
+                        {
+                            switcher = CharStateIs.Ability;
+                        }
                     }
                     break;
                 case CharStateIs.Ability:
                     {
+                        endMove = false;
                         if (Input.GetMouseButton(0))
                         {
                             switcher = CharStateIs.Next;
