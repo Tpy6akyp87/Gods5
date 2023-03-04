@@ -49,6 +49,5 @@ public class HexUnit : MonoBehaviour
         for (int i = 0; i < hexTiles.Length; i++)
             hexTiles[i].canMoveOnMe = false;
         endMove = true;
-        //queue.Next_Turn();
     }
 }

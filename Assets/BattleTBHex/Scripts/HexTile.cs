@@ -21,7 +21,7 @@ public class HexTile : MonoBehaviour, IPointerEnterHandler
     }
     public void Check_OnMe()
     {
-        HexUnit[] hexUnits = FindObjectsOfType<UnitMover>();
+        HexUnit[] hexUnits = FindObjectsOfType<HexUnit>();
         empty = true;
         for (int i = 0; i < hexUnits.Length; i++)
         {

@@ -26,13 +26,14 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
                     {
                         sprite.color = Color.green;
                         MyTurn();
+                        Find_Target(out moveTo, out target);
+                        Move_To(moveTo);
                         switcher = CharStateIs.Move;
                     }
                     break;
                 case CharStateIs.Move:
                     {
-                        Find_Target(out moveTo, out target);
-                        Move_To(moveTo);
+                        
                         if (endMove)
                         {
                             switcher = CharStateIs.Ability;
@@ -61,8 +62,8 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void Find_Target(out Vector3 move_to, out Vector3 target)
     {
-        target = new Vector3(0, 0, 0);
-        move_to = new Vector3(0, 0, 0);
+        //target = new Vector3(0, 0, 0);
+        //move_to = new Vector3(0, 0, 0);
         UnitMover tempMover;
         UnitMover[] unitMovers = FindObjectsOfType<UnitMover>();
         for (int i = 0; i < unitMovers.Length - 1; i++)
@@ -73,14 +74,17 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
                     unitMovers[i] = unitMovers[j];
                     unitMovers[j] = tempMover;
                 }
+        target = unitMovers[0].transform.position;
         if ((transform.position - unitMovers[0].transform.position).magnitude > 0.9f)
         {
             HexTile[] hexTiles = FindObjectsOfType<HexTile>();
-            List<HexTile> hexList = null;
+            Debug.Log(hexTiles.Length);
+            List<HexTile> hexList = new List<HexTile>();
             HexTile tempHexTile;
             for (int i = 0; i < hexTiles.Length; i++)
                 if (hexTiles[i].canMoveOnMe)
                     hexList.Add(hexTiles[i]);
+            Debug.Log(hexList.Count);
             for (int i = 0; i < hexList.Count - 1; i++)
                 for (int j = i + 1; j < hexList.Count; j++)
                     if ((unitMovers[0].transform.position - hexTiles[i].transform.position).magnitude > (unitMovers[0].transform.position - hexTiles[j].transform.position).magnitude)
