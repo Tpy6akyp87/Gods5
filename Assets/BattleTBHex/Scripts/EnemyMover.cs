@@ -13,7 +13,6 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
 
     void Start()
     {
-        sprite = GetComponentInChildren<SpriteRenderer>();
         queue = FindObjectOfType<Queue>();
         switcher = CharStateIs.Start;
     }

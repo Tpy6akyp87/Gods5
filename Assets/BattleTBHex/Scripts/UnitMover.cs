@@ -12,7 +12,6 @@ public class UnitMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IPo
 
     void Start()
     {
-        sprite = GetComponentInChildren<SpriteRenderer>();
         queue = FindObjectOfType<Queue>();
         switcher = CharStateIs.Start;
     }
