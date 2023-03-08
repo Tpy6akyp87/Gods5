@@ -20,10 +20,11 @@ public class HexUnit : MonoBehaviour
     {
         
     }
-    public void Receive_Damage()
+    public void Receive_Damage(int damage)
     {
-        Debug.Log(name + " Receive_Damage ");
+        Debug.Log(name + " Receive_Damage = "+ damage);
     }
+
     public void MyTurn()
     {
         HexTile[] hexTiles = FindObjectsOfType<HexTile>();
@@ -49,5 +50,16 @@ public class HexUnit : MonoBehaviour
         for (int i = 0; i < hexTiles.Length; i++)
             hexTiles[i].canMoveOnMe = false;
         endMove = true;
+    }
+    public void Melee_Attack(HexUnit[] hexEnemies, Vector3 target, int damage) // хуета, надо сделать метод подсветки цели для своих и поиска цели для ИИ
+    {
+        HexTile[] hexTiles = FindObjectsOfType<HexTile>();
+        for (int i = 0; i < hexTiles.Length; i++)
+            for (int j = 0; j < hexEnemies.Length; j++)
+                if (hexTiles[i].transform.position == hexEnemies[j].transform.position && (transform.position - hexTiles[i].transform.position).magnitude < 1.0f)
+                    hexTiles[i].canbeAttacked = true; 
+        for (int i = 0; i < hexEnemies.Length; i++)
+            if (hexEnemies[i].transform.position == target)
+                hexEnemies[i].Receive_Damage(damage);
     }
 }

@@ -7,6 +7,7 @@ public class HexTile : MonoBehaviour, IPointerEnterHandler
 {
     public bool empty;
     public bool canMoveOnMe;
+    public bool canbeAttacked;
     public SpriteRenderer sprite;
     void Start()
     {

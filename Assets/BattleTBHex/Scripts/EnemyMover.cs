@@ -61,8 +61,6 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void Find_Target(out Vector3 move_to, out Vector3 target)
     {
-        //target = new Vector3(0, 0, 0);
-        //move_to = new Vector3(0, 0, 0);
         UnitMover tempMover;
         UnitMover[] unitMovers = FindObjectsOfType<UnitMover>();
         for (int i = 0; i < unitMovers.Length - 1; i++)
@@ -86,7 +84,7 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
             Debug.Log(hexList.Count);
             for (int i = 0; i < hexList.Count - 1; i++)
                 for (int j = i + 1; j < hexList.Count; j++)
-                    if ((unitMovers[0].transform.position - hexTiles[i].transform.position).magnitude > (unitMovers[0].transform.position - hexTiles[j].transform.position).magnitude)
+                    if ((unitMovers[0].transform.position - hexList[i].transform.position).magnitude > (unitMovers[0].transform.position - hexList[j].transform.position).magnitude)
                     {
                         tempHexTile = hexList[i];
                         hexList[i] = hexList[j];
@@ -101,7 +99,7 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
         UnitMover[] unitMovers = FindObjectsOfType<UnitMover>();
         for (int i = 0; i < unitMovers.Length; i++)
             if (unitMovers[i].transform.position == target)
-                unitMovers[i].Receive_Damage();
+                unitMovers[i].Receive_Damage(13);
     }
 
     public void OnPointerExit(PointerEventData eventData)
