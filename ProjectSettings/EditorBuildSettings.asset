@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Town/Town.unity
     guid: 71128e0141722074a8ef8bfb62fd25c3
+  - enabled: 1
+    path: Assets/BattleTBHex/BattleTBHex.unity
+    guid: b6e1e1e4284719342a4b4fe90a1710b2
   m_configObjects: {}

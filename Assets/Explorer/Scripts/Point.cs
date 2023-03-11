@@ -213,7 +213,7 @@ public class Point : MonoBehaviour
                 explorer.textLog.text += "5 SwSc";
                 enemyTeam.Save_EnemyTeam();
                 explorer.textLog.text += "6 SwSc";
-                SwitchScene("BattleScene");
+                SwitchScene("BattleTBHex");
             }
             if (pointType == PointType.Treasure)
             {

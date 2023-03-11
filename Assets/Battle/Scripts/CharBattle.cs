@@ -27,9 +27,7 @@ public class CharBattle : UnitBattle
                 phisicalArmor += townData.town.buildings[i].playerEffects.phisicalArmorEffect;
             }
         }
-       
-   
-}
+    }
 
     void Update()
     {

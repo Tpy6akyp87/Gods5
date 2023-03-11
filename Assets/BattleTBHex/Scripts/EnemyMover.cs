@@ -10,11 +10,33 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
     public CharStateIs switcher;
     public Vector3 moveTo;
     public Vector3 target;
+    public TownDataHolder townData;
 
     void Start()
     {
         queue = FindObjectOfType<Queue>();
         switcher = CharStateIs.Start;
+    }
+    void Awake()
+    {
+        townData = FindObjectOfType<TownDataHolder>();
+        townData.Load_Town();
+        for (int i = 0; i < townData.town.buildings.Count; i++)
+        {
+            if (townData.town.buildings[i].isBuilded)
+            {
+                maxHP += townData.town.buildings[i].playerEffects.maxHPEffect;
+                startTimeToAction += townData.town.buildings[i].playerEffects.maxHPEffect;
+                phisicalDamage += townData.town.buildings[i].playerEffects.phisicalDamageEffect;
+                magicDamage += townData.town.buildings[i].playerEffects.magicDamageEffect;
+                magicArmor += townData.town.buildings[i].playerEffects.magicArmorEffect;
+                healPower += townData.town.buildings[i].playerEffects.healPowerEffect;
+                lifeSteal += townData.town.buildings[i].playerEffects.lifeStealEffect;
+                critChance += townData.town.buildings[i].playerEffects.critChanceEffect;
+                dodgeChance += townData.town.buildings[i].playerEffects.dodgeChanceEffect;
+                phisicalArmor += townData.town.buildings[i].playerEffects.phisicalArmorEffect;
+            }
+        }
     }
     void Update()
     {

@@ -4,6 +4,20 @@ using UnityEngine;
 
 public class HexUnit : MonoBehaviour
 {
+    public float maxHP;
+    public float startTimeToAction;
+    public int phisicalDamage;
+    public bool inRage;
+    public int magicDamage;
+    public int magicArmor;
+    public int healPower;
+    public int lifeSteal;
+    public int critChance;
+    public int dodgeChance;
+    public int phisicalArmor;
+
+    public float hp;
+
     public bool myTurn;
     public float moveDistance;
     public float speed;
@@ -12,7 +26,7 @@ public class HexUnit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        hp = maxHP;
     }
 
     // Update is called once per frame
