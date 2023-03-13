@@ -18,6 +18,8 @@ public class HexTile : MonoBehaviour, IPointerEnterHandler
     {
         if (canMoveOnMe) sprite.color = Color.gray;
         else sprite.color = Color.white;
+        if (canbeAttacked) sprite.color = Color.red;
+        else sprite.color = Color.white;
 
     }
     public void Check_OnMe()

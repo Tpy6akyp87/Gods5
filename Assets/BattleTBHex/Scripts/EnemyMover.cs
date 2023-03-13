@@ -79,6 +79,8 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
                     }
                     break;
             }
+        
+
     }
 
     public void Find_Target(out Vector3 move_to, out Vector3 target)
@@ -132,27 +134,42 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("OnPointerUp");
-        sprite.color = Color.blue;
+        if (canBeAttacked)
+            sprite.color = Color.red;
+        else
+            sprite.color = Color.white;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (myTurn)
+        if (canBeAttacked)
         {
-            Debug.Log("Healed");
-        }
-        else
-        {
-            Debug.Log("Damaged");
+            HexUnit[] hexUnits = FindObjectsOfType<HexUnit>();
+            for (int i = 0; i < hexUnits.Length; i++)
+            {
+                if ((transform.position - hexUnits[i].transform.position).magnitude < 1.0f && hexUnits[i].canBeAttacked)
+                {
+                    hexUnits[i].Receive_Damage(11);
+                    hexUnits[i].canBeAttacked = false;
+                }
+            }
+            UnitMover [] unitMovers = FindObjectsOfType<UnitMover>();
+            for (int i = 0; i < unitMovers.Length; i++)
+            {
+                if (unitMovers[i].myTurn)
+                {
+                    unitMovers[i].switcher = CharStateIs.Next;
+                }
+            }
+
         }
     }
 
-    public enum CharStateIs
-    {
-        Start,
-        Move,
-        Ability,
-        Next
-    }
+    //public enum CharStateIs
+    //{
+    //    Start,
+    //    Move,
+    //    Ability,
+    //    Next
+    //}
 }

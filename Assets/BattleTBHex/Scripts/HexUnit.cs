@@ -23,6 +23,7 @@ public class HexUnit : MonoBehaviour
     public float speed;
     public int initative;
     public bool endMove;
+    public bool canBeAttacked;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,5 +76,25 @@ public class HexUnit : MonoBehaviour
         for (int i = 0; i < hexEnemies.Length; i++)
             if (hexEnemies[i].transform.position == target)
                 hexEnemies[i].Receive_Damage(damage);
+    }
+    public void Check_MeeleeAtack()
+    {
+        EnemyMover[] enemyMovers = FindObjectsOfType<EnemyMover>();
+        HexTile[] hexTiles = FindObjectsOfType<HexTile>();
+        for (int i = 0; i < hexTiles.Length; i++)
+            for (int j = 0; j < enemyMovers.Length; j++)
+                if (hexTiles[i].transform.position == enemyMovers[j].transform.position && (transform.position - hexTiles[i].transform.position).magnitude < 1.0f)
+                {
+                    hexTiles[i].canbeAttacked = true;
+                    enemyMovers[j].canBeAttacked = true;
+                }
+                    
+    }
+    public enum CharStateIs
+    {
+        Start,
+        Move,
+        Ability,
+        Next
     }
 }

@@ -45,6 +45,7 @@ public class UnitMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IPo
                 case CharStateIs.Ability:
                     {
                         endMove = false;
+                        Check_MeeleeAtack();
                         if (Input.GetMouseButton(0))
                         {
                             switcher = CharStateIs.Next;
@@ -88,11 +89,5 @@ public class UnitMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IPo
         }
     }
 
-    public enum CharStateIs
-    {
-        Start,
-        Move,
-        Ability,
-        Next
-    }
+    
 }
