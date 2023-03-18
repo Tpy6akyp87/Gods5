@@ -92,6 +92,12 @@ public class HexUnit : MonoBehaviour
         HexTile[] hexTiles = FindObjectsOfType<HexTile>();
         for (int i = 0; i < hexTiles.Length; i++)
             for (int j = 0; j < enemyMovers.Length; j++)
+                {
+                    hexTiles[i].canbeAttacked = false;
+                    enemyMovers[j].canBeAttacked = false;
+                }
+        for (int i = 0; i < hexTiles.Length; i++)
+            for (int j = 0; j < enemyMovers.Length; j++)
                 if (hexTiles[i].transform.position == enemyMovers[j].transform.position && (transform.position - hexTiles[i].transform.position).magnitude < 1.0f)
                 {
                     hexTiles[i].canbeAttacked = true;
