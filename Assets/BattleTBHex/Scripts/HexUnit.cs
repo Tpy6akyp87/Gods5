@@ -44,7 +44,13 @@ public class HexUnit : MonoBehaviour
     {
         HexTile[] hexTiles = FindObjectsOfType<HexTile>();
         for (int i = 0; i < hexTiles.Length; i++)
+        {
             hexTiles[i].Check_OnMe();
+            if (hexTiles[i].transform.position == transform.position)
+                hexTiles[i].canMove = true;
+            else
+                hexTiles[i].canMove = false;
+        }
 
         for (int i = 0; i < hexTiles.Length; i++)
             if ((transform.position - hexTiles[i].transform.position).magnitude > 0.5f && (transform.position - hexTiles[i].transform.position).magnitude < moveDistance && hexTiles[i].empty)
@@ -63,7 +69,10 @@ public class HexUnit : MonoBehaviour
         }
         HexTile[] hexTiles = FindObjectsOfType<HexTile>();
         for (int i = 0; i < hexTiles.Length; i++)
+        {
             hexTiles[i].canMoveOnMe = false;
+            hexTiles[i].canMove = false;
+        }
         endMove = true;
     }
     public void Melee_Attack(HexUnit[] hexEnemies, Vector3 target, int damage) // хуета, надо сделать метод подсветки цели для своих и поиска цели для ИИ
@@ -88,7 +97,6 @@ public class HexUnit : MonoBehaviour
                     hexTiles[i].canbeAttacked = true;
                     enemyMovers[j].canBeAttacked = true;
                 }
-                    
     }
     public enum CharStateIs
     {

@@ -25,14 +25,15 @@ public class UnitMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IPo
             {
                 case CharStateIs.Start:
                     {
-                        sprite.color = Color.green;
+                        //sprite.color = Color.green;
                         MyTurn();
                         switcher = CharStateIs.Move;
                     }
                     break;
                 case CharStateIs.Move:
                     {
-                        if (Input.GetMouseButton(0))
+                        Check_MeeleeAtack();
+                        if (Input.GetMouseButton(0) && moveTo != new Vector3(100,100,100))
                         {
                             Move_To(moveTo);
                         }
