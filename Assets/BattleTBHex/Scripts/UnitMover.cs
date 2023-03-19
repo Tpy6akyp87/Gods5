@@ -25,14 +25,13 @@ public class UnitMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IPo
             {
                 case CharStateIs.Start:
                     {
-                        //sprite.color = Color.green;
                         MyTurn();
                         switcher = CharStateIs.Move;
                     }
                     break;
                 case CharStateIs.Move:
                     {
-                        Check_MeeleeAtack();
+                        Check_Atack(actionDistance, out noTarget);
                         if (Input.GetMouseButton(0) && moveTo != new Vector3(100,100,100))
                         {
                             Move_To(moveTo);
@@ -46,21 +45,19 @@ public class UnitMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IPo
                 case CharStateIs.Ability:
                     {
                         endMove = false;
-                        Check_MeeleeAtack();
-                        if (Input.GetMouseButton(0))
-                        {
+                        Check_Atack(actionDistance, out noTarget);
+                        if (noTarget) 
                             switcher = CharStateIs.Next;
-                        }
                     }
                     break;
                 case CharStateIs.Next:
                     {
-                        if (Input.GetMouseButton(1))
-                        {
+                        //if (Input.GetMouseButton(1))
+                        //{
                             switcher = CharStateIs.Start;
                             queue.Next_Turn();
                             sprite.color = Color.white;
-                        }
+                        //}
                     }
                     break;
             }

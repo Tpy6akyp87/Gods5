@@ -5,8 +5,10 @@ using UnityEngine;
 public class Queue : MonoBehaviour
 {
     public HexUnit[] hexUnits;
+    UnitAction unitAction;
     public void MyStart()
     {
+        unitAction = FindObjectOfType<UnitAction>();
         HexUnit tempMover;
         hexUnits = FindObjectsOfType<HexUnit>();
         for (int i = 0; i < hexUnits.Length -1; i++)
@@ -19,6 +21,7 @@ public class Queue : MonoBehaviour
                 }
         hexUnits[0].myTurn = true;
         hexUnits[0].MyTurn();
+        unitAction.Check_UnitForAbility();
     }
     [ContextMenu("Next_Turn")]
     public void Next_Turn()
@@ -42,6 +45,7 @@ public class Queue : MonoBehaviour
                 break;
             }
         }
+        unitAction.Check_UnitForAbility();
     }
 
     void Update()

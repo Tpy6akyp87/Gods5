@@ -50,7 +50,7 @@ public class HexTile : MonoBehaviour, IPointerEnterHandler//, IPointerExitHandle
         }
         for (int i = 0; i < unitMovers.Length; i++)
         {
-            if (unitMovers[i].myTurn == true && !empty)
+            if (unitMovers[i].myTurn == true && !empty || unitMovers[i].myTurn == true && empty && !canMoveOnMe)
             {
                 unitMovers[i].moveTo = new Vector3(100, 100, 100);
             }

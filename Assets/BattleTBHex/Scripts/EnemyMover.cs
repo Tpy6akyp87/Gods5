@@ -11,11 +11,13 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
     public Vector3 moveTo;
     public Vector3 target;
     public TownDataHolder townData;
+    public UnitAction unitAction;
 
     void Start()
     {
         queue = FindObjectOfType<Queue>();
         switcher = CharStateIs.Start;
+        unitAction = FindObjectOfType<UnitAction>();
     }
     void Awake()
     {
@@ -70,12 +72,12 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
                     break;
                 case CharStateIs.Next:
                     {
-                        if (Input.GetMouseButton(1))
-                        {
+                        //if (Input.GetMouseButton(1))
+                        //{
                             switcher = CharStateIs.Start;
                             queue.Next_Turn();
                             sprite.color = Color.white;
-                        }
+                        //}
                     }
                     break;
             }
@@ -134,7 +136,6 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
                 enemyMovers[i].sprite.color = Color.white;
             }
         }
-       // sprite.color = Color.white;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -149,7 +150,6 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
                     enemyMovers[i].sprite.color = Color.red;
                 }
             }
-            //sprite.color = Color.red;
         }
         else
             sprite.color = Color.white;
@@ -159,32 +159,10 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
     {
         if (canBeAttacked)
         {
-            EnemyMover[] enemyMovers = FindObjectsOfType<EnemyMover>();
-            for (int i = 0; i < enemyMovers.Length; i++)
-            {
-                if ((transform.position - enemyMovers[i].transform.position).magnitude < 1.0f && enemyMovers[i].canBeAttacked)
-                {
-                    enemyMovers[i].Receive_Damage(11);
-                    enemyMovers[i].canBeAttacked = false;
-                }
-                enemyMovers[i].sprite.color = Color.white;
-            }
-            UnitMover [] unitMovers = FindObjectsOfType<UnitMover>();
-            for (int i = 0; i < unitMovers.Length; i++)
-            {
-                if (unitMovers[i].myTurn)
-                {
-                    unitMovers[i].switcher = CharStateIs.Next;
-                }
-            }
-            HexTile[] hexTiles = FindObjectsOfType<HexTile>();
-            for (int i = 0; i < hexTiles.Length; i++)
-            {
-                hexTiles[i].canbeAttacked = false;
-                hexTiles[i].canMoveOnMe = false;
-                hexTiles[i].canMove = false;
-            }
-
+            if (unitAction.numOfAbility == 1)
+                Swing_Attack();
+            else if (unitAction.numOfAbility == 2)
+                FireBall(0.9f);
         }
     }
 
