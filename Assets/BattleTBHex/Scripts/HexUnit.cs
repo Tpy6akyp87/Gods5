@@ -26,6 +26,8 @@ public class HexUnit : MonoBehaviour
     public bool canBeAttacked;
     public float actionDistance;
     public bool noTarget;
+    public GameObject fireDamage;
+    public GameObject swingDamage;
     // Start is called before the first frame update
     void Start()
     {
@@ -115,12 +117,14 @@ public class HexUnit : MonoBehaviour
     }
     public void Swing_Attack()
     {
+        swingDamage = Resources.Load<GameObject>("SwingDamage");
         EnemyMover[] enemyMovers = FindObjectsOfType<EnemyMover>();
         for (int i = 0; i < enemyMovers.Length; i++)
         {
             if ((transform.position - enemyMovers[i].transform.position).magnitude < actionDistance && enemyMovers[i].canBeAttacked)
             {
                 enemyMovers[i].Receive_Damage(11);
+                GameObject newsingDamage = Instantiate(swingDamage, enemyMovers[i].transform.position, swingDamage.transform.rotation) as GameObject;
                 enemyMovers[i].canBeAttacked = false;
             }
             enemyMovers[i].sprite.color = Color.white;
@@ -143,12 +147,14 @@ public class HexUnit : MonoBehaviour
     }
     public void FireBall(float radius)
     {
+        fireDamage = Resources.Load<GameObject>("FireDamage");
         EnemyMover[] enemyMovers = FindObjectsOfType<EnemyMover>();
         for (int i = 0; i < enemyMovers.Length; i++)
         {
             if ((transform.position - enemyMovers[i].transform.position).magnitude < radius)
             {
                 enemyMovers[i].Receive_Damage(12);
+                GameObject newfireDamage = Instantiate(fireDamage, enemyMovers[i].transform.position, fireDamage.transform.rotation) as GameObject;
                 enemyMovers[i].canBeAttacked = false;
             }
             enemyMovers[i].sprite.color = Color.white;

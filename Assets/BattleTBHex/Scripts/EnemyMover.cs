@@ -12,6 +12,7 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
     public Vector3 target;
     public TownDataHolder townData;
     public UnitAction unitAction;
+    bool firstmove = true;
 
     void Start()
     {
@@ -40,6 +41,15 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
             }
         }
     }
+    public void FirstMove()
+    {
+        //sprite.color = Color.green;
+        MyTurn();
+        Find_Target(out moveTo, out target);
+        Move_To(moveTo);
+        switcher = CharStateIs.Move;
+    }
+
     void Update()
     {
         if (myTurn)
@@ -47,11 +57,11 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
             {
                 case CharStateIs.Start:
                     {
-                        //sprite.color = Color.green;
-                        MyTurn();
-                        Find_Target(out moveTo, out target);
-                        Move_To(moveTo);
-                        switcher = CharStateIs.Move;
+                        if (firstmove)
+                        {
+                            firstmove = false;
+                            Invoke("FirstMove", 0.7f);
+                        }
                     }
                     break;
                 case CharStateIs.Move:
@@ -77,6 +87,7 @@ public class EnemyMover : HexUnit, IPointerEnterHandler, IPointerExitHandler, IP
                             switcher = CharStateIs.Start;
                             queue.Next_Turn();
                             sprite.color = Color.white;
+                        firstmove = true;
                         //}
                     }
                     break;
